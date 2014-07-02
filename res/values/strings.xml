@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Dont Change This -->
+    <string name="app_name">timeSheetsAlpha</string>
+    <string name="action_save">Save</string>
+    <string name="action_update">Update</string>
+    
+	<!-- This line is not needed on multichoice <item>@string/prompt</item> -->    
+    <!-- Safety arrays -->
+	<string-array name="work_area">
+	    <item>work_area</item>
+	    <!-- <item>@string/prompt</item>
+	    <item>New Build Site</item>
+	    <item>Existing Office Area</item>
+	    <item>House Maintenance</item>
+	    <item>Office refurb</item>
+	    <item>Outside a building</item>
+	    <item>Near a foot path</item>
+	    <item>Near a road</item>
+	    <item>EX Area</item> -->
+	</string-array>
+	<string-array name="rating_array">
+	    <item>@string/prompt</item>
+	    <item>1</item>
+	    <item>2</item>
+	    <item>3</item>
+	    <item>4</item>
+	    <item>5</item>
+	</string-array>
+	<string-array name="site_condition_controls">
+	    <item>Site Induction</item>
+	    <item>Traffic Cones</item>
+	    <item>Site Notice</item>
+	    <item>Inform Staff of work</item>
+	    <item>O2 analyzer</item>
+	    <item>Hepa filter hoover</item>
+	</string-array>
+	<string-array name="access_types">
+	    <item>@string/prompt</item>
+	    <item>Not working at a height</item>
+	    <item>MEWP GENIE 1</item>
+	    <item>MEWP GENIE 2</item>
+	    <item>MEWP Green Boom 3</item>
+	    <item>A frame ladder 1</item>
+	    <item>A frame ladder 2</item>
+	    <item>A frame ladder 3</item>
+	    <item>A frame ladder 4</item>
+	    <item>A frame ladder 5</item>
+	    <item>A frame ladder 6</item>
+	    <item>A frame ladder 7</item>
+	    <item>A frame ladder 8</item>
+	    <item>A frame ladder 9</item>
+	    <item>A frame ladder 10</item>
+	    <item>A frame ladder 11</item>
+	    <item>A frame ladder 12</item>
+	    <item>A frame ladder 13</item>
+	    <item>Straight ladder 1</item>
+	    <item>Straight ladder 2</item>
+	    <item>Straight ladder 3</item>
+	</string-array>
+	<string-array name="working_at_height_controls">
+	    <item>Good Ground Conditions</item>
+	    <item>Short term work</item>
+	    <item>Safety Harness</item>
+	    <item>Traffic cones</item>
+	    <item>Tie off ladder</item>
+	    <item>Foot ladder</item>
+	    <item>Training in date</item>
+	</string-array>
+	<string-array name="load_types">
+	    <item>@string/prompt</item>
+	    <item>10kg 1 man lift</item>
+	    <item>20kg 2 man lift</item>
+	    <item>Large object 4 man lift</item>
+	    <item>Over 30kg use pallet truck</item>
+	</string-array>
+	<string-array name = "manual_handling_controls">
+	    <item>Plan route</item>
+	    <item>Mechanical aid</item>
+	    <item>Drop load near to job site</item>
+	    <item>Manual handling training</item>
+	</string-array>
+	<string-array name="lock_out_circuits">
+	    <item>@string/prompt</item>
+	    <item>LOTO required</item>
+	</string-array>
+	<string-array name="lock_out_controls">
+	    <item>Place lock on device</item>
+	    <item>Place Tag on DB or device</item>
+	</string-array>
+	
+	
+	<!-- Time arrays -->
+	<string-array name="time_hours">
+	    <item>@string/prompt</item>
+	    <item>0hrs</item>
+	    <item>1hr</item>
+	    <item>2hrs</item>
+	    <item>3hrs</item>
+	    <item>4hrs</item>
+	    <item>5hrs</item>
+	    <item>6hrs</item>
+	    <item>7hrs</item>
+	    <item>8hrs</item>
+	    <item>9hrs</item>
+	    <item>10hrs</item>
+	    <item>11hrs</item>
+	    <item>12hrs</item>
+	</string-array>
+	<string-array name="time_minutes">
+	    <item>@string/prompt</item>
+	    <item>30 minutes</item>
+	</string-array>
+	<string-array name="time_percentages">
+	    <item>@string/prompt</item>
+	    <item>10%</item>
+	    <item>20%</item>
+	    <item>30%</item>
+	    <item>40%</item>
+	    <item>50%</item>
+	    <item>60%</item>
+	    <item>70%</item>
+	    <item>80%</item>
+	    <item>90%</item>
+	</string-array>
+	<string-array name="time_yes_no">
+	    <item>@string/prompt</item>
+	    <item>YES</item>
+	    <item>NO</item>
+	</string-array>
+	<string-array name="time_reasons">
+	    <item>@string/prompt</item>
+	    <item>Parts on order</item>
+	    <item>No access</item>
+	    <item>Plumber required</item>
+	    <item>Further works by others</item>
+	</string-array>
+	
+	<!-- Equipment Arrays -->
+	<string-array name="drills">
+	    <item>@string/prompt</item>
+	    <item>Yellow trailer</item>
+	    <item>Big red hilti</item>
+	    <item>Cango</item>
+	    <item>Cordless</item>
+	    <item>Bosch</item>
+	    <item>Hilti t2</item>
+	    <item>Large Grinder</item>
+	    <item>Small Grinder</item>
+	    <item>Jig Saw</item>
+	</string-array>
+	<string-array name="leads">
+	    <item>@string/prompt</item>
+	    <item>110 volt lead 1</item>
+	    <item>110 volt lead 2</item>
+	    <item>110 volt lead 3</item>
+	    <item>110 volt lead 4</item>
+	    <item>110 volt lead 5</item>
+	</string-array>
+	
+	<!-- Materials Arrays -->
+	<string-array name="materials_stores">
+	    <item>Choose a store</item>
+	    <item>Cliffords</item>
+	    <item>CT</item>
+	    <item>CEF</item>
+	    <item>STORE</item>
+	    <item>Special order</item>
+	</string-array>
+	
+	<!-- Testing Arrays -->
+	<string-array name="testing_testing">
+	    <item>@string/prompt</item>
+	    <item>Cat 5</item>
+	    <item>Cat 6</item>
+	    <item>Emergency lighting</item>
+	    <item>Electrical pre-connection</item>
+	    <item>Electrical sub systems cert</item>
+	    <item>Electrical periodic inspection</item>
+	    <item>Fire alarm</item>
+	</string-array>
+	<string-array name="testing_duration">
+	    <item>@string/prompt</item>
+	    <item>30 min</item>
+	    <item>1hr</item>
+	    <item>3hrs</item>
+	    <item>Yearly</item>
+	</string-array>
+	<string-array name="testing_report">
+	    <item>@string/prompt</item>
+	    <item>Paper Cert</item>
+	    <item>Pass</item>
+	    <item>Fail</item>
+	    <item>More work required</item>
+	    <item>Quote required</item>
+	</string-array>
+	
+	<string name="prompt">Choose an item</string>
+	<string name="control_text">Additional controls - enter more than 1 control if required</string>
+
+</resources>

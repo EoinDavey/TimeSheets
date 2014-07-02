@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="main_fragment_button_width_dimen">200dp</dimen>
+    <dimen name="main_fragment_button_height_dimen">100dp</dimen>
+    <dimen name="main_fragment_button_font">22dp</dimen>
+    <dimen name="main_fragment_layout_padding">50dp</dimen>
+    <dimen name="job_setup_frag_text_view_margin">25dp</dimen>
+    <dimen name="safety_image_view">70dp</dimen>
+    <dimen name="safety_image_padding">5dp</dimen>
+    <dimen name="safety_cell_width">180dp</dimen>
+    <dimen name="safety_cell_height">90dp</dimen>
+    <dimen name="safety_font">20dp</dimen>
+    <dimen name="materials_cell_width">180dp</dimen>
+    <dimen name="materials_cell_height">40dp</dimen>
+    <dimen name="materials_font">18dp</dimen>
+    <dimen name="testing_font">17dp</dimen>
+    <dimen name="testing_cell_width">90dp</dimen>
+    <dimen name="testing_cell_height">30dp</dimen>
+    <dimen name="time_sheet_list_padding">5dp</dimen>
+</resources>
