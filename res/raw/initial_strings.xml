@@ -1,0 +1,13 @@
+<Lists>
+	<List name="work_area">
+	    <item>Choose an item</item>
+		<item>New Build Site</item>
+	    <item>Existing Office Area</item>
+	    <item>House Maintenance</item>
+	    <item>Office refurb</item>
+	    <item>Outside a building</item>
+	    <item>Near a foot path</item>
+	    <item>Near a road</item>
+	    <item>EX Area</item>
+	</List>
+</Lists>

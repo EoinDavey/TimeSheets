@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MultiSpinner">
+        <attr name="multi_entries" format="string" />
+    </declare-styleable>
+    <declare-styleable name="CustomSpinner">
+        <attr name="entries" format="string"/>
+    </declare-styleable>
+</resources>

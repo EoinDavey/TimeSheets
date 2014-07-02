@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin" >
+        <TextView
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerHorizontal="true"
+		    android:layout_alignParentTop="true"
+		    android:textSize="@dimen/safety_font"
+		    android:text="Equipment Used" />
+		
+		<TableLayout android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="40dp"
+		    android:layout_centerHorizontal="true"
+		    android:layout_alignParentTop="true"
+		    android:id="@+id/equipment_table_layout_1">
+		    <TableRow
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+	
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Drills"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Leads"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Access"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+	
+		    </TableRow>
+		    <TableRow 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent">
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="drills"
+		            android:prompt="@string/prompt" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="leads"
+		            android:prompt="@string/prompt" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="access_types"
+		            android:prompt="@string/prompt" />
+		    </TableRow>
+		</TableLayout>
+		<TableLayout android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="40dp"
+		    android:layout_centerHorizontal="true"
+		    android:layout_below="@id/equipment_table_layout_1"
+		    android:id="@+id/equipment_table_layout_2">
+		    <TableRow
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+	
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Drills"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Leads"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Access"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+	
+		    </TableRow>
+		    <TableRow 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent">
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="drills"
+		            android:prompt="@string/prompt" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="leads"
+		            android:prompt="@string/prompt" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="access_types"
+		            android:prompt="@string/prompt" />
+		    </TableRow>
+		</TableLayout>
+		<TableLayout android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="40dp"
+		    android:layout_centerHorizontal="true"
+		    android:layout_below="@id/equipment_table_layout_2"
+		    android:id="@+id/equipment_table_layout_3">
+		    <TableRow
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+	
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Drills"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Leads"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Access"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+	
+		    </TableRow>
+		    <TableRow 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent">
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="drills"
+		            android:prompt="@string/prompt" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="leads"
+		            android:prompt="@string/prompt" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="access_types"
+		            android:prompt="@string/prompt" />
+		    </TableRow>
+		</TableLayout>
+		<TableLayout android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="40dp"
+		    android:layout_centerHorizontal="true"
+		    android:layout_below="@id/equipment_table_layout_3"
+		    android:id="@+id/equipment_table_layout_4">
+		    <TableRow
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+	
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Drills"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Leads"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Access"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+	
+		    </TableRow>
+		    <TableRow 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent">
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="drills"
+		            android:prompt="@string/prompt" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="leads"
+		            android:prompt="@string/prompt" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="access_types"
+		            android:prompt="@string/prompt" />
+		    </TableRow>
+		</TableLayout>
+		<TableLayout android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="40dp"
+		    android:layout_centerHorizontal="true"
+		    android:layout_below="@id/equipment_table_layout_4"
+		    android:id="@+id/equipment_table_layout_5"
+    		android:layout_marginBottom="@dimen/activity_vertical_margin">
+		    <TableRow
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+	
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Test Equipment"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Test Equipment"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Equipment"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+	
+		    </TableRow>
+		    <TableRow 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent">
+		        <EditText
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:hint="Enter Text" />
+		        <EditText
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:hint="Enter Text"  />
+		        <EditText
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:hint="Enter Text"  />
+		    </TableRow>
+		</TableLayout>
+    </RelativeLayout>
+    
+
+</ScrollView>
