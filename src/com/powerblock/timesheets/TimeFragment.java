@@ -1,5 +1,8 @@
 package com.powerblock.timesheets;
 
+import com.powerblock.timesheets.signatures.SignatureActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class TimeFragment extends Fragment {
 	public TimeFragment(){
@@ -15,7 +19,17 @@ public class TimeFragment extends Fragment {
 	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(true);
-		return inflater.inflate(R.layout.time_layout, container,false);	
+		View v = inflater.inflate(R.layout.time_layout, container,false);
+		Button b = (Button) v.findViewById(R.id.time_customer_signature_button);
+		b.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getActivity(),SignatureActivity.class);
+				startActivity(i);
+			}
+		});
+		return v;	
 	}
 	
 	@Override
