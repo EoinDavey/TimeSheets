@@ -1,5 +1,9 @@
 package com.powerblock.timesheets;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,8 +15,9 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+@SuppressLint("ClickableViewAccessibility")
 public class MultiChoiceSpinner extends Spinner implements
-		OnMultiChoiceClickListener, OnCancelListener {
+		OnMultiChoiceClickListener, OnCancelListener, PBSpinner {
 	private CharSequence[] items;
 	private boolean[] selected;
 	private String defaultText = "Choose Items";
@@ -50,6 +55,17 @@ public class MultiChoiceSpinner extends Spinner implements
 		}
 		
 		return selectedItems;
+	}
+	
+	public String getString(){
+		StringBuffer b = new StringBuffer();
+		for(int i = 0; i < selected.length; i++){
+			if(selected[i] == true){
+				b.append(items[i] + ",");
+			}
+		}
+		
+		return b.toString();
 	}
 	
 	private void init(AttributeSet attrs){
@@ -148,6 +164,18 @@ public class MultiChoiceSpinner extends Spinner implements
 	
 	public interface MultiSpinnerListener{
 		public void onItemsSelected(CharSequence[] selected);
+	}
+
+	@Override
+	public void select(String s) {
+		selected = new boolean[items.length];
+		ArrayList<String> l = new ArrayList<String>(Arrays.asList(s.split(",")));
+		for(int i = 0; i < items.length; i ++){
+			Log.v("Test", "given: " + l.get(i));
+			if(l.contains(items[i])){
+				selected[i] = true;
+			}
+		}
 	}
 
 }

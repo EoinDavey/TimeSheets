@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class CustomSpinner extends Spinner {
+public class CustomSpinner extends Spinner implements PBSpinner {
 	private XmlHandler mXmlHandler;
 	private String[] items;
 

@@ -10,14 +10,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class EquipmentFragment extends Fragment {
+	
+	private ExcelHandler mExcelHandler;
+	private View mView;
+	
 	public EquipmentFragment(){
-		
+		mExcelHandler = MainActivity.getExcelHandler();
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(true);
-		return inflater.inflate(R.layout.equipment_fragment, container, false);
+		mView = mExcelHandler.read(inflater, container, R.layout.equipment_fragment, ExcelHandler.EXCEL_SECTION_EQUIPMENT);
+		if(mView == null){
+			mView = inflater.inflate(R.layout.equipment_fragment, container, false);
+		}
+		return mView;
 	}
 	
 	@Override
@@ -29,7 +37,7 @@ public class EquipmentFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
-			
+			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_EQUIPMENT,mView);
 			return true;
 		}
 		return false;

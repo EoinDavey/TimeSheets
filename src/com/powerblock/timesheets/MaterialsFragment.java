@@ -11,14 +11,20 @@ import android.view.ViewGroup;
 
 public class MaterialsFragment extends Fragment {
 	
+	private ExcelHandler mExcelHandler;
+	private View mView;
+	
 	public MaterialsFragment(){
-		
+		mExcelHandler = MainActivity.getExcelHandler();
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(true);
-		return inflater.inflate(R.layout.materials_fragment, container, false);
+		mView = mExcelHandler.read(inflater, container, R.layout.materials_fragment, ExcelHandler.EXCEL_SECTION_MATERIALS);
+		if(mView == null)
+			mView = inflater.inflate(R.layout.materials_fragment, container,false);
+		return mView;
 	}
 	
 	@Override
@@ -30,7 +36,7 @@ public class MaterialsFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
-			
+			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_MATERIALS,mView);
 			return true;
 		}
 		return false;
