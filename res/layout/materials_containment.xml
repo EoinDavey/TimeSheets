@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <!-- Containment -->
+		<TableLayout android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="40dp"
+		    android:layout_centerHorizontal="true"
+		    android:id="@+id/materials_table_layout_7">
+		    <TableRow
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+	
+		        <TextView
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:text="Containment -"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            custom:entries="materials_stores"
+		            android:prompt="@string/prompt"/>
+		        <com.powerblock.timesheets.CustomEditText
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter docket number"
+		            android:inputType="number" />
+	
+		    </TableRow>
+		    <TableRow 
+		        android:layout_height="wrap_content"
+		        android:layout_width="match_parent"
+		        android:baselineAligned="false">
+		        <TextView
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:text="Quantity"
+		            android:gravity="center_vertical|center_horizontal"/>
+
+		        <TextView
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:text="Material"
+		            android:gravity="center_vertical|center_horizontal"/>
+		        <TextView
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:text="Size"
+		            android:gravity="center_vertical|center_horizontal"/>
+		    </TableRow>
+		</TableLayout>
+		<TableLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="20dp"
+		    android:layout_centerHorizontal="true"
+		    android:id="@+id/materials_table_layout_8"
+		    android:layout_below="@id/materials_table_layout_7">
+		    <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_quantity_1"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_material_1"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter Material"/>
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_size_1"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter Size"/>
+		    </TableRow>
+		    <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_quantity_2"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/materials_cell_containment_material_2" 
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter Material"/>
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_size_2"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter Size"/>
+		    </TableRow>
+		    <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_quantity_3"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_material_3"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter Material"/>
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_size_3"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter Size"/>
+		    </TableRow>
+		    <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_quantity_4"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_material_4"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter Material"/>
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_containment_size_4"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter Size"/>
+		    </TableRow>
+		    
+		</TableLayout>
+
+</RelativeLayout>

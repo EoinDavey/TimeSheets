@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import jxl.Cell;
 import jxl.CellType;
@@ -43,6 +45,8 @@ public class ExcelHandler {
 	public static final String EXCEL_SECTION_MATERIALS = "Materials";
 	public static final String EXCEL_SECTION_TESTING = "Testing";
 	public static final String EXCEL_SECTION_TIME = "Time";
+	public static final String EXCEL_SECTION_MATERIALS_LIGHTING = "Lighting";
+	public static final String EXCEL_SECTION_MATERIALS_POWER = "Power";
 
 	//Cell coordinates
 	private final static int[] cJobType = {1,1};
@@ -56,27 +60,15 @@ public class ExcelHandler {
 		R.id.job_setup_personnel};
 
 	private final static int[][] cEquipmentCells = 
-		{{1,7},{2,7},{3,7},{4,7},
-		{1,11},{1,12},{1,13},
-		{1,8},{2,8},{3,8},{4,8},
-		{1,9},{2,9},{3,9},{4,9}};
+		{{1,7},{1,11},{1,12},{1,13},{1,8},{1,9}};
 	private final static int[] rEquipmentIds = 
-		{R.id.equipment_drills_1, R.id.equipment_drills_2, R.id.equipment_drills_3, R.id.equipment_drills_4, 
+		{R.id.equipment_drills, 
 		R.id.equipment_test_1, R.id.equipment_test_2, R.id.equipment_equipment, 
-		R.id.equipment_leads_1, R.id.equipment_leads_2, R.id.equipment_leads_3, R.id.equipment_leads_4, 
-		R.id.equipment_access_1,R.id.equipment_access_2, R.id.equipment_access_3, R.id.equipment_access_4};
+		R.id.equipment_leads, R.id.equipment_access};
 
 
 	private final static int[][] cMaterialsCells = 
-		{{0,20},{0,21},
-		{1,21},{1,22},{1,23},{1,24},
-		{2,21},{2,22},{2,23},{2,24},
-		{3,21},{3,22},{3,23},{3,24},
-
-		{1,27},{1,28},{1,29},{1,30},
-		{2,27},{2,28},{2,29},{2,30},
-		{3,27},{3,28},{3,29},{3,30},
-
+		{
 		{1,33},{1,34},{1,35},{1,36},
 		{2,33},{2,34},{2,35},{2,36},
 		{3,33},{3,34},{3,35},{3,36},
@@ -86,24 +78,7 @@ public class ExcelHandler {
 		{3,39},{3,40},{3,41},{3,42}
 		};
 	private final static int[] rMaterialsIds =
-		{R.id.materials_cell_lighting_store, R.id.materials_cell_lighting_docket,
-
-		R.id.materials_cell_lighting_quantity_1,R.id.materials_cell_lighting_quantity_3,
-		R.id.materials_cell_lighting_quantity_3,R.id.materials_cell_lighting_quantity_4,
-		R.id.materials_cell_lighting_material_1,R.id.materials_cell_lighting_material_3,
-		R.id.materials_cell_lighting_material_3,R.id.materials_cell_lighting_material_4,
-		R.id.materials_cell_lighting_size_1,R.id.materials_cell_lighting_size_3,
-		R.id.materials_cell_lighting_size_3,R.id.materials_cell_lighting_size_4,
-
-
-		R.id.materials_cell_power_quantity_1,R.id.materials_cell_power_quantity_3,
-		R.id.materials_cell_power_quantity_3,R.id.materials_cell_power_quantity_4,
-		R.id.materials_cell_power_material_1,R.id.materials_cell_power_material_3,
-		R.id.materials_cell_power_material_3,R.id.materials_cell_power_material_4,
-		R.id.materials_cell_power_size_1,R.id.materials_cell_power_size_3,
-		R.id.materials_cell_power_size_3,R.id.materials_cell_power_size_4,
-
-
+		{
 		R.id.materials_cell_data_quantity_1,R.id.materials_cell_data_quantity_3,
 		R.id.materials_cell_data_quantity_3,R.id.materials_cell_data_quantity_4,
 		R.id.materials_cell_data_material_1,R.id.materials_cell_data_material_2,
@@ -118,6 +93,39 @@ public class ExcelHandler {
 		R.id.materials_cell_containment_size_1,R.id.materials_cell_containment_size_3,
 		R.id.materials_cell_containment_size_3,R.id.materials_cell_containment_size_4
 		};
+	
+	private final static int[][] cMaterialsLighting = {
+		{0,20},{0,21},
+		{1,21},{1,22},{1,23},{1,24},
+		{2,21},{2,22},{2,23},{2,24},
+		{3,21},{3,22},{3,23},{3,24}};
+	
+	private final static int[] rMaterialsLighting = {
+		R.id.materials_cell_lighting_store, R.id.materials_cell_lighting_docket,
+
+		R.id.materials_cell_lighting_quantity_1,R.id.materials_cell_lighting_quantity_2,
+		R.id.materials_cell_lighting_quantity_3,R.id.materials_cell_lighting_quantity_4,
+		R.id.materials_cell_lighting_material_1,R.id.materials_cell_lighting_material_2,
+		R.id.materials_cell_lighting_material_3,R.id.materials_cell_lighting_material_4,
+		R.id.materials_cell_lighting_size_1,R.id.materials_cell_lighting_size_2,
+		R.id.materials_cell_lighting_size_3,R.id.materials_cell_lighting_size_4};
+	
+	private final static int[][] cMaterialsPower = {
+		{0,26},{0,27},
+		{1,27},{1,28},{1,29},{1,30},
+		{2,27},{2,28},{2,29},{2,30},
+		{3,27},{3,28},{3,29},{3,30}
+	};
+	
+	private final static int[] rMaterialsPower = {
+		R.id.materials_power_store, R.id.materials_power_docket,
+		R.id.materials_cell_power_quantity_1,R.id.materials_cell_power_quantity_2,
+		R.id.materials_cell_power_quantity_3,R.id.materials_cell_power_quantity_4,
+		R.id.materials_cell_power_material_1,R.id.materials_cell_power_material_2,
+		R.id.materials_cell_power_material_3,R.id.materials_cell_power_material_4,
+		R.id.materials_cell_power_size_1,R.id.materials_cell_power_size_2,
+		R.id.materials_cell_power_size_3,R.id.materials_cell_power_size_4
+	};
 
 
 	private final static int[] cSigImage = {1,2};
@@ -128,24 +136,38 @@ public class ExcelHandler {
 		workingTemplateFile = new File(myDir, MainActivity.workingTemplateFileName);
 		workingTemplateTemp = new File(myDir, workingTemplateTempFileName);
 	}
-
-	public void write(String section, View givenView){
+	
+	public ArrayList<int[][]> getCells(String section){
 		int[][] cells;
-		int[] ids;
-		Log.v("Test","Section: " + section);
+		int[][] ids = new int[1][];
+		List<int[][]> list = new ArrayList<int[][]>();
 		if(section.equalsIgnoreCase(EXCEL_SECTION_JOB_SETUP)){
 			cells = cJobSetupCells;
-			ids = rJobSetupIds;
+			ids[0] = rJobSetupIds;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_EQUIPMENT)){
 			cells = cEquipmentCells;
-			ids = rEquipmentIds;
-
+			ids[0] = rEquipmentIds;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS)){
 			cells = cMaterialsCells;
-			ids = rMaterialsIds;
+			ids[0] = rMaterialsIds;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_LIGHTING)){
+			cells = cMaterialsLighting;
+			ids[0] = rMaterialsLighting;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_POWER)){
+			cells = cMaterialsPower;
+			ids[0] = rMaterialsPower;
 		} else {
-			return;
+			return null;
 		}
+		list.add(cells);
+		list.add(ids);
+		return (ArrayList<int[][]>) list;
+	}
+
+	public void write(String section, View givenView){
+		ArrayList<int[][]> list = getCells(section);
+		int[][] cells = list.get(0);
+		int[] ids = list.get(1)[0];
 		try{
 			WritableWorkbook w = getWritableWorkbook();
 			WritableSheet s = w.getSheet(0);
@@ -191,20 +213,9 @@ public class ExcelHandler {
 	}*/
 
 	public View read(LayoutInflater inflater, ViewGroup container, int layout, String section){
-		int[][] cells;
-		int[] ids;
-		if(section.equalsIgnoreCase(EXCEL_SECTION_JOB_SETUP)){
-			cells = cJobSetupCells;
-			ids = rJobSetupIds;
-		} else if(section.equalsIgnoreCase(EXCEL_SECTION_EQUIPMENT)){
-			cells = cEquipmentCells;
-			ids = rEquipmentIds;
-		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS)){
-			cells = cMaterialsCells;
-			ids = rMaterialsIds;
-		}  else {
-			return null;
-		}
+		ArrayList<int[][]> list = getCells(section);
+		int[][] cells = list.get(0);
+		int[] ids = list.get(1)[0];
 		Workbook w = getWorkbook();
 		Sheet s = w.getSheet(0);
 		View v = inflater.inflate(layout, container, false);

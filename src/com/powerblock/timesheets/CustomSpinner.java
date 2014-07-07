@@ -56,7 +56,7 @@ public class CustomSpinner extends Spinner implements PBSpinner {
 		if(sc.next().equalsIgnoreCase("Choose")){
 			sc.close();
 			sc = null;
-			return "None Selected";
+			return "";
 		} else{
 			sc.close();
 			sc = null;

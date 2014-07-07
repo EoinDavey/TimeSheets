@@ -1,4 +1,4 @@
-package com.powerblock.timesheets;
+package com.powerblock.timesheets.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +8,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.powerblock.timesheets.ExcelHandler;
+import com.powerblock.timesheets.MainActivity;
+import com.powerblock.timesheets.R;
 
 public class EquipmentFragment extends Fragment {
 	

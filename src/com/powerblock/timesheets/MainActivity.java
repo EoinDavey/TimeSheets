@@ -8,6 +8,17 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.powerblock.timesheets.fragments.EquipmentFragment;
+import com.powerblock.timesheets.fragments.JobSetupFragment;
+import com.powerblock.timesheets.fragments.MainFragment;
+import com.powerblock.timesheets.fragments.MaterialsFragment;
+import com.powerblock.timesheets.fragments.MaterialsLighting;
+import com.powerblock.timesheets.fragments.MaterialsPower;
+import com.powerblock.timesheets.fragments.SafetyFragment;
+import com.powerblock.timesheets.fragments.TestingFragment;
+import com.powerblock.timesheets.fragments.TimeFragment;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -19,6 +30,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -28,6 +40,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
+@SuppressLint("InflateParams")
 public class MainActivity extends ActionBarActivity {
 	
 	public static final String root = Environment.getExternalStorageDirectory().toString();
@@ -124,28 +137,40 @@ public class MainActivity extends ActionBarActivity {
 		}
 	}
 	
+	public void show(int id, Fragment frag, String back){
+		getSupportFragmentManager().beginTransaction().replace(id, frag).addToBackStack(back).commit();
+	}
+	
 	public void showJobSetup(View v){
-		getSupportFragmentManager().beginTransaction().replace(R.id.container, new JobSetupFragment()).addToBackStack("job Setup").commit();
+		show(R.id.container, new JobSetupFragment(),"Job Setup");
 	}
 	
 	public void showSafety(View v){
-		getSupportFragmentManager().beginTransaction().replace(R.id.container, new SafetyFragment()).addToBackStack("Safety").commit();
+		show(R.id.container, new SafetyFragment(),"Safety");
 	}
 	
 	public void showTime(View v){
-		getSupportFragmentManager().beginTransaction().replace(R.id.container, new TimeFragment()).addToBackStack("Time").commit();
+		show(R.id.container, new TimeFragment(),"Time");
 	}
 	
 	public void showEquipment(View v){
-		getSupportFragmentManager().beginTransaction().replace(R.id.container, new EquipmentFragment()).addToBackStack("Equipment").commit();
+		show(R.id.container, new EquipmentFragment(),"Equipment");
 	}
 	
 	public void showMaterials(View v){
-		getSupportFragmentManager().beginTransaction().replace(R.id.container, new MaterialsFragment()).addToBackStack("Materials").commit();
+		show(R.id.container, new MaterialsFragment(),"Materials");
 	}
 	
 	public void showTesting(View v){
-		getSupportFragmentManager().beginTransaction().replace(R.id.container, new TestingFragment()).addToBackStack("Testing").commit();
+		show(R.id.container, new TestingFragment(),"Testing");
+	}
+	
+	public void showMaterialsLighting(View v){
+		show(R.id.container, new MaterialsLighting(),"Materials");
+	}
+	
+	public void showMaterialsPower(View v){
+		show(R.id.container,new MaterialsPower(), "Power");
 	}
 	
 	public void saveTimeSheet(String fileName){

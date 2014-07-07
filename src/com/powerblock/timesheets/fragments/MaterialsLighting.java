@@ -1,4 +1,8 @@
-package com.powerblock.timesheets;
+package com.powerblock.timesheets.fragments;
+
+import com.powerblock.timesheets.ExcelHandler;
+import com.powerblock.timesheets.MainActivity;
+import com.powerblock.timesheets.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,26 +13,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.powerblock.timesheets.MultiChoiceSpinner.MultiSpinnerListener;
+public class MaterialsLighting extends Fragment {
+	private ExcelHandler mExcelHandler;
+	private View mView;
 
-public class SafetyFragment extends Fragment implements MultiSpinnerListener{
-
-	/**
-	 * @param args
-	 */
-	public SafetyFragment(){
-		
+	public MaterialsLighting(){
+		mExcelHandler = MainActivity.getExcelHandler();
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-		View v = inflater.inflate(R.layout.safety_fragment, container, false);
 		setHasOptionsMenu(true);
-		return v;
-	}
-
-	@Override
-	public void onItemsSelected(CharSequence[] selected) {
+		mView = mExcelHandler.read(inflater, container, R.layout.materials_lighting, ExcelHandler.EXCEL_SECTION_MATERIALS_LIGHTING);
+		if(mView == null)
+			mView = inflater.inflate(R.layout.materials_lighting, container,false);
+		return mView;
 	}
 	
 	@Override
@@ -40,10 +39,9 @@ public class SafetyFragment extends Fragment implements MultiSpinnerListener{
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
-			
+			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_MATERIALS_LIGHTING,mView);
 			return true;
 		}
 		return false;
 	}
-
 }

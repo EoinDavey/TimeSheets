@@ -55,7 +55,7 @@
         android:textColor="#FF0000"
         android:textSize="@dimen/main_fragment_button_font"
         android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <com.powerblock.timesheets.MultiChoicSpinner 
+    <com.powerblock.timesheets.MultiChoiceSpinner 
     	android:id="@+id/job_setup_personnel" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

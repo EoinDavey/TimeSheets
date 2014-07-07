@@ -95,6 +95,32 @@ public class MultiChoiceSpinner extends Spinner implements
 
 	@Override
 	public void onCancel(DialogInterface dialog) {
+		/*StringBuffer spinnerBuffer = new StringBuffer();
+		boolean someSelected = false;
+		String spinnerText = defaultText;
+		if(items != null){
+			for(int i = 0; i < items.length; i ++){
+				if(selected[i] == true){
+					spinnerBuffer.append(items[i]);
+					spinnerBuffer.append(", ");
+					someSelected = true;
+				}
+			}
+			if (someSelected){
+				spinnerText = spinnerBuffer.toString();
+				if(spinnerText.length() > 2){
+					spinnerText = spinnerText.substring(0, spinnerText.length() - 2);
+				}
+			} else {
+				spinnerText = defaultText;
+			}
+		}*/
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, new String[] {getSpinnerText()});
+		setAdapter(adapter);
+		listener.onItemsSelected(getSelectedItems());
+	}
+	
+	private String getSpinnerText(){
 		StringBuffer spinnerBuffer = new StringBuffer();
 		boolean someSelected = false;
 		String spinnerText = defaultText;
@@ -115,9 +141,7 @@ public class MultiChoiceSpinner extends Spinner implements
 				spinnerText = defaultText;
 			}
 		}
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, new String[] {spinnerText});
-		setAdapter(adapter);
-		listener.onItemsSelected(getSelectedItems());
+		return spinnerText;
 	}
 	
 	@Override
@@ -171,11 +195,14 @@ public class MultiChoiceSpinner extends Spinner implements
 		selected = new boolean[items.length];
 		ArrayList<String> l = new ArrayList<String>(Arrays.asList(s.split(",")));
 		for(int i = 0; i < items.length; i ++){
-			Log.v("Test", "given: " + l.get(i));
+			//Log.v("Test", "given: " + l.get(i));
+			//Log.v("Test","items: " + items[i]);
 			if(l.contains(items[i])){
 				selected[i] = true;
 			}
 		}
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, new String[] {getSpinnerText()});
+		setAdapter(adapter);
 	}
 
 }

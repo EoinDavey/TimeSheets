@@ -1,4 +1,4 @@
-package com.powerblock.timesheets;
+package com.powerblock.timesheets.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,22 +9,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class JobSetupFragment extends Fragment {
-	
-	private ExcelHandler mExcelHandler;
-	private View mView;
+import com.powerblock.timesheets.R;
 
-	public JobSetupFragment(){
-		mExcelHandler = MainActivity.getExcelHandler();
+public class TestingFragment extends Fragment {
+	public TestingFragment(){
+		
 	}
-	
-	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(true);
-		mView = mExcelHandler.read(inflater, container, R.layout.job_setup_fragment, ExcelHandler.EXCEL_SECTION_JOB_SETUP);
-		if(mView == null)
-			mView = inflater.inflate(R.layout.job_setup_fragment, container,false);
-		return mView;
+		return inflater.inflate(R.layout.testing_fragment, container, false);
 	}
 	
 	@Override
@@ -36,10 +29,9 @@ public class JobSetupFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
-			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_JOB_SETUP,mView);
+			
 			return true;
 		}
 		return false;
 	}
-
 }

@@ -1,4 +1,4 @@
-package com.powerblock.timesheets;
+package com.powerblock.timesheets.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.powerblock.timesheets.ExcelHandler;
+import com.powerblock.timesheets.MainActivity;
+import com.powerblock.timesheets.R;
 import com.powerblock.timesheets.signatures.SignatureActivity;
 
 public class TimeFragment extends Fragment {

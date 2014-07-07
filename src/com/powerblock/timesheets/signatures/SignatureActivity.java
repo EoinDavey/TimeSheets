@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.powerblock.timesheets.R;
-import com.powerblock.timesheets.TimeFragment;
+import com.powerblock.timesheets.fragments.TimeFragment;
 
 public class SignatureActivity extends ActionBarActivity {
 	private SignatureView view;
