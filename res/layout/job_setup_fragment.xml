@@ -55,7 +55,14 @@
         android:textColor="#FF0000"
         android:textSize="@dimen/main_fragment_button_font"
         android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <com.powerblock.timesheets.CustomSpinner
+    <com.powerblock.timesheets.MultiChoicSpinner 
+    	android:id="@+id/job_setup_personnel" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:multi_entries="job_setup_personnel"
+        android:textSize="@dimen/main_fragment_button_font"
+        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
+    <!--com.powerblock.timesheets.CustomSpinner
         android:id="@+id/job_setup_personnel_1" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,7 +82,7 @@
         android:layout_height="wrap_content"
         custom:entries="job_setup_personnel"
         android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
+        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/-->
     
 
 </LinearLayout>
