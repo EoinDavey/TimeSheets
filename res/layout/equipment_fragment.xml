@@ -51,8 +51,10 @@
 		    </TableRow>
 		    <TableRow 
 		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
+		        android:layout_width="match_parent"
+		        android:baselineAligned="false">
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_drills_1"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -60,6 +62,7 @@
 		            custom:entries="drills"
 		            android:prompt="@string/prompt" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_leads_1"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -67,6 +70,7 @@
 		            custom:entries="leads"
 		            android:prompt="@string/prompt" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_access_1"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -110,8 +114,10 @@
 		    </TableRow>
 		    <TableRow 
 		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
+		        android:layout_width="match_parent"
+		        android:baselineAligned="false">
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_drills_2"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -119,6 +125,7 @@
 		            custom:entries="drills"
 		            android:prompt="@string/prompt" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_leads_2"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -126,6 +133,7 @@
 		            custom:entries="leads"
 		            android:prompt="@string/prompt" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_access_2"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -169,8 +177,10 @@
 		    </TableRow>
 		    <TableRow 
 		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
+		        android:layout_width="match_parent"
+		        android:baselineAligned="false">
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_drills_3"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -178,6 +188,7 @@
 		            custom:entries="drills"
 		            android:prompt="@string/prompt" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_leads_3"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -185,6 +196,7 @@
 		            custom:entries="leads"
 		            android:prompt="@string/prompt" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_access_3"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -228,8 +240,10 @@
 		    </TableRow>
 		    <TableRow 
 		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
+		        android:layout_width="match_parent"
+		        android:baselineAligned="false">
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_drills_4"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -237,6 +251,7 @@
 		            custom:entries="drills"
 		            android:prompt="@string/prompt" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_leads_4"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -244,6 +259,7 @@
 		            custom:entries="leads"
 		            android:prompt="@string/prompt" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/equipment_access_4"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -288,20 +304,24 @@
 		    </TableRow>
 		    <TableRow 
 		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
-		        <EditText
+		        android:layout_width="match_parent"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/equipment_test_1"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
 		            android:hint="Enter Text" />
-		        <EditText
+		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/equipment_test_2"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
 		            android:hint="Enter Text"  />
-		        <EditText
+		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/equipment_equipment"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"

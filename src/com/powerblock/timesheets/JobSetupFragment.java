@@ -21,7 +21,7 @@ public class JobSetupFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(true);
-		mView = mExcelHandler.readJobSetup(inflater, container);
+		mView = mExcelHandler.read(inflater, container, R.layout.job_setup_fragment, ExcelHandler.EXCEL_SECTION_JOB_SETUP);
 		if(mView == null)
 			mView = inflater.inflate(R.layout.job_setup_fragment, container,false);
 		return mView;
@@ -36,7 +36,7 @@ public class JobSetupFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
-			mExcelHandler.writeJobSetup(mView);
+			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_JOB_SETUP,mView);
 			return true;
 		}
 		return false;

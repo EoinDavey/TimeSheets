@@ -1,12 +1,20 @@
 package com.powerblock.timesheets.signatures;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Environment;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -16,22 +24,35 @@ public class SignatureView extends View {
 	private Path mPath;
 	private Paint drawPaint;
 	private boolean moved = false;
+	private static final String root = Environment.getExternalStorageDirectory().toString();
+	public static final String custSigLoc = ".workingTemplate/custSigTemp.png";
+	public static final String empSigLoc = ".workingTemplate/empSigTemp.png";
+	private static File custSig;
+	private static File empSig;
+	private static String mSigType;
 
 	public SignatureView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setUpDrawing();
+		custSig = new File(root, custSigLoc);
+		empSig = new File(root,empSigLoc);
 	}
 	
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
-		//canvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-		//drawCanvas = new Canvas(canvasBitmap);
+	}
+	
+	public void setSigType(String s){
+		mSigType = s;
+	}
+	
+	public String getSigType(){
+		return mSigType;
 	}
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
-		//canvas.drawBitmap(canvasBitmap, 0, 0, canvasPaint);
 		canvas.drawPath(mPath, drawPaint);
 	}
 	
@@ -69,7 +90,37 @@ public class SignatureView extends View {
 		drawPaint.setStyle(Paint.Style.STROKE);
 		drawPaint.setStrokeJoin(Paint.Join.ROUND);
 		drawPaint.setStrokeCap(Paint.Cap.ROUND);
-		//canvasPaint = new Paint(Paint.DITHER_FLAG);
+	}
+	
+	public File saveSignature(){
+		Log.v("Test","Save called");
+		OutputStream out = null;
+		this.setDrawingCacheEnabled(true);
+		this.setDrawingCacheBackgroundColor(Color.WHITE);
+		this.buildDrawingCache();
+		Bitmap b = this.getDrawingCache();
+		if(b == null){
+			Log.v("Test","Bitmap is null");
+		}
+		try{
+			if(mSigType.equalsIgnoreCase(SignatureActivity.SIG_IDENTIFIER_CUST)){
+				out = new FileOutputStream(custSig);
+			} else if(mSigType.equalsIgnoreCase(SignatureActivity.SIG_IDENTIFIER_EMP)){
+				out = new FileOutputStream(empSig);
+			}
+			if(b.compress(Bitmap.CompressFormat.PNG, 90, out)){
+				Log.v("Test","Compressed");
+			}
+		} catch(Exception e){
+			e.printStackTrace();
+		} finally {
+			try {
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return custSig;
 	}
 	
 	public void Clear(){
