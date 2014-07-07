@@ -34,11 +34,9 @@ public class ExcelHandler {
 	private final static int[] cSiteName = {1,2};
 	private final static int[] cSiteAddress = {1,3};
 	private final static int[] cPIC = {1,4};
-	private final static int[] cAPersonnel1 = {1,5};
-	private final static int[] cAPersonnel2 = {2,5};
-	private final static int[] cAPersonnel3 = {3,5};
-	private final static int[][] cJobSetupCells = {cJobType,cSiteName,cSiteAddress, cPIC, cAPersonnel1,cAPersonnel2,cAPersonnel3};
-	private final static int[] rJobSetupIds = {R.id.job_setup_job_types, R.id.job_setup_site_name, R.id.job_setup_site_address, R.id.job_setup_PIC, R.id.job_setup_personnel_1,R.id.job_setup_personnel_2,R.id.job_setup_personnel_3};
+	private final static int[] cAPersonnel = {1,5};
+	private final static int[][] cJobSetupCells = {cJobType,cSiteName,cSiteAddress, cPIC, cAPersonnel};
+	private final static int[] rJobSetupIds = {R.id.job_setup_job_types, R.id.job_setup_site_name, R.id.job_setup_site_address, R.id.job_setup_PIC, R.id.job_setup_personnel};
 	
 	public ExcelHandler(){
 		String root = Environment.getExternalStorageDirectory().toString();
