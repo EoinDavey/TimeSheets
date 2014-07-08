@@ -8,15 +8,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import com.powerblock.timesheets.fragments.EquipmentFragment;
-import com.powerblock.timesheets.fragments.JobSetupFragment;
-import com.powerblock.timesheets.fragments.MainFragment;
-import com.powerblock.timesheets.fragments.MaterialsFragment;
-import com.powerblock.timesheets.fragments.MaterialsLighting;
-import com.powerblock.timesheets.fragments.MaterialsPower;
-import com.powerblock.timesheets.fragments.SafetyFragment;
-import com.powerblock.timesheets.fragments.TestingFragment;
-import com.powerblock.timesheets.fragments.TimeFragment;
+import com.powerblock.timesheets.fragments.*;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -171,6 +163,14 @@ public class MainActivity extends ActionBarActivity {
 	
 	public void showMaterialsPower(View v){
 		show(R.id.container,new MaterialsPower(), "Power");
+	}
+	
+	public void showMaterialsData(View v){
+		show(R.id.container, new MaterialsData(), "Data");
+	}
+	
+	public void showMaterialsContainment(View v){
+		show(R.id.container, new MaterialsContainment(), "Containment");
 	}
 	
 	public void saveTimeSheet(String fileName){
