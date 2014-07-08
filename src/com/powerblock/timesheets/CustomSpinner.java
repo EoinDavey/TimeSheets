@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class CustomSpinner extends Spinner {
+public class CustomSpinner extends Spinner implements PBSpinner {
 	private XmlHandler mXmlHandler;
 	private String[] items;
 
@@ -56,7 +56,7 @@ public class CustomSpinner extends Spinner {
 		if(sc.next().equalsIgnoreCase("Choose")){
 			sc.close();
 			sc = null;
-			return "None Selected";
+			return "";
 		} else{
 			sc.close();
 			sc = null;

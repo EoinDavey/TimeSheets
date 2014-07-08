@@ -1,4 +1,4 @@
-package com.powerblock.timesheets;
+package com.powerblock.timesheets.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,15 +9,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class EquipmentFragment extends Fragment {
-	public EquipmentFragment(){
+import com.powerblock.timesheets.R;
+
+public class TestingFragment extends Fragment {
+	public TestingFragment(){
 		
 	}
-	
-	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(true);
-		return inflater.inflate(R.layout.equipment_fragment, container, false);
+		return inflater.inflate(R.layout.testing_fragment, container, false);
 	}
 	
 	@Override

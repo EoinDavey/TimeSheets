@@ -1,4 +1,4 @@
-package com.powerblock.timesheets;
+package com.powerblock.timesheets.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.powerblock.timesheets.MultiChoiceSpinner.MultiSpinnerListener;
+import com.powerblock.timesheets.R;
 
 public class SafetyFragment extends Fragment implements MultiSpinnerListener{
 

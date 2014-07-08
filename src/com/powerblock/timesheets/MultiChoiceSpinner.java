@@ -1,5 +1,9 @@
 package com.powerblock.timesheets;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,8 +15,9 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+@SuppressLint("ClickableViewAccessibility")
 public class MultiChoiceSpinner extends Spinner implements
-		OnMultiChoiceClickListener, OnCancelListener {
+		OnMultiChoiceClickListener, OnCancelListener, PBSpinner {
 	private CharSequence[] items;
 	private boolean[] selected;
 	private String defaultText = "Choose Items";
@@ -52,6 +57,17 @@ public class MultiChoiceSpinner extends Spinner implements
 		return selectedItems;
 	}
 	
+	public String getString(){
+		StringBuffer b = new StringBuffer();
+		for(int i = 0; i < selected.length; i++){
+			if(selected[i] == true){
+				b.append(items[i] + ",");
+			}
+		}
+		
+		return b.toString();
+	}
+	
 	private void init(AttributeSet attrs){
 		mXmlHandler = MainActivity.getXmlHandler();
 		if(mXmlHandler == null){
@@ -79,6 +95,32 @@ public class MultiChoiceSpinner extends Spinner implements
 
 	@Override
 	public void onCancel(DialogInterface dialog) {
+		/*StringBuffer spinnerBuffer = new StringBuffer();
+		boolean someSelected = false;
+		String spinnerText = defaultText;
+		if(items != null){
+			for(int i = 0; i < items.length; i ++){
+				if(selected[i] == true){
+					spinnerBuffer.append(items[i]);
+					spinnerBuffer.append(", ");
+					someSelected = true;
+				}
+			}
+			if (someSelected){
+				spinnerText = spinnerBuffer.toString();
+				if(spinnerText.length() > 2){
+					spinnerText = spinnerText.substring(0, spinnerText.length() - 2);
+				}
+			} else {
+				spinnerText = defaultText;
+			}
+		}*/
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, new String[] {getSpinnerText()});
+		setAdapter(adapter);
+		listener.onItemsSelected(getSelectedItems());
+	}
+	
+	private String getSpinnerText(){
 		StringBuffer spinnerBuffer = new StringBuffer();
 		boolean someSelected = false;
 		String spinnerText = defaultText;
@@ -99,9 +141,7 @@ public class MultiChoiceSpinner extends Spinner implements
 				spinnerText = defaultText;
 			}
 		}
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, new String[] {spinnerText});
-		setAdapter(adapter);
-		listener.onItemsSelected(getSelectedItems());
+		return spinnerText;
 	}
 	
 	@Override
@@ -148,6 +188,21 @@ public class MultiChoiceSpinner extends Spinner implements
 	
 	public interface MultiSpinnerListener{
 		public void onItemsSelected(CharSequence[] selected);
+	}
+
+	@Override
+	public void select(String s) {
+		selected = new boolean[items.length];
+		ArrayList<String> l = new ArrayList<String>(Arrays.asList(s.split(",")));
+		for(int i = 0; i < items.length; i ++){
+			//Log.v("Test", "given: " + l.get(i));
+			//Log.v("Test","items: " + items[i]);
+			if(l.contains(items[i])){
+				selected[i] = true;
+			}
+		}
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, new String[] {getSpinnerText()});
+		setAdapter(adapter);
 	}
 
 }

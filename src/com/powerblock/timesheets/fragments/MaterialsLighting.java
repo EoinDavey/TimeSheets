@@ -1,4 +1,8 @@
-package com.powerblock.timesheets;
+package com.powerblock.timesheets.fragments;
+
+import com.powerblock.timesheets.ExcelHandler;
+import com.powerblock.timesheets.MainActivity;
+import com.powerblock.timesheets.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,21 +13,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class JobSetupFragment extends Fragment {
-	
+public class MaterialsLighting extends Fragment {
 	private ExcelHandler mExcelHandler;
 	private View mView;
 
-	public JobSetupFragment(){
+	public MaterialsLighting(){
 		mExcelHandler = MainActivity.getExcelHandler();
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(true);
-		mView = mExcelHandler.readJobSetup(inflater, container);
+		mView = mExcelHandler.read(inflater, container, R.layout.materials_lighting, ExcelHandler.EXCEL_SECTION_MATERIALS_LIGHTING);
 		if(mView == null)
-			mView = inflater.inflate(R.layout.job_setup_fragment, container,false);
+			mView = inflater.inflate(R.layout.materials_lighting, container,false);
 		return mView;
 	}
 	
@@ -36,10 +39,9 @@ public class JobSetupFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
-			mExcelHandler.writeJobSetup(mView);
+			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_MATERIALS_LIGHTING,mView);
 			return true;
 		}
 		return false;
 	}
-
 }

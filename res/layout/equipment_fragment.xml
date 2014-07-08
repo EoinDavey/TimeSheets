@@ -51,213 +51,41 @@
 		    </TableRow>
 		    <TableRow 
 		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
-		        <com.powerblock.timesheets.CustomSpinner
+		        android:layout_width="match_parent"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.MultiChoiceSpinner
+		            android:id="@+id/equipment_drills"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
-		            custom:entries="drills"
+		            custom:multi_entries="drills"
 		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
+		        <com.powerblock.timesheets.MultiChoiceSpinner
+		            android:id="@+id/equipment_leads"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
-		            custom:entries="leads"
+		            custom:multi_entries="leads"
 		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
+		        <com.powerblock.timesheets.MultiChoiceSpinner
+		            android:id="@+id/equipment_access"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
-		            custom:entries="access_types"
+		            custom:multi_entries="access_types"
 		            android:prompt="@string/prompt" />
 		    </TableRow>
 		</TableLayout>
+		
 		<TableLayout android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_marginTop="40dp"
 		    android:layout_centerHorizontal="true"
 		    android:layout_below="@id/equipment_table_layout_1"
-		    android:id="@+id/equipment_table_layout_2">
-		    <TableRow
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content">
-	
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Drills"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Leads"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Access"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-	
-		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="drills"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="leads"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="access_types"
-		            android:prompt="@string/prompt" />
-		    </TableRow>
-		</TableLayout>
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:layout_below="@id/equipment_table_layout_2"
-		    android:id="@+id/equipment_table_layout_3">
-		    <TableRow
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content">
-	
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Drills"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Leads"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Access"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-	
-		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="drills"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="leads"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="access_types"
-		            android:prompt="@string/prompt" />
-		    </TableRow>
-		</TableLayout>
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:layout_below="@id/equipment_table_layout_3"
-		    android:id="@+id/equipment_table_layout_4">
-		    <TableRow
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content">
-	
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Drills"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Leads"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Access"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-	
-		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="drills"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="leads"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="access_types"
-		            android:prompt="@string/prompt" />
-		    </TableRow>
-		</TableLayout>
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:layout_below="@id/equipment_table_layout_4"
-		    android:id="@+id/equipment_table_layout_5"
+		    android:id="@+id/equipment_table_layout_2"
     		android:layout_marginBottom="@dimen/activity_vertical_margin">
 		    <TableRow
 		        android:layout_width="match_parent"
@@ -288,20 +116,24 @@
 		    </TableRow>
 		    <TableRow 
 		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
-		        <EditText
+		        android:layout_width="match_parent"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/equipment_test_1"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
 		            android:hint="Enter Text" />
-		        <EditText
+		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/equipment_test_2"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
 		            android:hint="Enter Text"  />
-		        <EditText
+		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/equipment_equipment"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -47,26 +48,26 @@
 		    <TableRow 
 		        android:layout_height="wrap_content"
 		        android:layout_width="match_parent">
-		        <Spinner
+		        <com.powerblock.timesheets.CustomSpinner
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
-		            android:entries="@array/time_hours"
+		            custom:entries="time_hours"
 		            android:prompt="@string/prompt"/>
-		        <Spinner
+		        <com.powerblock.timesheets.CustomSpinner
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
-		            android:entries="@array/time_minutes"
+		            custom:entries="time_minutes"
 		            android:prompt="@string/prompt"/>
-		        <Spinner
+		        <com.powerblock.timesheets.CustomSpinner
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
-		            android:entries="@array/time_percentages"
+		            custom:entries="time_percentages"
 		            android:prompt="@string/prompt"/>
 		    </TableRow>
 		</TableLayout>
@@ -99,19 +100,19 @@
 		    <TableRow 
 		        android:layout_height="wrap_content"
 		        android:layout_width="match_parent">
-		        <Spinner
+		        <com.powerblock.timesheets.CustomSpinner
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
-		            android:entries="@array/time_yes_no"
+		            custom:entries="time_yes_no"
 		            android:prompt="@string/prompt"/>
-		        <Spinner
+		        <com.powerblock.timesheets.CustomSpinner
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
 		            android:background="@drawable/cell_background"
-		            android:entries="@array/time_reasons"
+		            custom:entries="time_reasons"
 		            android:prompt="@string/prompt"/>
 		    </TableRow>
 		</TableLayout>
@@ -122,11 +123,14 @@
 		    android:layout_below="@id/time_table_layout_2"
 		    android:layout_marginTop="40dp"
 		    android:layout_centerHorizontal="true">
-		    <Button android:layout_width="wrap_content"
+		    <Button
+		        android:id="@+id/time_customer_signature_button"
+		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="Customer Signature"
 		        android:textSize="@dimen/safety_font"/>
-		    <Button android:layout_width="wrap_content"
+		    <Button android:id="@+id/time_employee_signature_button"
+		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="Engineer Signature"
 		        android:textSize="@dimen/safety_font"
