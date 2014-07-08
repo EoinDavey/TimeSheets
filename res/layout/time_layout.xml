@@ -49,6 +49,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_width="match_parent">
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/time_cell_hours"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -56,6 +57,7 @@
 		            custom:entries="time_hours"
 		            android:prompt="@string/prompt"/>
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/time_cell_minutes"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -63,6 +65,7 @@
 		            custom:entries="time_minutes"
 		            android:prompt="@string/prompt"/>
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/time_cell_complete"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -101,6 +104,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_width="match_parent">
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/time_cell_testing_complete"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"
@@ -108,6 +112,7 @@
 		            custom:entries="time_yes_no"
 		            android:prompt="@string/prompt"/>
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/time_cell_reason"
 		            android:layout_width="@dimen/safety_cell_width"
 		            android:layout_height="@dimen/safety_cell_height"
 		            android:textSize="@dimen/safety_font"

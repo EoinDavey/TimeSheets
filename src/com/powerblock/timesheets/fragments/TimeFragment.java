@@ -22,14 +22,17 @@ public class TimeFragment extends Fragment {
 	private ExcelHandler mExcelHandler;
 	static final int TIME_FRAGMENT_REQUEST_CODE = 1;
 	public static final String TIME_FRAGMENT_SIGNATURE_CODE = "Signature Type";
+	private View mView;
 	
 	public TimeFragment(){
 		mExcelHandler = MainActivity.getExcelHandler();
 	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(true);
-		View v = inflater.inflate(R.layout.time_layout, container,false);
-		Button b = (Button) v.findViewById(R.id.time_customer_signature_button);
+		mView = mExcelHandler.read(inflater, container, R.layout.time_layout, ExcelHandler.EXCEL_SECTION_TIME);
+		if(mView == null)
+			mView = inflater.inflate(R.layout.time_layout, container,false);
+		Button b = (Button) mView.findViewById(R.id.time_customer_signature_button);
 		b.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -39,7 +42,7 @@ public class TimeFragment extends Fragment {
 				startActivityForResult(i,TIME_FRAGMENT_REQUEST_CODE);
 			}
 		});
-		b = (Button) v.findViewById(R.id.time_employee_signature_button);
+		b = (Button) mView.findViewById(R.id.time_employee_signature_button);
 		b.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -49,7 +52,7 @@ public class TimeFragment extends Fragment {
 				startActivityForResult(i, TIME_FRAGMENT_REQUEST_CODE);
 			}
 		});
-		return v;	
+		return mView;	
 	}
 	
 	@Override
@@ -61,7 +64,7 @@ public class TimeFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
-			
+			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_TIME,mView);
 			return true;
 		}
 		return false;

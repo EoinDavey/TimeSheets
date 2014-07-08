@@ -23,6 +23,7 @@
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_cell_cable_store"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
@@ -30,6 +31,7 @@
 		            custom:entries="materials_stores"
 		            android:prompt="@string/prompt"/>
 		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/materials_cell_cable_docket"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
@@ -77,20 +79,26 @@
 		    <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_quantity_1"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter quantity"
 		            android:inputType="number"/>
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_material_1"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter Material"/>
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_size_1"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
@@ -100,20 +108,26 @@
 		    <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_quantity_2"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter quantity"
 		            android:inputType="number"/>
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_material_2"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter Material"/>
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_size_2"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
@@ -123,20 +137,26 @@
 		    <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_quantity_3"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter quantity"
 		            android:inputType="number"/>
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_material_3"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter Material"/>
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_size_3"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
@@ -146,20 +166,26 @@
 		    <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_quantity_4"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter quantity"
 		            android:inputType="number"/>
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_material_4"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter Material"/>
-		        <com.powerblock.timesheets.CustomEditText android:layout_width="@dimen/materials_cell_width"
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_cell_cable_size_4"
+		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"

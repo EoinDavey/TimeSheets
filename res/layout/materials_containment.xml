@@ -23,6 +23,7 @@
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal" />
 		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_cell_containment_store"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
@@ -30,6 +31,7 @@
 		            custom:entries="materials_stores"
 		            android:prompt="@string/prompt"/>
 		        <com.powerblock.timesheets.CustomEditText
+		            android:id="@+id/materials_cell_containment_docket"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"

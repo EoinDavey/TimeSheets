@@ -24,10 +24,7 @@ public class MaterialsFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		setHasOptionsMenu(false);
-		mView = mExcelHandler.read(inflater, container, R.layout.materials_fragment, ExcelHandler.EXCEL_SECTION_MATERIALS);
-		if(mView == null)
-			mView = inflater.inflate(R.layout.materials_fragment, container,false);
-		return mView;
+		return inflater.inflate(R.layout.materials_fragment, container,false);
 	}
 	
 	@Override

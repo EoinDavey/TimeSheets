@@ -173,6 +173,10 @@ public class MainActivity extends ActionBarActivity {
 		show(R.id.container, new MaterialsContainment(), "Containment");
 	}
 	
+	public void showMaterialsCable(View v){
+		show(R.id.container, new MaterialsCable(), "Cable");
+	}
+	
 	public void saveTimeSheet(String fileName){
 		if(fileName.equalsIgnoreCase("Error")){
 			Toast.makeText(this, "Error, please contact developer", Toast.LENGTH_LONG).show();

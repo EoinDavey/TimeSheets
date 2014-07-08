@@ -49,6 +49,7 @@ public class ExcelHandler {
 	public static final String EXCEL_SECTION_MATERIALS_POWER = "Power";
 	public static final String EXCEL_SECTION_MATERIALS_DATA = "Data";
 	public static final String EXCEL_SECTION_MATERIALS_CONTAINMENT = "Containment";
+	public static final String EXCEL_SECTION_MATERIALS_CABLE = "Cable";
 
 	//Cell coordinates
 	private final static int[] cJobType = {1,1};
@@ -103,11 +104,13 @@ public class ExcelHandler {
 	};
 	
 	private final static int[][] cMaterialsData = {
+		{0,32},{0,33},
 		{1,33},{1,34},{1,35},{1,36},
 		{2,33},{2,34},{2,35},{2,36},
 		{3,33},{3,34},{3,35},{3,36}};
 	
 	private final static int[] rMaterialsData = {
+		R.id.materials_cell_data_store, R.id.materials_cell_data_docket,
 		R.id.materials_cell_data_quantity_1,R.id.materials_cell_data_quantity_2,
 		R.id.materials_cell_data_quantity_3,R.id.materials_cell_data_quantity_4,
 		R.id.materials_cell_data_material_1,R.id.materials_cell_data_material_2,
@@ -128,8 +131,29 @@ public class ExcelHandler {
 		R.id.materials_cell_containment_size_1,R.id.materials_cell_containment_size_3,
 		R.id.materials_cell_containment_size_3,R.id.materials_cell_containment_size_4
 		};
-
-
+	
+	private final static int[][] cMaterialsCable = {
+		{1,45},{1,46},{1,47},{1,48},
+		{2,45},{2,46},{2,47},{2,48},
+		{3,45},{3,46},{3,47},{3,48}
+		};
+	private final static int[] rMaterialsCable = {
+		R.id.materials_cell_cable_quantity_1,R.id.materials_cell_cable_quantity_2,
+		R.id.materials_cell_cable_quantity_3,R.id.materials_cell_cable_quantity_4,
+		R.id.materials_cell_cable_material_1,R.id.materials_cell_cable_material_2,
+		R.id.materials_cell_cable_material_3,R.id.materials_cell_cable_material_4,
+		R.id.materials_cell_cable_size_1,R.id.materials_cell_cable_size_2,
+		R.id.materials_cell_cable_size_3,R.id.materials_cell_cable_size_4
+		};
+	
+	private final static int[][] cTime = {
+		{1,51},{2,51},{3,51},{4,51},{5,51}
+	};
+	private final static int[] rTime = {
+		R.id.time_cell_hours, R.id.time_cell_minutes, R.id.time_cell_complete,
+		R.id.time_cell_testing_complete, R.id.time_cell_reason
+	};
+	
 	private final static int[] cSigImage = {1,2};
 
 
@@ -149,6 +173,9 @@ public class ExcelHandler {
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_EQUIPMENT)){
 			cells = cEquipmentCells;
 			ids[0] = rEquipmentIds;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_TIME)){
+			cells = cTime;
+			ids[0] = rTime;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_CONTAINMENT)){
 			cells = cMaterialsContainment;
 			ids[0] = rMaterialsContainment;
@@ -161,6 +188,9 @@ public class ExcelHandler {
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_DATA)){
 			cells = cMaterialsData;
 			ids[0] = rMaterialsData;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_CABLE)){
+			cells = cMaterialsCable;
+			ids[0] = rMaterialsCable;
 		} else {
 			return null;
 		}
