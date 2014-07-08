@@ -47,6 +47,8 @@ public class ExcelHandler {
 	public static final String EXCEL_SECTION_TIME = "Time";
 	public static final String EXCEL_SECTION_MATERIALS_LIGHTING = "Lighting";
 	public static final String EXCEL_SECTION_MATERIALS_POWER = "Power";
+	public static final String EXCEL_SECTION_MATERIALS_DATA = "Data";
+	public static final String EXCEL_SECTION_MATERIALS_CONTAINMENT = "Containment";
 
 	//Cell coordinates
 	private final static int[] cJobType = {1,1};
