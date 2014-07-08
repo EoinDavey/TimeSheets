@@ -66,34 +66,7 @@ public class ExcelHandler {
 		R.id.equipment_test_1, R.id.equipment_test_2, R.id.equipment_equipment, 
 		R.id.equipment_leads, R.id.equipment_access};
 
-
-	private final static int[][] cMaterialsCells = 
-		{
-		{1,33},{1,34},{1,35},{1,36},
-		{2,33},{2,34},{2,35},{2,36},
-		{3,33},{3,34},{3,35},{3,36},
-
-		{1,39},{1,40},{1,41},{1,42},
-		{2,39},{2,40},{2,41},{2,42},
-		{3,39},{3,40},{3,41},{3,42}
-		};
-	private final static int[] rMaterialsIds =
-		{
-		R.id.materials_cell_data_quantity_1,R.id.materials_cell_data_quantity_3,
-		R.id.materials_cell_data_quantity_3,R.id.materials_cell_data_quantity_4,
-		R.id.materials_cell_data_material_1,R.id.materials_cell_data_material_2,
-		R.id.materials_cell_data_material_3,R.id.materials_cell_data_material_4,
-		R.id.materials_cell_data_size_1,R.id.materials_cell_data_size_3,
-		R.id.materials_cell_data_size_3,R.id.materials_cell_data_size_4,
-
-		R.id.materials_cell_containment_quantity_1,R.id.materials_cell_containment_quantity_3,
-		R.id.materials_cell_containment_quantity_3,R.id.materials_cell_containment_quantity_4,
-		R.id.materials_cell_containment_material_1,R.id.materials_cell_containment_material_2,
-		R.id.materials_cell_containment_material_3,R.id.materials_cell_containment_material_4,
-		R.id.materials_cell_containment_size_1,R.id.materials_cell_containment_size_3,
-		R.id.materials_cell_containment_size_3,R.id.materials_cell_containment_size_4
-		};
-	
+		
 	private final static int[][] cMaterialsLighting = {
 		{0,20},{0,21},
 		{1,21},{1,22},{1,23},{1,24},
@@ -126,6 +99,33 @@ public class ExcelHandler {
 		R.id.materials_cell_power_size_1,R.id.materials_cell_power_size_2,
 		R.id.materials_cell_power_size_3,R.id.materials_cell_power_size_4
 	};
+	
+	private final static int[][] cMaterialsData = {
+		{1,33},{1,34},{1,35},{1,36},
+		{2,33},{2,34},{2,35},{2,36},
+		{3,33},{3,34},{3,35},{3,36}};
+	
+	private final static int[] rMaterialsData = {
+		R.id.materials_cell_data_quantity_1,R.id.materials_cell_data_quantity_2,
+		R.id.materials_cell_data_quantity_3,R.id.materials_cell_data_quantity_4,
+		R.id.materials_cell_data_material_1,R.id.materials_cell_data_material_2,
+		R.id.materials_cell_data_material_3,R.id.materials_cell_data_material_4,
+		R.id.materials_cell_data_size_1,R.id.materials_cell_data_size_2,
+		R.id.materials_cell_data_size_3,R.id.materials_cell_data_size_4};
+	
+	private final static int[][] cMaterialsContainment = {
+		{1,39},{1,40},{1,41},{1,42},
+		{2,39},{2,40},{2,41},{2,42},
+		{3,39},{3,40},{3,41},{3,42}
+		};
+	private final static int[] rMaterialsContainment = {
+		R.id.materials_cell_containment_quantity_1,R.id.materials_cell_containment_quantity_3,
+		R.id.materials_cell_containment_quantity_3,R.id.materials_cell_containment_quantity_4,
+		R.id.materials_cell_containment_material_1,R.id.materials_cell_containment_material_2,
+		R.id.materials_cell_containment_material_3,R.id.materials_cell_containment_material_4,
+		R.id.materials_cell_containment_size_1,R.id.materials_cell_containment_size_3,
+		R.id.materials_cell_containment_size_3,R.id.materials_cell_containment_size_4
+		};
 
 
 	private final static int[] cSigImage = {1,2};
@@ -147,15 +147,18 @@ public class ExcelHandler {
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_EQUIPMENT)){
 			cells = cEquipmentCells;
 			ids[0] = rEquipmentIds;
-		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS)){
-			cells = cMaterialsCells;
-			ids[0] = rMaterialsIds;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_CONTAINMENT)){
+			cells = cMaterialsContainment;
+			ids[0] = rMaterialsContainment;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_LIGHTING)){
 			cells = cMaterialsLighting;
 			ids[0] = rMaterialsLighting;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_POWER)){
 			cells = cMaterialsPower;
 			ids[0] = rMaterialsPower;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_DATA)){
+			cells = cMaterialsData;
+			ids[0] = rMaterialsData;
 		} else {
 			return null;
 		}
