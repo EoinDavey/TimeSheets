@@ -36,6 +36,40 @@
 	                android:onClick="showMaterialsPower" />
 	            
 	    </LinearLayout>
+	    <LinearLayout
+	            android:orientation="horizontal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="@dimen/main_fragment_layout_padding">
+	            
+	            <Button
+	                android:layout_width="@dimen/main_fragment_button_width_dimen"
+	                android:layout_height = "@dimen/main_fragment_button_height_dimen"
+	                android:text="Data"
+	                android:textSize="@dimen/main_fragment_button_font"
+	                android:layout_marginRight="@dimen/main_fragment_layout_padding"
+	                android:onClick="showMaterialsData"/>
+	            <Button
+	                android:layout_width="@dimen/main_fragment_button_width_dimen"
+	                android:layout_height = "@dimen/main_fragment_button_height_dimen"
+	                android:text="Containment"
+	                android:textSize="@dimen/main_fragment_button_font"
+	                android:onClick="showMaterialsContainment" />
+	            
+	    </LinearLayout>
+	    <LinearLayout
+	            android:orientation="horizontal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="@dimen/main_fragment_layout_padding">
+	            <Button
+	                android:layout_width="@dimen/main_fragment_button_width_dimen"
+	                android:layout_height = "@dimen/main_fragment_button_height_dimen"
+	                android:text="Cable"
+	                android:textSize="@dimen/main_fragment_button_font"
+	                android:layout_marginRight="@dimen/main_fragment_layout_padding"
+	                android:onClick="showMaterialsCable"/>
+	    </LinearLayout>
     </LinearLayout>
     
 </RelativeLayout>
