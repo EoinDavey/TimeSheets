@@ -42,6 +42,7 @@ public class EquipmentFragment extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
 			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_EQUIPMENT,mView);
+			getActivity().getSupportFragmentManager().popBackStack();
 			return true;
 		}
 		return false;

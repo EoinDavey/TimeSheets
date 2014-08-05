@@ -41,6 +41,7 @@ public class JobSetupFragment extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
 			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_JOB_SETUP,mView);
+			getActivity().getSupportFragmentManager().popBackStack();
 			return true;
 		}
 		return false;

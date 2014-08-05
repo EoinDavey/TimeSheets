@@ -19,14 +19,18 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.powerblock.timesheets.signatures.SignatureActivity;
-import com.powerblock.timesheets.signatures.SignatureView;
 
 public class ExcelHandler {
 
@@ -34,10 +38,10 @@ public class ExcelHandler {
 	private File workingTemplateFile;
 	private File workingTemplateTemp;
 	private static final String root = Environment.getExternalStorageDirectory().toString();
-	private static File custSig = new File(root, SignatureView.custSigLoc);
-	private static File empSig = new File(root, SignatureView.empSigLoc);
 	private Workbook mOriginalWorkingTemplate;
-	private static File[] fSigFiles = {custSig, empSig};
+	private Activity mParent;
+	private ProgressDialog mProgressDialog;
+	private ProgressDialog mImageProgressDialog;
 
 	//Section constants
 	public static final String EXCEL_SECTION_JOB_SETUP = "JobSetup";
@@ -45,11 +49,18 @@ public class ExcelHandler {
 	public static final String EXCEL_SECTION_MATERIALS = "Materials";
 	public static final String EXCEL_SECTION_TESTING = "Testing";
 	public static final String EXCEL_SECTION_TIME = "Time";
+	public static final String EXCEL_SECTION_SAFETY = "Safety";
 	public static final String EXCEL_SECTION_MATERIALS_LIGHTING = "Lighting";
 	public static final String EXCEL_SECTION_MATERIALS_POWER = "Power";
 	public static final String EXCEL_SECTION_MATERIALS_DATA = "Data";
 	public static final String EXCEL_SECTION_MATERIALS_CONTAINMENT = "Containment";
 	public static final String EXCEL_SECTION_MATERIALS_CABLE = "Cable";
+	public static final String EXCEL_SECTION_SAFETY_SITE_CONDITIONS="Site Conditions";
+	public static final String EXCEL_SECTION_SAFETY_PPE="PPE";
+	public static final String EXCEL_SECTION_SAFETY_LOCK_OUT="Lock out";
+	public static final String EXCEL_SECTION_SAFETY_MANUAL_HANDLING="Manual Handling";
+	public static final String EXCEL_SECTION_SAFETY_WORKING_AT_HEIGHT="Working at height";
+	public static final String EXCEL_SECTION_SAFETY_OTHER = "Other";
 
 	//Cell coordinates
 	private final static int[] cJobType = {1,1};
@@ -61,15 +72,102 @@ public class ExcelHandler {
 	private final static int[] rJobSetupIds = {R.id.job_setup_job_types, 
 		R.id.job_setup_site_name, R.id.job_setup_site_address, R.id.job_setup_PIC, 
 		R.id.job_setup_personnel};
+	
+	private final static int[] rSafetySiteConditionIds = {
+		R.id.safety_site_conditions_work_area,
+		R.id.safety_site_conditions_checkbox_1, R.id.safety_site_conditions_checkbox_2, R.id.safety_site_conditions_checkbox_3, R.id.safety_site_conditions_checkbox_4,
+		R.id.safety_site_conditions_checkbox_5, R.id.safety_site_conditions_checkbox_6, R.id.safety_site_conditions_checkbox_7, R.id.safety_site_conditions_checkbox_8,
+		R.id.safety_site_conditions_checkbox_9, R.id.safety_site_conditions_checkbox_10, R.id.safety_site_conditions_checkbox_11, R.id.safety_site_conditions_checkbox_12,
+		R.id.safety_site_conditions_checkbox_13, R.id.safety_site_conditions_checkbox_14, R.id.safety_site_conditions_checkbox_15, R.id.safety_site_conditions_checkbox_16,
+		R.id.safety_site_conditions_checkbox_17, R.id.safety_site_conditions_checkbox_18, R.id.safety_site_conditions_checkbox_19, R.id.safety_site_conditions_checkbox_20,
+	};
+	
+	private final static int[][] cSafetySiteConditionCells = {
+		{2,55},
+		{2,57},{2,58},{2,59},{2,60},
+		{4,57},{4,58},{4,59},{4,60},
+		{6,57},{6,58},{6,59},{6,60},
+		{8,57},{8,58},{8,59},{8,60},
+		{10,57},{10,58},{10,59},{10,60}
+	};
+	
+	private final static int[] rSafetyPPEIds = {
+		R.id.safety_ppe_checkbox_1, R.id.safety_ppe_checkbox_2, R.id.safety_ppe_checkbox_3,
+		R.id.safety_ppe_checkbox_4, R.id.safety_ppe_checkbox_5, R.id.safety_ppe_checkbox_6,
+		R.id.safety_ppe_checkbox_7, R.id.safety_ppe_checkbox_8, R.id.safety_ppe_checkbox_9,
+		R.id.safety_ppe_checkbox_10, R.id.safety_ppe_checkbox_11, R.id.safety_ppe_checkbox_12
+	};
+	
+	private final static int[][] cSafetyPPECells = {
+		{2,64},{2,65},{2,66},
+		{4,64},{4,65},{4,66},
+		{6,64},{6,65},{6,66},
+		{8,64},{8,65},{8,66}
+	};
+	
+	private final static int[] rSafetyLockOutIds = {
+		R.id.safety_lock_out_circuits,
+		R.id.safety_lock_out_checkbox_1, R.id.safety_lock_out_checkbox_2, R.id.safety_lock_out_checkbox_3,
+		R.id.safety_lock_out_checkbox_5, R.id.safety_lock_out_checkbox_6, R.id.safety_lock_out_checkbox_7,
+		R.id.safety_lock_out_checkbox_9, R.id.safety_lock_out_checkbox_10, R.id.safety_lock_out_checkbox_11,
+		R.id.safety_lock_out_checkbox_13,R.id.safety_lock_out_checkbox_19, R.id.safety_lock_out_checkbox_20
+	};
+	
+	private final static int[][] cSafetyLockOutCells = {
+		{2,69},
+		{2,70},{2,71},{2,72},
+		{4,70},{4,71},{4,72},
+		{6,70},{6,71},{6,72},
+		{8,70},{8,71},{8,72},
+	};
+	
+	private final static int[] rSafetyManualIds = {
+		R.id.safety_manual_load_types,
+		R.id.safety_manual_checkbox_1,R.id.safety_manual_checkbox_2,R.id.safety_manual_checkbox_3,
+		R.id.safety_manual_checkbox_4,R.id.safety_manual_checkbox_5,R.id.safety_manual_checkbox_6,
+		R.id.safety_manual_checkbox_7,R.id.safety_manual_checkbox_8,R.id.safety_manual_checkbox_9
+	};
+	
+	private final static int[][] cSafetyManualCells = {
+		{2,75},
+		{2,76},{2,77},{2,78},
+		{4,76},{4,77},{4,78},
+		{6,76},{6,77},{6,78}
+	};
+	
+	/*private final static int[] rSafetyIds = {
+		R.id.safety_cell_checkbox_1,R.id.safety_cell_checkbox_2,R.id.safety_cell_checkbox_3,
+		R.id.safety_cell_checkbox_4,R.id.safety_cell_checkbox_5,R.id.safety_cell_checkbox_6,
+		R.id.safety_cell_checkbox_7,R.id.safety_cell_checkbox_8,R.id.safety_cell_checkbox_9,
+		R.id.safety_cell_checkbox_10,R.id.safety_cell_checkbox_11,R.id.safety_cell_checkbox_12,
+		R.id.safety_cell_checkbox_13,R.id.safety_cell_checkbox_14,R.id.safety_cell_checkbox_15,
+		R.id.safety_cell_checkbox_16,R.id.safety_cell_work_area, R.id.safety_cell_site_rating,
+		R.id.safety_cell_site_controls, R.id.safety_cell_access_types, R.id.safety_cell_access_rating,
+		R.id.safety_cell_access_controls, R.id.safety_cell_load_type, R.id.safety_cell_load_rating,
+		R.id.safety_cell_lock_out, R.id.safety_cell_lock_out_rating, R.id.safety_cell_lock_out_controls,
+		R.id.safety_cell_other, R.id.safety_cell_other_rating, R.id.safety_cell_other_controls
+	}; */
+	
+	/*private final static int[][] cSafetyCells = {
+		{1,65},{2,65},{3,65},
+		{1,67},{2,67},{3,67},
+		{1,69},{2,69},{3,69},
+		{1,56},{2,56},{3,56},{4,56},{5,56},{6,56},{7,56},
+		{1,59},{2,59},{3,59},
+		{1,62},{2,62},{3,62},
+		{1,65},{2,65},
+		{1,74},{2,74},{3,74},
+		{1,77},{2,77},{3,77}
+	};*/
 
 	private final static int[][] cEquipmentCells = 
 		{{1,7},{1,11},{1,12},{1,13},{1,8},{1,9}};
+	
 	private final static int[] rEquipmentIds = 
 		{R.id.equipment_drills, 
 		R.id.equipment_test_1, R.id.equipment_test_2, R.id.equipment_equipment, 
 		R.id.equipment_leads, R.id.equipment_access};
 
-		
 	private final static int[][] cMaterialsLighting = {
 		{0,20},{0,21},
 		{1,21},{1,22},{1,23},{1,24},
@@ -78,7 +176,6 @@ public class ExcelHandler {
 	
 	private final static int[] rMaterialsLighting = {
 		R.id.materials_cell_lighting_store, R.id.materials_cell_lighting_docket,
-
 		R.id.materials_cell_lighting_quantity_1,R.id.materials_cell_lighting_quantity_2,
 		R.id.materials_cell_lighting_quantity_3,R.id.materials_cell_lighting_quantity_4,
 		R.id.materials_cell_lighting_material_1,R.id.materials_cell_lighting_material_2,
@@ -157,10 +254,11 @@ public class ExcelHandler {
 	private final static int[] cSigImage = {1,2};
 
 
-	public ExcelHandler(){
+	public ExcelHandler(Activity parent){
 		File myDir = new File(root + MainActivity.workingTemplateDir);
 		workingTemplateFile = new File(myDir, MainActivity.workingTemplateFileName);
 		workingTemplateTemp = new File(myDir, workingTemplateTempFileName);
+		mParent = parent;
 	}
 	
 	public ArrayList<int[][]> getCells(String section){
@@ -191,6 +289,18 @@ public class ExcelHandler {
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_CABLE)){
 			cells = cMaterialsCable;
 			ids[0] = rMaterialsCable;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_SAFETY_SITE_CONDITIONS)){
+			cells = cSafetySiteConditionCells;
+			ids[0] = rSafetySiteConditionIds;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_SAFETY_PPE)){
+			cells = cSafetyPPECells;
+			ids[0] = rSafetyPPEIds;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_SAFETY_LOCK_OUT)){
+			cells = cSafetyLockOutCells;
+			ids[0] = rSafetyLockOutIds;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_SAFETY_MANUAL_HANDLING)){
+			cells = cSafetyManualCells;
+			ids[0] = rSafetyManualIds;
 		} else {
 			return null;
 		}
@@ -200,55 +310,28 @@ public class ExcelHandler {
 	}
 
 	public void write(String section, View givenView){
-		ArrayList<int[][]> list = getCells(section);
-		int[][] cells = list.get(0);
-		int[] ids = list.get(1)[0];
-		try{
-			WritableWorkbook w = getWritableWorkbook();
-			WritableSheet s = w.getSheet(0);
-			WritableCell cell = null;
-			PBSpinner spinner = null;
-			for(int i = 0; i < cells.length; i ++){
-				cell = s.getWritableCell(cells[i][0], cells[i][1]);
-				spinner = (PBSpinner) givenView.findViewById(ids[i]);
-				if(isLabel(cell)){
-					Label l = (Label) cell;
-					l.setString(spinner.getString());
-				} else {
-					Label l = new Label(cells[i][0], cells[i][1],spinner.getString());
-					s.addCell(l);
+			final SaveTask downTask = new SaveTask();
+			mProgressDialog = new ProgressDialog(mParent);
+			mProgressDialog.setMessage("Saving");
+			mProgressDialog.setIndeterminate(true);
+			mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+			mProgressDialog.setCancelable(true);
+			mProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+				
+				@Override
+				public void onCancel(DialogInterface dialog) {
+					downTask.cancel(true);
 				}
-			}
-			saveWritableWorkbook(w);
-			} catch(RowsExceededException e){
-				e.printStackTrace();
-			} catch (WriteException e) {
-				e.printStackTrace();
-			}
-	}
-
-	/*public View readJobSetup(LayoutInflater inflater, ViewGroup container){
-		Workbook w = getWorkbook();
-		Sheet s = w.getSheet(0);
-		View v = inflater.inflate(R.layout.job_setup_fragment, container, false);
-		Cell cell = null;
-		CustomSpinner spinner = null;
-		int columns = s.getColumns();
-		Log.v("Test","Columns = " + String.valueOf(columns));
-		if(columns > 1){
-			for(int i = 0; i < cJobSetupCells.length; i ++){
-				cell = s.getCell(cJobSetupCells[i][0], cJobSetupCells[i][1]);
-				spinner = (CustomSpinner) v.findViewById(rJobSetupIds[i]);
-				if(isLabel(cell)){
-					spinner.select(cell.getContents());
-				}
-			}
-		}
-		return v;
-	}*/
+			});
+			PBStore store = new PBStore(section, givenView);
+			downTask.execute(store);
+	} 
 
 	public View read(LayoutInflater inflater, ViewGroup container, int layout, String section){
 		ArrayList<int[][]> list = getCells(section);
+		if(list == null){
+			return inflater.inflate(layout, container, false);
+		}
 		int[][] cells = list.get(0);
 		int[] ids = list.get(1)[0];
 		Workbook w = getWorkbook();
@@ -301,50 +384,215 @@ public class ExcelHandler {
 		return w;
 	}
 
-	private void saveWritableWorkbook(WritableWorkbook w){
-		File myDir = new File(root + MainActivity.workingTemplateDir);
-		workingTemplateFile = new File(myDir, MainActivity.workingTemplateFileName);
-		workingTemplateTemp = new File(myDir, workingTemplateTempFileName);
-		try{
-			w.write();
-			w.close();
-
-			workingTemplateFile.delete();
-
-			InputStream in = new FileInputStream(workingTemplateTemp);
-			OutputStream out = new FileOutputStream(workingTemplateFile);
-
-			byte[] buffer = new byte[1024];
-			int read;
-			while((read = in.read(buffer)) != - 1){
-				out.write(buffer, 0, read);
+	public void saveImage(String fileLoc, String type){
+		
+		final ImageSaveTask downTask = new ImageSaveTask();
+		mImageProgressDialog = new ProgressDialog(mParent);
+		mImageProgressDialog.setMessage("Saving image");
+		mImageProgressDialog.setIndeterminate(true);
+		mImageProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		mImageProgressDialog.setCancelable(true);
+		mImageProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+			@Override
+			public void onCancel(DialogInterface dialog) {
+				downTask.cancel(true);
 			}
-			in.close();
-			in = null;
-			out.flush();
-			out.close();
-			out = null;
-			workingTemplateTemp.delete();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+		});
+		downTask.execute(fileLoc,type);
 	}
-
-	public void saveSignature(String fileLoc, String type){
-		Log.v("Test","Saving");
-		int iType = 0;
-		if(type.equalsIgnoreCase(SignatureActivity.SIG_IDENTIFIER_CUST)){
-			Log.v("Test","iType = 1");
-			iType = 1;
-		} else if(type.equalsIgnoreCase(SignatureActivity.SIG_IDENTIFIER_EMP)){
-			Log.v("Test","iType = 2");
-			iType = 2;
+	
+	private class ImageSaveTask extends AsyncTask<String, Integer, String>{
+		
+		@Override
+		protected void onPreExecute() {
+			mProgressDialog.show();
 		}
-		WritableWorkbook w = getWritableWorkbook();
-		WritableSheet s = w.getSheet(iType);
-		Log.v("Test","Image = " + fSigFiles[iType - 1].toString());
-		WritableImage i = new WritableImage(cSigImage[0], cSigImage[1], 6, 6, fSigFiles[iType - 1]);
-		s.addImage(i);
-		saveWritableWorkbook(w);
+		
+		@Override
+		protected void onPostExecute(String result) {
+			mProgressDialog.dismiss();
+			if(result == null){
+				Toast.makeText(mParent, "Saved..", Toast.LENGTH_SHORT).show();
+			}
+		}
+		
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			mProgressDialog.setIndeterminate(false);
+	        mProgressDialog.setMax(100);
+	        mProgressDialog.setProgress(values[0]);
+		}
+
+		@Override
+		protected String doInBackground(String... params) {
+			String fileLoc = params[0];
+			String type = params[1];
+			int height = 6;
+			Log.v("Test","Saving");
+			int iType = 0;
+			if(type.equalsIgnoreCase(SignatureActivity.SIG_IDENTIFIER_CUST)){
+				Log.v("Test","iType = 1");
+				iType = 1;
+			} else if(type.equalsIgnoreCase(SignatureActivity.SIG_IDENTIFIER_EMP)){
+				Log.v("Test","iType = 2");
+				iType = 2;
+			}
+			publishProgress(20);
+			WritableWorkbook w = getWritableWorkbook();
+			WritableSheet s = w.getSheet(iType);
+			WritableImage i = new WritableImage(cSigImage[0], cSigImage[1], 6, height, new File(fileLoc));
+			s.addImage(i);
+			
+			File myDir = new File(root + MainActivity.workingTemplateDir);
+			workingTemplateFile = new File(myDir, MainActivity.workingTemplateFileName);
+			workingTemplateTemp = new File(myDir, workingTemplateTempFileName);
+			try{
+				w.write();
+				w.close();
+
+				workingTemplateFile.delete();
+
+				InputStream in = new FileInputStream(workingTemplateTemp);
+				OutputStream out = new FileOutputStream(workingTemplateFile);
+				byte[] buffer = new byte[1024];
+				int read;
+				while((read = in.read(buffer)) != - 1){
+					out.write(buffer, 0, read);
+				}
+				in.close();
+				in = null;
+				out.flush();
+				out.close();
+				out = null;
+				workingTemplateTemp.delete();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+			return null;
+		}
+		
+	}
+	
+	private class SaveTask extends AsyncTask<PBStore, Integer, String>{
+		
+		@Override
+		protected void onPreExecute() {
+			mProgressDialog.show();
+		}
+		
+		@Override
+		protected void onPostExecute(String result) {
+			mProgressDialog.dismiss();
+			if (result != null)
+				MainActivity.toastError();
+			else
+				Toast.makeText(mParent, "Saved..", Toast.LENGTH_SHORT).show();
+		}
+		
+		@Override
+		protected String doInBackground(PBStore... pb) {
+			
+			ArrayList<int[][]> list = getCells(pb[0].getSection());
+			publishProgress(5);
+			int[][] cells = list.get(0);
+			int[] ids = list.get(1)[0];
+			WritableWorkbook w = null;
+			try{
+				w = getWritableWorkbook();
+				publishProgress(10);
+				WritableSheet s = w.getSheet(0);
+				WritableCell cell = null;
+				PBSpinner spinner = null;
+				for(int i = 0; i < cells.length; i ++){
+					cell = s.getWritableCell(cells[i][0], cells[i][1]);
+					spinner = (PBSpinner) pb[0].getGivenView().findViewById(ids[i]);
+					if(isLabel(cell)){
+						Label l = (Label) cell;
+						l.setString(spinner.getString());
+					} else {
+						Label l = new Label(cells[i][0], cells[i][1],spinner.getString());
+						s.addCell(l);
+					}
+					publishProgress( (40 / cells.length) * i + 10  );
+				}
+				
+			} catch(RowsExceededException e){
+				e.printStackTrace();
+			} catch (WriteException e) {
+				e.printStackTrace();
+			}
+			
+			if(w == null){
+				return "ERROR";
+			}
+			
+			
+			File myDir = new File(root + MainActivity.workingTemplateDir);
+			workingTemplateFile = new File(myDir, MainActivity.workingTemplateFileName);
+			workingTemplateTemp = new File(myDir, workingTemplateTempFileName);
+			publishProgress(55);
+			try{
+				w.write();
+				w.close();
+
+				workingTemplateFile.delete();
+
+				InputStream in = new FileInputStream(workingTemplateTemp);
+				OutputStream out = new FileOutputStream(workingTemplateFile);
+
+				byte[] buffer = new byte[1024];
+				int read;
+				while((read = in.read(buffer)) != - 1){
+					out.write(buffer, 0, read);
+				}
+				in.close();
+				in = null;
+				out.flush();
+				out.close();
+				out = null;
+				workingTemplateTemp.delete();
+				publishProgress(100);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			return null;
+		}
+		
+		@Override
+	    protected void onProgressUpdate(Integer... progress) {
+	        super.onProgressUpdate(progress);
+	        mProgressDialog.setIndeterminate(false);
+	        mProgressDialog.setMax(100);
+	        mProgressDialog.setProgress(progress[0]);
+	    }
+		
+	}
+	
+	private class PBStore{
+		private String section;
+		private View givenView;
+		
+		public PBStore(String section, View givenView){
+			this.setSection(section);
+			this.setGivenView(givenView);
+		}
+
+		public String getSection() {
+			return section;
+		}
+
+		public void setSection(String section) {
+			this.section = section;
+		}
+
+		public View getGivenView() {
+			return givenView;
+		}
+
+		public void setGivenView(View givenView) {
+			this.givenView = givenView;
+		}
+		
 	}
 }

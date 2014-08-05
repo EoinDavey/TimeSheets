@@ -40,6 +40,7 @@ public class MaterialsCable extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
 			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_MATERIALS_CABLE,mView);
+			getActivity().getSupportFragmentManager().popBackStack();
 			return true;
 		}
 		return false;

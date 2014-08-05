@@ -351,6 +351,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int icon=0x7f01002c;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int icon_image=0x7f010070;
         /**  The default state of the SearchView. If true, it will be iconified when not in
              use and expanded when clicked. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -1015,8 +1023,10 @@ containing a value of this type.
         public static final int safety_cell_height=0x7f09001f;
         public static final int safety_cell_width=0x7f09001e;
         public static final int safety_font=0x7f090020;
+        public static final int safety_image_dimen=0x7f090028;
         public static final int safety_image_padding=0x7f09001d;
         public static final int safety_image_view=0x7f09001c;
+        public static final int safety_ppe_image_dimen=0x7f090029;
         public static final int testing_cell_height=0x7f090026;
         public static final int testing_cell_width=0x7f090025;
         public static final int testing_font=0x7f090024;
@@ -1110,15 +1120,56 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int boots=0x7f020057;
-        public static final int cell_background=0x7f020058;
-        public static final int ear_protection=0x7f020059;
-        public static final int glasses=0x7f02005a;
-        public static final int gloves=0x7f02005b;
-        public static final int hard_hat=0x7f02005c;
-        public static final int high_vis=0x7f02005d;
-        public static final int ic_launcher=0x7f02005e;
-        public static final int mask=0x7f02005f;
+        public static final int asbestos=0x7f020057;
+        public static final int boots=0x7f020058;
+        public static final int caution=0x7f020059;
+        public static final int caution_cars=0x7f02005a;
+        public static final int caution_machinery=0x7f02005b;
+        public static final int cell_background=0x7f02005c;
+        public static final int checked=0x7f02005d;
+        public static final int chemicals=0x7f02005e;
+        public static final int clip=0x7f02005f;
+        public static final int clip_2=0x7f020060;
+        public static final int confined_space=0x7f020061;
+        public static final int crossing_sign=0x7f020062;
+        public static final int ear_protection=0x7f020063;
+        public static final int earthed=0x7f020064;
+        public static final int explosive_atmosphere=0x7f020065;
+        public static final int four_man=0x7f020066;
+        public static final int gas_mask=0x7f020067;
+        public static final int glasses=0x7f020068;
+        public static final int gloves=0x7f020069;
+        public static final int hard_hat=0x7f02006a;
+        public static final int harness=0x7f02006b;
+        public static final int high_vis=0x7f02006c;
+        public static final int high_vis_safety=0x7f02006d;
+        public static final int ic_launcher=0x7f02006e;
+        public static final int induction=0x7f02006f;
+        public static final int lock=0x7f020070;
+        public static final int lock_out_lock=0x7f020071;
+        public static final int lock_out_meter=0x7f020072;
+        public static final int map=0x7f020073;
+        public static final int mask=0x7f020074;
+        public static final int metal_clip=0x7f020075;
+        public static final int meter=0x7f020076;
+        public static final int one_man=0x7f020077;
+        public static final int pallet_truck=0x7f020078;
+        public static final int plastic_clip=0x7f020079;
+        public static final int qualification=0x7f02007a;
+        public static final int railing=0x7f02007b;
+        public static final int safety_notice=0x7f02007c;
+        public static final int shock_sign=0x7f02007d;
+        public static final int shock_warning=0x7f02007e;
+        public static final int stairway=0x7f02007f;
+        public static final int stickers=0x7f020080;
+        public static final int suit=0x7f020081;
+        public static final int three_man=0x7f020082;
+        public static final int traffic_cone=0x7f020083;
+        public static final int training=0x7f020084;
+        public static final int two_man=0x7f020085;
+        public static final int vacuum_cleaner=0x7f020086;
+        public static final int watch_step=0x7f020087;
+        public static final int wet_floor=0x7f020088;
     }
     public static final class id {
         public static final int action_bar=0x7f06001c;
@@ -1132,8 +1183,8 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_save=0x7f0600b2;
-        public static final int action_update=0x7f0600b1;
+        public static final int action_save=0x7f0600f0;
+        public static final int action_update=0x7f0600ef;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1170,87 +1221,87 @@ containing a value of this type.
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f060029;
         public static final int main_fragment_table_1=0x7f060045;
-        public static final int materials_cell_cable_docket=0x7f06004e;
-        public static final int materials_cell_cable_material_1=0x7f060051;
-        public static final int materials_cell_cable_material_2=0x7f060054;
-        public static final int materials_cell_cable_material_3=0x7f060057;
-        public static final int materials_cell_cable_material_4=0x7f06005a;
-        public static final int materials_cell_cable_quantity_1=0x7f060050;
-        public static final int materials_cell_cable_quantity_2=0x7f060053;
-        public static final int materials_cell_cable_quantity_3=0x7f060056;
-        public static final int materials_cell_cable_quantity_4=0x7f060059;
-        public static final int materials_cell_cable_size_1=0x7f060052;
-        public static final int materials_cell_cable_size_2=0x7f060055;
-        public static final int materials_cell_cable_size_3=0x7f060058;
-        public static final int materials_cell_cable_size_4=0x7f06005b;
-        public static final int materials_cell_cable_store=0x7f06004d;
-        public static final int materials_cell_containment_docket=0x7f06005e;
-        public static final int materials_cell_containment_material_1=0x7f060061;
-        public static final int materials_cell_containment_material_2=0x7f060064;
-        public static final int materials_cell_containment_material_3=0x7f060067;
-        public static final int materials_cell_containment_material_4=0x7f06006a;
-        public static final int materials_cell_containment_quantity_1=0x7f060060;
-        public static final int materials_cell_containment_quantity_2=0x7f060063;
-        public static final int materials_cell_containment_quantity_3=0x7f060066;
-        public static final int materials_cell_containment_quantity_4=0x7f060069;
-        public static final int materials_cell_containment_size_1=0x7f060062;
-        public static final int materials_cell_containment_size_2=0x7f060065;
-        public static final int materials_cell_containment_size_3=0x7f060068;
-        public static final int materials_cell_containment_size_4=0x7f06006b;
-        public static final int materials_cell_containment_store=0x7f06005d;
-        public static final int materials_cell_data_docket=0x7f06006e;
-        public static final int materials_cell_data_material_1=0x7f060071;
-        public static final int materials_cell_data_material_2=0x7f060074;
-        public static final int materials_cell_data_material_3=0x7f060077;
-        public static final int materials_cell_data_material_4=0x7f06007a;
-        public static final int materials_cell_data_quantity_1=0x7f060070;
-        public static final int materials_cell_data_quantity_2=0x7f060073;
-        public static final int materials_cell_data_quantity_3=0x7f060076;
-        public static final int materials_cell_data_quantity_4=0x7f060079;
-        public static final int materials_cell_data_size_1=0x7f060072;
-        public static final int materials_cell_data_size_2=0x7f060075;
-        public static final int materials_cell_data_size_3=0x7f060078;
-        public static final int materials_cell_data_size_4=0x7f06007b;
-        public static final int materials_cell_data_store=0x7f06006d;
-        public static final int materials_cell_lighting_docket=0x7f06007f;
-        public static final int materials_cell_lighting_material_1=0x7f060082;
-        public static final int materials_cell_lighting_material_2=0x7f060085;
-        public static final int materials_cell_lighting_material_3=0x7f060088;
-        public static final int materials_cell_lighting_material_4=0x7f06008b;
-        public static final int materials_cell_lighting_quantity_1=0x7f060081;
-        public static final int materials_cell_lighting_quantity_2=0x7f060084;
-        public static final int materials_cell_lighting_quantity_3=0x7f060087;
-        public static final int materials_cell_lighting_quantity_4=0x7f06008a;
-        public static final int materials_cell_lighting_size_1=0x7f060083;
-        public static final int materials_cell_lighting_size_2=0x7f060086;
-        public static final int materials_cell_lighting_size_3=0x7f060089;
-        public static final int materials_cell_lighting_size_4=0x7f06008c;
-        public static final int materials_cell_lighting_store=0x7f06007e;
-        public static final int materials_cell_power_material_1=0x7f060092;
-        public static final int materials_cell_power_material_2=0x7f060095;
-        public static final int materials_cell_power_material_3=0x7f060098;
-        public static final int materials_cell_power_material_4=0x7f06009b;
-        public static final int materials_cell_power_quantity_1=0x7f060091;
-        public static final int materials_cell_power_quantity_2=0x7f060094;
-        public static final int materials_cell_power_quantity_3=0x7f060097;
-        public static final int materials_cell_power_quantity_4=0x7f06009a;
-        public static final int materials_cell_power_size_1=0x7f060093;
-        public static final int materials_cell_power_size_2=0x7f060096;
-        public static final int materials_cell_power_size_3=0x7f060099;
-        public static final int materials_cell_power_size_4=0x7f06009c;
-        public static final int materials_fragment_table_1=0x7f06007c;
-        public static final int materials_power_docket=0x7f06008f;
-        public static final int materials_power_store=0x7f06008e;
-        public static final int materials_table_layout_1=0x7f06007d;
-        public static final int materials_table_layout_10=0x7f06004f;
-        public static final int materials_table_layout_2=0x7f060080;
-        public static final int materials_table_layout_3=0x7f06008d;
-        public static final int materials_table_layout_4=0x7f060090;
-        public static final int materials_table_layout_5=0x7f06006c;
-        public static final int materials_table_layout_6=0x7f06006f;
-        public static final int materials_table_layout_7=0x7f06005c;
-        public static final int materials_table_layout_8=0x7f06005f;
-        public static final int materials_table_layout_9=0x7f06004c;
+        public static final int materials_cell_cable_docket=0x7f06005e;
+        public static final int materials_cell_cable_material_1=0x7f060061;
+        public static final int materials_cell_cable_material_2=0x7f060064;
+        public static final int materials_cell_cable_material_3=0x7f060067;
+        public static final int materials_cell_cable_material_4=0x7f06006a;
+        public static final int materials_cell_cable_quantity_1=0x7f060060;
+        public static final int materials_cell_cable_quantity_2=0x7f060063;
+        public static final int materials_cell_cable_quantity_3=0x7f060066;
+        public static final int materials_cell_cable_quantity_4=0x7f060069;
+        public static final int materials_cell_cable_size_1=0x7f060062;
+        public static final int materials_cell_cable_size_2=0x7f060065;
+        public static final int materials_cell_cable_size_3=0x7f060068;
+        public static final int materials_cell_cable_size_4=0x7f06006b;
+        public static final int materials_cell_cable_store=0x7f06005d;
+        public static final int materials_cell_containment_docket=0x7f06006e;
+        public static final int materials_cell_containment_material_1=0x7f060071;
+        public static final int materials_cell_containment_material_2=0x7f060074;
+        public static final int materials_cell_containment_material_3=0x7f060077;
+        public static final int materials_cell_containment_material_4=0x7f06007a;
+        public static final int materials_cell_containment_quantity_1=0x7f060070;
+        public static final int materials_cell_containment_quantity_2=0x7f060073;
+        public static final int materials_cell_containment_quantity_3=0x7f060076;
+        public static final int materials_cell_containment_quantity_4=0x7f060079;
+        public static final int materials_cell_containment_size_1=0x7f060072;
+        public static final int materials_cell_containment_size_2=0x7f060075;
+        public static final int materials_cell_containment_size_3=0x7f060078;
+        public static final int materials_cell_containment_size_4=0x7f06007b;
+        public static final int materials_cell_containment_store=0x7f06006d;
+        public static final int materials_cell_data_docket=0x7f06007e;
+        public static final int materials_cell_data_material_1=0x7f060081;
+        public static final int materials_cell_data_material_2=0x7f060084;
+        public static final int materials_cell_data_material_3=0x7f060087;
+        public static final int materials_cell_data_material_4=0x7f06008a;
+        public static final int materials_cell_data_quantity_1=0x7f060080;
+        public static final int materials_cell_data_quantity_2=0x7f060083;
+        public static final int materials_cell_data_quantity_3=0x7f060086;
+        public static final int materials_cell_data_quantity_4=0x7f060089;
+        public static final int materials_cell_data_size_1=0x7f060082;
+        public static final int materials_cell_data_size_2=0x7f060085;
+        public static final int materials_cell_data_size_3=0x7f060088;
+        public static final int materials_cell_data_size_4=0x7f06008b;
+        public static final int materials_cell_data_store=0x7f06007d;
+        public static final int materials_cell_lighting_docket=0x7f06008f;
+        public static final int materials_cell_lighting_material_1=0x7f060092;
+        public static final int materials_cell_lighting_material_2=0x7f060095;
+        public static final int materials_cell_lighting_material_3=0x7f060098;
+        public static final int materials_cell_lighting_material_4=0x7f06009b;
+        public static final int materials_cell_lighting_quantity_1=0x7f060091;
+        public static final int materials_cell_lighting_quantity_2=0x7f060094;
+        public static final int materials_cell_lighting_quantity_3=0x7f060097;
+        public static final int materials_cell_lighting_quantity_4=0x7f06009a;
+        public static final int materials_cell_lighting_size_1=0x7f060093;
+        public static final int materials_cell_lighting_size_2=0x7f060096;
+        public static final int materials_cell_lighting_size_3=0x7f060099;
+        public static final int materials_cell_lighting_size_4=0x7f06009c;
+        public static final int materials_cell_lighting_store=0x7f06008e;
+        public static final int materials_cell_power_material_1=0x7f0600a2;
+        public static final int materials_cell_power_material_2=0x7f0600a5;
+        public static final int materials_cell_power_material_3=0x7f0600a8;
+        public static final int materials_cell_power_material_4=0x7f0600ab;
+        public static final int materials_cell_power_quantity_1=0x7f0600a1;
+        public static final int materials_cell_power_quantity_2=0x7f0600a4;
+        public static final int materials_cell_power_quantity_3=0x7f0600a7;
+        public static final int materials_cell_power_quantity_4=0x7f0600aa;
+        public static final int materials_cell_power_size_1=0x7f0600a3;
+        public static final int materials_cell_power_size_2=0x7f0600a6;
+        public static final int materials_cell_power_size_3=0x7f0600a9;
+        public static final int materials_cell_power_size_4=0x7f0600ac;
+        public static final int materials_fragment_table_1=0x7f06008c;
+        public static final int materials_power_docket=0x7f06009f;
+        public static final int materials_power_store=0x7f06009e;
+        public static final int materials_table_layout_1=0x7f06008d;
+        public static final int materials_table_layout_10=0x7f06005f;
+        public static final int materials_table_layout_2=0x7f060090;
+        public static final int materials_table_layout_3=0x7f06009d;
+        public static final int materials_table_layout_4=0x7f0600a0;
+        public static final int materials_table_layout_5=0x7f06007c;
+        public static final int materials_table_layout_6=0x7f06007f;
+        public static final int materials_table_layout_7=0x7f06006c;
+        public static final int materials_table_layout_8=0x7f06006f;
+        public static final int materials_table_layout_9=0x7f06005c;
         public static final int middle=0x7f060012;
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
@@ -1258,13 +1309,75 @@ containing a value of this type.
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int radio=0x7f06002f;
-        public static final int safety_table_layout_1=0x7f06009d;
-        public static final int safety_table_layout_2=0x7f06009e;
-        public static final int safety_table_layout_3=0x7f06009f;
-        public static final int safety_table_layout_4=0x7f0600a0;
-        public static final int safety_table_layout_5=0x7f0600a1;
-        public static final int safety_table_layout_6=0x7f0600a2;
-        public static final int save_dialog_edit_text=0x7f0600a3;
+        public static final int safety_fragment_table_1=0x7f0600bb;
+        public static final int safety_lock_out_checkbox_1=0x7f060050;
+        public static final int safety_lock_out_checkbox_10=0x7f060057;
+        public static final int safety_lock_out_checkbox_11=0x7f060058;
+        public static final int safety_lock_out_checkbox_13=0x7f060059;
+        public static final int safety_lock_out_checkbox_19=0x7f06005a;
+        public static final int safety_lock_out_checkbox_2=0x7f060051;
+        public static final int safety_lock_out_checkbox_20=0x7f06005b;
+        public static final int safety_lock_out_checkbox_3=0x7f060052;
+        public static final int safety_lock_out_checkbox_5=0x7f060053;
+        public static final int safety_lock_out_checkbox_6=0x7f060054;
+        public static final int safety_lock_out_checkbox_7=0x7f060055;
+        public static final int safety_lock_out_checkbox_9=0x7f060056;
+        public static final int safety_lock_out_circuits=0x7f06004e;
+        public static final int safety_lock_out_table_1=0x7f06004d;
+        public static final int safety_lock_out_table_2=0x7f06004f;
+        public static final int safety_manual_checkbox_1=0x7f0600c0;
+        public static final int safety_manual_checkbox_2=0x7f0600c1;
+        public static final int safety_manual_checkbox_3=0x7f0600c2;
+        public static final int safety_manual_checkbox_4=0x7f0600c3;
+        public static final int safety_manual_checkbox_5=0x7f0600c4;
+        public static final int safety_manual_checkbox_6=0x7f0600c5;
+        public static final int safety_manual_checkbox_7=0x7f0600c6;
+        public static final int safety_manual_checkbox_8=0x7f0600c7;
+        public static final int safety_manual_checkbox_9=0x7f0600c8;
+        public static final int safety_manual_load_types=0x7f0600be;
+        public static final int safety_manual_table_1=0x7f0600bd;
+        public static final int safety_manual_table_2=0x7f0600bf;
+        public static final int safety_ppe_checkbox_1=0x7f0600af;
+        public static final int safety_ppe_checkbox_10=0x7f0600b8;
+        public static final int safety_ppe_checkbox_11=0x7f0600b9;
+        public static final int safety_ppe_checkbox_12=0x7f0600ba;
+        public static final int safety_ppe_checkbox_2=0x7f0600b0;
+        public static final int safety_ppe_checkbox_3=0x7f0600b1;
+        public static final int safety_ppe_checkbox_4=0x7f0600b2;
+        public static final int safety_ppe_checkbox_5=0x7f0600b3;
+        public static final int safety_ppe_checkbox_6=0x7f0600b4;
+        public static final int safety_ppe_checkbox_7=0x7f0600b5;
+        public static final int safety_ppe_checkbox_8=0x7f0600b6;
+        public static final int safety_ppe_checkbox_9=0x7f0600b7;
+        public static final int safety_ppe_table_1=0x7f0600ae;
+        public static final int safety_site_conditions_checkbox_1=0x7f0600cd;
+        public static final int safety_site_conditions_checkbox_10=0x7f0600d6;
+        public static final int safety_site_conditions_checkbox_11=0x7f0600d7;
+        public static final int safety_site_conditions_checkbox_12=0x7f0600d8;
+        public static final int safety_site_conditions_checkbox_13=0x7f0600d9;
+        public static final int safety_site_conditions_checkbox_14=0x7f0600da;
+        public static final int safety_site_conditions_checkbox_15=0x7f0600db;
+        public static final int safety_site_conditions_checkbox_16=0x7f0600dc;
+        public static final int safety_site_conditions_checkbox_17=0x7f0600dd;
+        public static final int safety_site_conditions_checkbox_18=0x7f0600de;
+        public static final int safety_site_conditions_checkbox_19=0x7f0600df;
+        public static final int safety_site_conditions_checkbox_2=0x7f0600ce;
+        public static final int safety_site_conditions_checkbox_20=0x7f0600e0;
+        public static final int safety_site_conditions_checkbox_3=0x7f0600cf;
+        public static final int safety_site_conditions_checkbox_4=0x7f0600d0;
+        public static final int safety_site_conditions_checkbox_5=0x7f0600d1;
+        public static final int safety_site_conditions_checkbox_6=0x7f0600d2;
+        public static final int safety_site_conditions_checkbox_7=0x7f0600d3;
+        public static final int safety_site_conditions_checkbox_8=0x7f0600d4;
+        public static final int safety_site_conditions_checkbox_9=0x7f0600d5;
+        public static final int safety_site_conditions_work_area=0x7f0600cb;
+        public static final int safety_site_table_1=0x7f0600ca;
+        public static final int safety_site_table_2=0x7f0600cc;
+        public static final int safety_text_conditions=0x7f0600c9;
+        public static final int safety_text_lock_out=0x7f06004c;
+        public static final int safety_text_manual=0x7f0600bc;
+        public static final int safety_text_ppe=0x7f0600ad;
+        public static final int save_dialog_edit_text=0x7f0600e1;
         public static final int search_badge=0x7f060032;
         public static final int search_bar=0x7f060031;
         public static final int search_button=0x7f060033;
@@ -1279,24 +1392,24 @@ containing a value of this type.
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
-        public static final int signature_clear=0x7f0600b4;
-        public static final int signature_save=0x7f0600b3;
-        public static final int signature_view=0x7f0600a4;
+        public static final int signature_clear=0x7f0600f2;
+        public static final int signature_save=0x7f0600f1;
+        public static final int signature_view=0x7f0600e2;
         public static final int split_action_bar=0x7f06001e;
         public static final int submit_area=0x7f060039;
         public static final int tabMode=0x7f060002;
-        public static final int testing_table_layout_1=0x7f0600a5;
-        public static final int testing_table_layout_2=0x7f0600a6;
-        public static final int testing_table_layout_3=0x7f0600a7;
-        public static final int time_cell_complete=0x7f0600ab;
-        public static final int time_cell_hours=0x7f0600a9;
-        public static final int time_cell_minutes=0x7f0600aa;
-        public static final int time_cell_reason=0x7f0600ae;
-        public static final int time_cell_testing_complete=0x7f0600ad;
-        public static final int time_customer_signature_button=0x7f0600af;
-        public static final int time_employee_signature_button=0x7f0600b0;
-        public static final int time_table_layout_1=0x7f0600a8;
-        public static final int time_table_layout_2=0x7f0600ac;
+        public static final int testing_table_layout_1=0x7f0600e3;
+        public static final int testing_table_layout_2=0x7f0600e4;
+        public static final int testing_table_layout_3=0x7f0600e5;
+        public static final int time_cell_complete=0x7f0600e9;
+        public static final int time_cell_hours=0x7f0600e7;
+        public static final int time_cell_minutes=0x7f0600e8;
+        public static final int time_cell_reason=0x7f0600ec;
+        public static final int time_cell_testing_complete=0x7f0600eb;
+        public static final int time_customer_signature_button=0x7f0600ed;
+        public static final int time_employee_signature_button=0x7f0600ee;
+        public static final int time_table_layout_1=0x7f0600e6;
+        public static final int time_table_layout_2=0x7f0600ea;
         public static final int title=0x7f06002b;
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
@@ -1357,19 +1470,23 @@ containing a value of this type.
         public static final int equipment_fragment=0x7f030019;
         public static final int fragment_main=0x7f03001a;
         public static final int job_setup_fragment=0x7f03001b;
-        public static final int materials_cable=0x7f03001c;
-        public static final int materials_containment=0x7f03001d;
-        public static final int materials_data=0x7f03001e;
-        public static final int materials_fragment=0x7f03001f;
-        public static final int materials_lighting=0x7f030020;
-        public static final int materials_power=0x7f030021;
-        public static final int safety_fragment=0x7f030022;
-        public static final int save_dialog=0x7f030023;
-        public static final int signature_layout=0x7f030024;
-        public static final int support_simple_spinner_dropdown_item=0x7f030025;
-        public static final int testing_fragment=0x7f030026;
-        public static final int time_layout=0x7f030027;
-        public static final int time_sheet_list_text_view=0x7f030028;
+        public static final int lock_out=0x7f03001c;
+        public static final int materials_cable=0x7f03001d;
+        public static final int materials_containment=0x7f03001e;
+        public static final int materials_data=0x7f03001f;
+        public static final int materials_fragment=0x7f030020;
+        public static final int materials_lighting=0x7f030021;
+        public static final int materials_power=0x7f030022;
+        public static final int ppe=0x7f030023;
+        public static final int safety_fragment=0x7f030024;
+        public static final int safety_manual_handling=0x7f030025;
+        public static final int safety_site_conditions=0x7f030026;
+        public static final int save_dialog=0x7f030027;
+        public static final int signature_layout=0x7f030028;
+        public static final int support_simple_spinner_dropdown_item=0x7f030029;
+        public static final int testing_fragment=0x7f03002a;
+        public static final int time_layout=0x7f03002b;
+        public static final int time_sheet_list_text_view=0x7f03002c;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -2374,6 +2491,33 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.powerblock.timesheets:textAllCaps
         */
         public static final int CompatTextView_textAllCaps = 0;
+        /** Attributes that can be used with a CustomCheckBox.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CustomCheckBox_icon_image com.powerblock.timesheets:icon_image}</code></td><td></td></tr>
+           </table>
+           @see #CustomCheckBox_icon_image
+         */
+        public static final int[] CustomCheckBox = {
+            0x7f010070
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.powerblock.timesheets.R.attr#icon_image}
+          attribute's value can be found in the {@link #CustomCheckBox} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.powerblock.timesheets:icon_image
+        */
+        public static final int CustomCheckBox_icon_image = 0;
         /** Attributes that can be used with a CustomSpinner.
            <p>Includes the following attributes:</p>
            <table>

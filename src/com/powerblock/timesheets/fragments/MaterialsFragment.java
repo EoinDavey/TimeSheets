@@ -8,17 +8,11 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.powerblock.timesheets.ExcelHandler;
-import com.powerblock.timesheets.MainActivity;
 import com.powerblock.timesheets.R;
 
 public class MaterialsFragment extends Fragment {
 	
-	private ExcelHandler mExcelHandler;
-	private View mView;
-	
 	public MaterialsFragment(){
-		mExcelHandler = MainActivity.getExcelHandler();
 	}
 	
 	@Override

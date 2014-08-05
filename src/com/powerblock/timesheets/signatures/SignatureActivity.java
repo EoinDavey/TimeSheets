@@ -43,11 +43,20 @@ public class SignatureActivity extends ActionBarActivity {
 	
 	private void finishWithResult(int resultcode){
 		Intent i = new Intent();
-		if(custSig != null){
-			i.putExtra(SIG_IDENTIFIER_FILE, custSig.toString());
-			i.putExtra(SIG_IDENTIFIER_TYPE, mSigType);
-			setResult(resultcode, i);
-			finish();
+		if(mSigType.equalsIgnoreCase(SIG_IDENTIFIER_CUST)){
+			if(custSig != null){
+				i.putExtra(SIG_IDENTIFIER_FILE, custSig.toString());
+				i.putExtra(SIG_IDENTIFIER_TYPE, mSigType);
+				setResult(resultcode, i);
+				finish();
+			}
+		} else if(mSigType.equalsIgnoreCase(SIG_IDENTIFIER_EMP)){
+			if(custSig != null){
+				i.putExtra(SIG_IDENTIFIER_FILE, custSig.toString());
+				i.putExtra(SIG_IDENTIFIER_TYPE, mSigType);
+				setResult(resultcode, i);
+				finish();
+			}
 		} else {
 			i.putExtra(SIG_IDENTIFIER_FILE, "Error");
 			i.putExtra(SIG_IDENTIFIER_TYPE, mSigType);

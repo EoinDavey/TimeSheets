@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+	    <TextView
+	        android:id="@+id/safety_text_manual"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:text="No. 4 Manual Handling"
+	        android:textSize="@dimen/safety_font"
+	        android:layout_marginBottom="40dp" />
+	    
+	    <TableLayout 
+	        android:id="@+id/safety_manual_table_1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/safety_text_manual">
+	        <TableRow android:baselineAligned="false"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	            <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Type of load"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+	        </TableRow>
+	        <TableRow android:baselineAligned="false"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	            <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/safety_manual_load_types"
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:prompt="@string/prompt"
+		           	custom:entries="load_types" />
+	        </TableRow>
+	    </TableLayout>
+	    
+	    <TableLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:id="@+id/safety_manual_table_2"
+		    android:layout_centerHorizontal="true"
+		    android:layout_below="@id/safety_manual_table_1"
+		    android:layout_marginTop="40dp" >
+			<TableRow android:baselineAligned="false" 
+	            android:background="@drawable/cell_background"
+			    android:layout_height="wrap_content"
+			    android:layout_width="wrap_content">
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_1"
+			        custom:icon_image="@drawable/training"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_2"
+			        custom:icon_image="@drawable/map"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_3"
+			        custom:icon_image="@drawable/pallet_truck"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			</TableRow>
+			<TableRow android:baselineAligned="false" 
+	            android:background="@drawable/cell_background"
+			    android:layout_height="wrap_content"
+			    android:layout_width="wrap_content">
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_4" 
+			        custom:icon_image="@drawable/high_vis_safety"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_5"
+			        custom:icon_image="@drawable/caution"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_6" 
+			        custom:icon_image="@drawable/one_man"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			</TableRow>
+			<TableRow android:baselineAligned="false"
+	            android:background="@drawable/cell_background"
+			    android:layout_height="wrap_content"
+			    android:layout_width="wrap_content">
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_7"
+			        custom:icon_image="@drawable/two_man"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_8"
+			        custom:icon_image="@drawable/three_man"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_manual_checkbox_9" 
+			        custom:icon_image="@drawable/four_man"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+			</TableRow>
+		    
+		</TableLayout>
+	    
+	</RelativeLayout>
+</ScrollView>

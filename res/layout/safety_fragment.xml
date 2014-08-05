@@ -1,471 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
-	android:layout_marginTop="@dimen/activity_vertical_margin"
-	android:layout_marginBottom="@dimen/activity_vertical_margin" >
-	<RelativeLayout  android:layout_width="match_parent"
-	   android:layout_height="wrap_content">
-		<TableLayout 
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_alignParentTop="true"
-		    android:layout_centerHorizontal="true"
-		    android:id="@+id/safety_table_layout_1">
-		    <TableRow android:layout_width="match_parent"
-		        android:layout_height="match_parent">
-		        <LinearLayout android:layout_width="wrap_content"
-		            android:layout_height="match_parent"
-		            android:orientation="vertical"
-		            android:background="@drawable/cell_background">
-		            
-		            <ImageView android:layout_width="@dimen/safety_image_view"
-		                android:layout_height="@dimen/safety_image_view"
-		                android:src="@drawable/boots"
-		                android:layout_marginLeft="@dimen/safety_image_padding" 
-		                android:layout_marginRight="@dimen/safety_image_padding"
-		                android:layout_marginTop="@dimen/safety_image_padding"/>
-	
-		            <CheckBox
-		                android:layout_width="match_parent"
-		                android:layout_height="wrap_content" />
-	
-		        </LinearLayout>
-		        <LinearLayout android:layout_width="wrap_content"
-		            android:layout_height="match_parent"
-		            android:orientation="vertical"
-		            android:background="@drawable/cell_background">
-		            
-		            <ImageView android:layout_width="@dimen/safety_image_view"
-		                android:layout_height="@dimen/safety_image_view"
-		                android:layout_marginLeft="@dimen/safety_image_padding" 
-		                android:layout_marginRight="@dimen/safety_image_padding"
-		                android:src="@drawable/hard_hat"
-		                android:layout_marginTop="@dimen/safety_image_padding" />
-	
-		            <CheckBox
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content" />
-	
-		        </LinearLayout>
-		        <LinearLayout android:layout_width="wrap_content"
-		            android:layout_height="match_parent"
-		            android:orientation="vertical"
-		            android:background="@drawable/cell_background">
-		            
-		            <ImageView android:layout_width="@dimen/safety_image_view"
-		                android:layout_height="@dimen/safety_image_view"
-		                android:layout_marginLeft="@dimen/safety_image_padding" 
-		                android:layout_marginRight="@dimen/safety_image_padding"
-		                android:src="@drawable/gloves" 
-		                android:layout_marginTop="@dimen/safety_image_padding"/>
-	
-		            <CheckBox
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content" />
-	
-		        </LinearLayout>
-		        <LinearLayout android:layout_width="wrap_content"
-		            android:layout_height="match_parent"
-		            android:orientation="vertical"
-		            android:background="@drawable/cell_background">
-		            
-		            <ImageView android:layout_width="@dimen/safety_image_view"
-		                android:layout_height="@dimen/safety_image_view"
-		                android:layout_marginLeft="@dimen/safety_image_padding" 
-		                android:layout_marginRight="@dimen/safety_image_padding"
-		                android:src="@drawable/ear_protection"
-		                android:layout_marginTop="@dimen/safety_image_padding" />
-	
-		            <CheckBox
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content" />
-	
-		        </LinearLayout>
-		        <LinearLayout android:layout_width="wrap_content"
-		            android:layout_height="match_parent"
-		            android:orientation="vertical"
-		            android:background="@drawable/cell_background">
-		            
-		           <ImageView android:layout_width="@dimen/safety_image_view"
-		                android:layout_height="@dimen/safety_image_view"
-		                android:layout_marginLeft="@dimen/safety_image_padding" 
-		                android:layout_marginRight="@dimen/safety_image_padding"
-		                android:src="@drawable/glasses" 
-		                android:layout_marginTop="@dimen/safety_image_padding"/>
-	
-		            <CheckBox
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content" />
-	
-		        </LinearLayout>
-		        <LinearLayout android:layout_width="wrap_content"
-		            android:layout_height="match_parent"
-		            android:orientation="vertical"
-		            android:background="@drawable/cell_background">
-		            
-		           <ImageView android:layout_width="@dimen/safety_image_view"
-		                android:layout_height="@dimen/safety_image_view"
-		                android:layout_marginLeft="@dimen/safety_image_padding" 
-		                android:layout_marginRight="@dimen/safety_image_padding"
-		                android:src="@drawable/mask" 
-		                android:layout_marginTop="@dimen/safety_image_padding"/>
-	
-		            <CheckBox
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content" />
-	
-		        </LinearLayout>
-		        <LinearLayout android:layout_width="wrap_content"
-		            android:layout_height="match_parent"
-		            android:orientation="vertical"
-		            android:background="@drawable/cell_background">
-		            
-		            <ImageView android:layout_width="@dimen/safety_image_view"
-		                android:layout_height="@dimen/safety_image_view"
-		                android:layout_marginLeft="@dimen/safety_image_padding" 
-		                android:layout_marginRight="@dimen/safety_image_padding"
-		                android:src="@drawable/high_vis" 
-		                android:layout_marginTop="@dimen/safety_image_padding"/>
-	
-		            <CheckBox
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content" />
-	
-		        </LinearLayout>
-		    </TableRow>
-		</TableLayout>
-		
-		<TextView
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_centerHorizontal="true"
-		    android:layout_below="@id/safety_table_layout_1"
-		    android:textSize="@dimen/safety_font"
-		    android:text="No. 1 Site Conditions" />
-		
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_below="@id/safety_table_layout_1"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:id="@+id/safety_table_layout_2">
-		    <TableRow
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		    	android:baselineAligned="false">
-	
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Where the work is to be carried out"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Risk level, 1 is low 5 is high"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="@string/control_text"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-	
-		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent"
-		    	android:baselineAligned="false">
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:prompt="@string/prompt"
-		           	custom:entries="work_area" />
-		        <!-- custom:entries="work_area" -->
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="rating_array"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.MultiChoiceSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:multi_entries="site_condition_controls"
-		            android:prompt="@string/prompt" />
-		    </TableRow>
-		</TableLayout>
-		<TextView
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_centerHorizontal="true"
-		    android:layout_below="@id/safety_table_layout_2"
-		    android:textSize="@dimen/safety_font"
-		    android:text="No. 2 Working At Height" />
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_below="@id/safety_table_layout_2"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:id="@+id/safety_table_layout_3">
-		    <TableRow android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		    	android:baselineAligned="false">
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Type of Access"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Risk level, 1 is low 5 is high"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="@string/control_text"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        
-		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent"
-		    	android:baselineAligned="false">
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="access_types"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="rating_array"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.MultiChoiceSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:multi_entries="working_at_height_controls"
-		            android:prompt="@string/prompt" />
-		    </TableRow>
-		</TableLayout>
-		<TextView
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_centerHorizontal="true"
-		    android:layout_below="@id/safety_table_layout_3"
-		    android:textSize="@dimen/safety_font"
-		    android:text="No. 3 Manual Handling" />
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_below="@id/safety_table_layout_3"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:id="@+id/safety_table_layout_4">
-		    <TableRow android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		    	android:baselineAligned="false">
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Type of Load"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Risk level, 1 is low 5 is high"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="@string/control_text"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        
-		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="load_types"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="rating_array"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.MultiChoiceSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:multi_entries="manual_handling_controls"
-		            android:prompt="@string/prompt" />
-		    </TableRow>
-		</TableLayout>
-		<TextView
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_centerHorizontal="true"
-		    android:layout_below="@id/safety_table_layout_4"
-		    android:textSize="@dimen/safety_font"
-		    android:text="No. 4 Lock out tag out" />
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_below="@id/safety_table_layout_4"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:id="@+id/safety_table_layout_5">
-		    <TableRow android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		    	android:baselineAligned="false">
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="All Circuits"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Risk level, 1 is low 5 is high"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="@string/control_text"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        
-		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent">
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="lock_out_circuits"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="rating_array"
-		            android:prompt="@string/prompt" />
-		        <com.powerblock.timesheets.MultiChoiceSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:multi_entries="lock_out_controls"
-		            android:prompt="@string/prompt" />
-		    </TableRow>
-		</TableLayout>
-		<TextView
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_centerHorizontal="true"
-		    android:layout_below="@id/safety_table_layout_5"
-		    android:textSize="@dimen/safety_font"
-		    android:text="No. 5 Other" />
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_below="@id/safety_table_layout_5"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:id="@+id/safety_table_layout_6">
-		    <TableRow android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		    	android:baselineAligned="false">
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Other"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="Risk level, 1 is low 5 is high"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        <TextView
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:text="@string/control_text"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
-		        
-		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent"
-		        android:baselineAligned="false">
-		        <EditText
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:hint="Enter Text"/>
-		        <com.powerblock.timesheets.CustomSpinner
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="rating_array"
-		            android:prompt="@string/prompt"/>
-		        <EditText
-		            android:layout_width="@dimen/safety_cell_width"
-		            android:layout_height="@dimen/safety_cell_height"
-		            android:textSize="@dimen/safety_font"
-		            android:background="@drawable/cell_background"
-		            android:hint="Enter Text"/>
-		    </TableRow>
-		</TableLayout>
-	</RelativeLayout>
-</ScrollView>
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/safety_fragment_table_1" >
+        
+        <!-- row 1 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_fragment_layout_padding" >
+            
+            <Button
+                android:layout_width="@dimen/main_fragment_button_width_dimen"
+                android:layout_height = "@dimen/main_fragment_button_height_dimen"
+                android:text="Site Conditions"
+                android:textSize="@dimen/main_fragment_button_font"
+                android:layout_marginRight="@dimen/main_fragment_layout_padding"
+                android:onClick="showSiteConditions"/>
+            <Button
+                android:layout_width="@dimen/main_fragment_button_width_dimen"
+                android:layout_height = "@dimen/main_fragment_button_height_dimen"
+                android:text="PPE"
+                android:textSize="@dimen/main_fragment_button_font"
+                android:onClick="showPPE" />
+            
+        </LinearLayout>
+        <!-- row 2 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_fragment_layout_padding"
+             >
+            <Button
+                android:layout_width="@dimen/main_fragment_button_width_dimen"
+                android:layout_height = "@dimen/main_fragment_button_height_dimen"
+                android:text="Lock out tag out"
+                android:textSize="@dimen/main_fragment_button_font"
+                android:layout_marginRight="@dimen/main_fragment_layout_padding"
+                android:onClick="showLockOut" />
+
+            <Button
+                android:layout_width="@dimen/main_fragment_button_width_dimen"
+                android:layout_height="@dimen/main_fragment_button_height_dimen"
+                android:text="Manual Handling"
+                android:textSize="@dimen/main_fragment_button_font"
+                android:onClick="showManualHandling" />
+
+        </LinearLayout>
+        <!-- row 3 -->
+        <LinearLayout 
+            android:orientation = "horizontal"
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_fragment_layout_padding" >
+            <Button
+                android:layout_width="@dimen/main_fragment_button_width_dimen"
+                android:layout_height = "@dimen/main_fragment_button_height_dimen"
+                android:text="Working At Height"
+                android:textSize="@dimen/main_fragment_button_font"
+                android:layout_marginRight="@dimen/main_fragment_layout_padding"
+                android:onClick="showWorkingAtHeight" />
+            <Button
+                android:layout_width="@dimen/main_fragment_button_width_dimen"
+                android:layout_height = "@dimen/main_fragment_button_height_dimen"
+                android:text="Other"
+                android:textSize="@dimen/main_fragment_button_font"
+                android:onClick="showSafetyOther" />
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+</RelativeLayout>

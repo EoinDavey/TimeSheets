@@ -20,4 +20,6 @@
     <dimen name="testing_cell_width">90dp</dimen>
     <dimen name="testing_cell_height">30dp</dimen>
     <dimen name="time_sheet_list_padding">5dp</dimen>
+    <dimen name="safety_image_dimen">150dp</dimen>
+    <dimen name="safety_ppe_image_dimen">100dp</dimen>
 </resources>

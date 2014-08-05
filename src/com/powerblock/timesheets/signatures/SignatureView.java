@@ -99,15 +99,17 @@ public class SignatureView extends View {
 		this.setDrawingCacheBackgroundColor(Color.WHITE);
 		this.buildDrawingCache();
 		Bitmap b = this.getDrawingCache();
+		File sig = null;
 		if(b == null){
 			Log.v("Test","Bitmap is null");
 		}
 		try{
 			if(mSigType.equalsIgnoreCase(SignatureActivity.SIG_IDENTIFIER_CUST)){
-				out = new FileOutputStream(custSig);
+				sig = custSig;
 			} else if(mSigType.equalsIgnoreCase(SignatureActivity.SIG_IDENTIFIER_EMP)){
-				out = new FileOutputStream(empSig);
+				sig = empSig;
 			}
+			out = new FileOutputStream(sig);
 			if(b.compress(Bitmap.CompressFormat.PNG, 90, out)){
 				Log.v("Test","Compressed");
 			}
@@ -120,7 +122,7 @@ public class SignatureView extends View {
 				e.printStackTrace();
 			}
 		}
-		return custSig;
+		return sig;
 	}
 	
 	public void Clear(){

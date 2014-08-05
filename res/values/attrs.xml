@@ -6,4 +6,7 @@
     <declare-styleable name="CustomSpinner">
         <attr name="entries" format="string"/>
     </declare-styleable>
+    <declare-styleable name="CustomCheckBox">
+        <attr name="icon_image" format="integer"/>
+    </declare-styleable>
 </resources>

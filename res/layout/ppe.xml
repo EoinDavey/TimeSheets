@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+        <TextView
+        android:id="@+id/safety_text_ppe"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="PPE required"
+        android:textSize="@dimen/safety_font"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp" />
+        
+        <TableLayout
+        android:id="@+id/safety_ppe_table_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/safety_text_ppe"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true" >
+        
+        	<TableRow android:baselineAligned="false"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:background="@drawable/cell_background"
+            	android:padding="2dp" >
+            	<com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_1"
+			        custom:icon_image="@drawable/boots"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+	            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_2"
+			        custom:icon_image="@drawable/hard_hat"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+	            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_3"
+			        custom:icon_image="@drawable/gloves"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+            </TableRow>
+            <TableRow android:baselineAligned="false"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:background="@drawable/cell_background"
+            	android:padding="2dp" >
+            	<com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_4"
+			        custom:icon_image="@drawable/ear_protection"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+	            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_5"
+			        custom:icon_image="@drawable/glasses"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+	            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_6"
+			        custom:icon_image="@drawable/high_vis"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+            </TableRow>
+            <TableRow android:baselineAligned="false"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:background="@drawable/cell_background"
+            	android:padding="2dp" >
+            	<com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_7"
+			        custom:icon_image="@drawable/harness"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+	            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_8"
+			        custom:icon_image="@drawable/mask"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+	            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_9"
+			        custom:icon_image="@drawable/gas_mask"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+            </TableRow>
+            <TableRow android:baselineAligned="false"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:background="@drawable/cell_background"
+            	android:padding="2dp" >
+            	<com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_10"
+			        custom:icon_image="@drawable/lock"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+	            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_ppe_checkbox_11"
+			        custom:icon_image="@drawable/suit"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"/>
+	            <com.powerblock.timesheets.CustomEditText android:id="@+id/safety_ppe_checkbox_12"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_ppe_image_dimen"
+			        android:layout_height="@dimen/safety_ppe_image_dimen"
+			        android:hint="Add"/>
+            </TableRow>
+        </TableLayout>
+        
+    </RelativeLayout>
+    
+
+</ScrollView>

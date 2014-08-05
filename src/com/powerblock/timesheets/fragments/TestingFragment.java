@@ -29,6 +29,7 @@ public class TestingFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
+			getActivity().getSupportFragmentManager().popBackStack();
 			
 			return true;
 		}

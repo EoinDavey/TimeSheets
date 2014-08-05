@@ -65,7 +65,7 @@ public class MainActivity extends ActionBarActivity {
 		}
 		workingTemplate = new File(myDir, workingTemplateFileName);
 		checkAndCreateTemplate();
-		mExcelHandler = new ExcelHandler();
+		mExcelHandler = new ExcelHandler(this);
 		mXmlHandler = new XmlHandler(this);
 	}
 	
@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity {
 		if(mXmlHandler != null){
 			return mXmlHandler;
 		} else {
-			Toast.makeText(thisActivity, "Error, please contact developer", Toast.LENGTH_LONG).show();
+			toastError();
 			return null;
 		}
 	}
@@ -82,9 +82,13 @@ public class MainActivity extends ActionBarActivity {
 		if(mExcelHandler != null){
 			return mExcelHandler;
 		} else {
-			Toast.makeText(thisActivity, "Error, please contact developer", Toast.LENGTH_LONG).show();
+			toastError();
 			return null;
 		}
+	}
+
+	public static void toastError() {
+		Toast.makeText(thisActivity, "Error, please contact developer", Toast.LENGTH_LONG).show();
 	}
 	
 	public void updateCurrentStrings(){
@@ -101,8 +105,10 @@ public class MainActivity extends ActionBarActivity {
 				downTask.cancel(true);
 			}
 		});
-		downTask.execute("https://docs.google.com/uc?export=download&id=0B7ZA1yW79zKtdlYxTWpNemcwN2c");
-		// Old link downTask.execute("https://docs.google.com/uc?export=download&id=0B7ZA1yW79zKtNmRHWjFTMkNwREk");
+		downTask.execute("https://docs.google.com/uc?export=download&id=0B2yJeDqIJEEhNzcwTEpNTGVkRW8");
+		//https://docs.google.com/uc?export=download&id=0B7ZA1yW79zKtdlYxTWpNemcwN2c
+		workingTemplate.delete();
+		checkAndCreateTemplate();
 	}
 	
 	public void checkAndCreateTemplate(){
@@ -175,6 +181,22 @@ public class MainActivity extends ActionBarActivity {
 	
 	public void showMaterialsCable(View v){
 		show(R.id.container, new MaterialsCable(), "Cable");
+	}
+	
+	public void showSiteConditions(View v){
+		show(R.id.container, new SiteConditionsFragment(), "Site Conditions");
+	}
+	
+	public void showPPE(View v){
+		show(R.id.container, new PPEFragment(), "PPE");
+	}
+	
+	public void showLockOut(View v){
+		show(R.id.container, new LockOutFragment(), "Lock Out");
+	}
+	
+	public void showManualHandling(View v){
+		show(R.id.container, new ManualHandlingFragment(), "Manual Handling");
 	}
 	
 	public void saveTimeSheet(String fileName){
@@ -308,7 +330,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	public void emailFile(String filename){
-		Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "eoin.davey@yahoo.com", null));
+		Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "emcgoffice@gmail.com", null));
 		emailIntent.putExtra(Intent.EXTRA_SUBJECT, "File: " + filename);
 		File timeSheet = new File(outputDir, filename);
 		Uri uri = Uri.parse("file://" + timeSheet.toString());

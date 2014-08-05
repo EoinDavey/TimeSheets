@@ -65,6 +65,7 @@ public class TimeFragment extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == R.id.action_save){
 			mExcelHandler.write(ExcelHandler.EXCEL_SECTION_TIME,mView);
+			getActivity().getSupportFragmentManager().popBackStack();
 			return true;
 		}
 		return false;
@@ -77,7 +78,7 @@ public class TimeFragment extends Fragment {
 				String code = data.getStringExtra(SignatureActivity.SIG_IDENTIFIER_FILE);
 				String type = data.getStringExtra(SignatureActivity.SIG_IDENTIFIER_TYPE);
 				if(!code.equalsIgnoreCase("Error")){
-					mExcelHandler.saveSignature(code, type);
+					mExcelHandler.saveImage(code, type);
 				}
 			}
 		}
