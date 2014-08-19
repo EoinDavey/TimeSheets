@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+	    <TextView
+	        android:id="@+id/safety_text_height"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:text="No. 5 Working At Height"
+	        android:textSize="@dimen/safety_font"
+	        android:layout_marginBottom="40dp" />
+	    
+	    <TableLayout 
+	        android:id="@+id/safety_height_table_1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/safety_text_height">
+	        <TableRow android:baselineAligned="false"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	            <TextView
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:text="Type of access"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal" />
+	        </TableRow>
+	        <TableRow android:baselineAligned="false"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	            <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/safety_height_access"
+		            android:layout_width="@dimen/safety_cell_width"
+		            android:layout_height="@dimen/safety_cell_height"
+		            android:textSize="@dimen/safety_font"
+		            android:background="@drawable/cell_background"
+		            android:prompt="@string/prompt"
+		           	custom:entries="access_types" />
+	        </TableRow>
+	    </TableLayout>
+	    
+	    <TableLayout
+	        android:id="@+id/safety_height_table_2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/safety_height_table_1"
+	        android:layout_marginTop="40dp" >
+        <TableRow android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_background"
+            android:padding="2dp" >
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_1"
+			        custom:icon_image="@drawable/railing"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_2"
+			        custom:icon_image="@drawable/traffic_cone"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_3"
+			        custom:icon_image="@drawable/crossing_sign"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_4"
+			        custom:icon_image="@drawable/cherry_picker"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+        </TableRow>
+        <TableRow android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_background"
+            android:padding="2dp" >
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_5"
+			        custom:icon_image="@drawable/height_harness"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_6"
+			        custom:icon_image="@drawable/high_vis_safety"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_7"
+			        custom:icon_image="@drawable/ladder"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_8"
+			        custom:icon_image="@drawable/overhead_lines"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+        </TableRow>
+        <TableRow android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_background"
+            android:padding="2dp" >
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_9"
+			        custom:icon_image="@drawable/ladder_inspection"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_10"
+			        custom:icon_image="@drawable/ladder_clearance"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_11"
+			        custom:icon_image="@drawable/ladder_2"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_12"
+			        custom:icon_image="@drawable/two_man_ladder"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+        </TableRow>
+        <TableRow android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_background"
+            android:padding="2dp" >
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_13"
+			        custom:icon_image="@drawable/cherry_picker_min"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"/>
+            <com.powerblock.timesheets.CustomEditText android:id="@+id/safety_height_checkbox_14"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"
+			        android:hint="Add text"/>
+            <com.powerblock.timesheets.CustomEditText android:id="@+id/safety_height_checkbox_15"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"
+			        android:hint="Add text"/>
+            <com.powerblock.timesheets.CustomEditText android:id="@+id/safety_height_checkbox_16"
+			     	android:padding="2dp"
+			        android:background="@drawable/cell_background"
+			        android:layout_width="@dimen/safety_image_dimen"
+			        android:layout_height="@dimen/safety_image_dimen"
+			        android:hint="Add text"/>
+        </TableRow>
+    </TableLayout>    
+	</RelativeLayout>
+</ScrollView>

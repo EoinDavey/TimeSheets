@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets" 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textSize="@dimen/safety_font"
+        android:text="Test type" />
+    <com.powerblock.timesheets.CustomSpinner 
+        android:id="@+id/testing_test_type_spinner_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="@dimen/safety_font"
+        android:prompt="@string/prompt"
+        custom:entries="testing_test_type"/>
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:textSize="@dimen/safety_font"
+        android:textStyle="bold"
+        android:text="Result"
+        />
+    <com.powerblock.timesheets.CustomSpinner 
+        android:id="@+id/testing_test_type_spinner_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="@dimen/safety_font"
+        android:prompt="@string/prompt"
+        custom:entries="testing_result"/>
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/safety_font"
+        android:text="Or"/>
+    <com.powerblock.timesheets.CustomEditText 
+        android:id="@+id/testing_test_type_spinner_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/safety_font"
+        android:hint="Enter text"/>
+    
+
+</LinearLayout>

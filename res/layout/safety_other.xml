@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TableLayout 
+		android:id="@+id/safety_other_table_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true">
+        <TableRow android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:text="Other"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:gravity="center_vertical|center_horizontal" />
+            <TextView
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:text="Risk Level: 1 is low 5 is high"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:gravity="center_vertical|center_horizontal" />
+            <TextView
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:text="Additional Controls"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:gravity="center_vertical|center_horizontal" />
+        </TableRow>
+        <TableRow android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_1"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomSpinner 
+           	    android:id="@+id/safety_other_text_2"
+           	    android:layout_width="@dimen/safety_cell_width"
+           	    android:layout_height="@dimen/safety_cell_height"
+           	    android:background="@drawable/cell_background"
+           	    custom:entries="rating_array"/>
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_3"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+        </TableRow>
+    </TableLayout>
+    
+    <TableLayout 
+		android:id="@+id/safety_other_table_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/safety_other_table_1">
+        <TableRow 
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_4"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_5"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_6"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_7"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_8"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_9"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_10"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_11"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_12"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_13"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_14"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_15"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_16"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_17"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_18"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_19"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_20"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+           	<com.powerblock.timesheets.CustomEditText
+	            android:id="@+id/safety_other_text_21"
+	            android:layout_width="@dimen/safety_cell_width"
+	            android:layout_height="@dimen/safety_cell_height"
+	            android:textSize="@dimen/safety_font"
+	            android:background="@drawable/cell_background"
+	            android:hint="Enter Text" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

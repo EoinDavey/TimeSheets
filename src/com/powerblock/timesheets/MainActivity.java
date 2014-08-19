@@ -8,8 +8,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import com.powerblock.timesheets.fragments.*;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -31,6 +29,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.powerblock.timesheets.fragments.MainFragment;
+import com.powerblock.timesheets.fragments.MaterialsFragment;
+import com.powerblock.timesheets.fragments.SafetyFragment;
+import com.powerblock.timesheets.fragments.SectionTemplate;
+import com.powerblock.timesheets.fragments.TimeFragment;
 
 @SuppressLint("InflateParams")
 public class MainActivity extends ActionBarActivity {
@@ -105,7 +109,8 @@ public class MainActivity extends ActionBarActivity {
 				downTask.cancel(true);
 			}
 		});
-		downTask.execute("https://docs.google.com/uc?export=download&id=0B2yJeDqIJEEhNzcwTEpNTGVkRW8");
+		downTask.execute("https://docs.google.com/uc?export=download&id=0B60096yO2RWEelR6RmdsZk1GbXZnbGxNX0ZucEp2R0dyb2JV");
+		//downTask.execute("https://docs.google.com/uc?export=download&id=0B2yJeDqIJEEhNzcwTEpNTGVkRW8");
 		//https://docs.google.com/uc?export=download&id=0B7ZA1yW79zKtdlYxTWpNemcwN2c
 		workingTemplate.delete();
 		checkAndCreateTemplate();
@@ -135,68 +140,88 @@ public class MainActivity extends ActionBarActivity {
 		}
 	}
 	
-	public void show(int id, Fragment frag, String back){
-		getSupportFragmentManager().beginTransaction().replace(id, frag).addToBackStack(back).commit();
+	public void showTable(Fragment frag, String back){
+		getSupportFragmentManager().beginTransaction().replace(R.id.container, frag).addToBackStack(back).commit();
+	}
+	
+	public void show(String section){
+		getSupportFragmentManager().beginTransaction().replace(R.id.container, new SectionTemplate(section)).addToBackStack(section).commit();
 	}
 	
 	public void showJobSetup(View v){
-		show(R.id.container, new JobSetupFragment(),"Job Setup");
+		show(ExcelHandler.EXCEL_SECTION_JOB_SETUP);
 	}
 	
 	public void showSafety(View v){
-		show(R.id.container, new SafetyFragment(),"Safety");
+		showTable(new SafetyFragment(), ExcelHandler.EXCEL_SECTION_SAFETY);
 	}
 	
 	public void showTime(View v){
-		show(R.id.container, new TimeFragment(),"Time");
+		showTable(new TimeFragment(),ExcelHandler.EXCEL_SECTION_TIME);
 	}
 	
 	public void showEquipment(View v){
-		show(R.id.container, new EquipmentFragment(),"Equipment");
+		show(ExcelHandler.EXCEL_SECTION_EQUIPMENT);
 	}
 	
 	public void showMaterials(View v){
-		show(R.id.container, new MaterialsFragment(),"Materials");
+		showTable(new MaterialsFragment(), ExcelHandler.EXCEL_SECTION_MATERIALS);
 	}
 	
 	public void showTesting(View v){
-		show(R.id.container, new TestingFragment(),"Testing");
+		show(ExcelHandler.EXCEL_SECTION_TESTING);
 	}
 	
 	public void showMaterialsLighting(View v){
-		show(R.id.container, new MaterialsLighting(),"Materials");
+		show(ExcelHandler.EXCEL_SECTION_MATERIALS_LIGHTING);
 	}
 	
 	public void showMaterialsPower(View v){
-		show(R.id.container,new MaterialsPower(), "Power");
+		show(ExcelHandler.EXCEL_SECTION_MATERIALS_POWER);
 	}
 	
 	public void showMaterialsData(View v){
-		show(R.id.container, new MaterialsData(), "Data");
+		show(ExcelHandler.EXCEL_SECTION_MATERIALS_DATA);
 	}
 	
 	public void showMaterialsContainment(View v){
-		show(R.id.container, new MaterialsContainment(), "Containment");
+		show(ExcelHandler.EXCEL_SECTION_MATERIALS_CONTAINMENT);
 	}
 	
 	public void showMaterialsCable(View v){
-		show(R.id.container, new MaterialsCable(), "Cable");
+		show(ExcelHandler.EXCEL_SECTION_MATERIALS_CABLE);
 	}
 	
 	public void showSiteConditions(View v){
-		show(R.id.container, new SiteConditionsFragment(), "Site Conditions");
+		show(ExcelHandler.EXCEL_SECTION_SAFETY_SITE_CONDITIONS);
 	}
 	
 	public void showPPE(View v){
-		show(R.id.container, new PPEFragment(), "PPE");
+		show(ExcelHandler.EXCEL_SECTION_SAFETY_PPE);
 	}
 	
 	public void showLockOut(View v){
-		show(R.id.container, new LockOutFragment(), "Lock Out");
+		show(ExcelHandler.EXCEL_SECTION_SAFETY_LOCK_OUT);
+	}
+	
+	public void showSafetyOther(View v){
+		show(ExcelHandler.EXCEL_SECTION_SAFETY_OTHER);
 	}
 	
 	public void showManualHandling(View v){
-		show(R.id.container, new ManualHandlingFragment(), "Manual Handling");
+		show(ExcelHandler.EXCEL_SECTION_SAFETY_MANUAL_HANDLING);
+	}
+	
+	public void showWorkingAtHeight(View v){
+		show(ExcelHandler.EXCEL_SECTION_SAFETY_WORKING_AT_HEIGHT);
+	}
+	
+	public void showTestType(View v){
+		show(ExcelHandler.EXCEL_SECTION_TESTING_TYPE);
+	}
+	
+	public void showDBDetails(View v){
+		show(ExcelHandler.EXCEL_SECTION_TESTING_DBDETAILS);
 	}
 	
 	public void saveTimeSheet(String fileName){
@@ -205,7 +230,6 @@ public class MainActivity extends ActionBarActivity {
 			return;
 		}
 		Log.v("Test","Save called, filename = " + fileName);
-		//workingTemplate.delete();
 		InputStream in = null;
 		OutputStream out = null;
 		File outputDir = new File(MainActivity.outputDir);

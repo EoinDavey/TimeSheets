@@ -3,25 +3,30 @@ package com.powerblock.timesheets;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.CheckBox;
 
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 public class CustomCheckBox extends CheckBox implements PBSpinner {
-	private Drawable mIcon;
-	private boolean mNormalMode = false;
-
+	private BitmapDrawable mIcon;
 	public CustomCheckBox(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		Log.v("Test","instantiated");
 		init(attrs);
 	}
 	
 	public CustomCheckBox(Context context, AttributeSet attrs, int i) {
 		super(context, attrs);
+		Log.v("Test","instantiated");
 		init(attrs);
 	}
 	
@@ -30,57 +35,73 @@ public class CustomCheckBox extends CheckBox implements PBSpinner {
 		super.setButtonDrawable(d);
 	}
 	
-	@SuppressWarnings("deprecation")
 	private void init(AttributeSet attrs){
 		TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.CustomCheckBox);
-		mIcon = a.getDrawable(R.styleable.CustomCheckBox_icon_image);
+		Log.v("Test","mIcon set");
+		mIcon = (BitmapDrawable) a.getDrawable(R.styleable.CustomCheckBox_icon_image);
 		a.recycle();
-		if(mIcon == null){
-			mNormalMode = true;
-		} else {
+		drawUncheckedIcon();
+		setButtonDrawable(new ColorDrawable(Color.WHITE));
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	private void drawUncheckedIcon(){
+		Drawable background = getResources().getDrawable(R.drawable.cell_background);
+		background.setBounds(0, 0, 258, 258);
+		if(mIcon != null){
+			mIcon.setBounds(10,10,250,250);
+			Bitmap b = Bitmap.createBitmap(258,258, Bitmap.Config.ARGB_8888);
+			Canvas c = new Canvas(b);
+			background.draw(c);
+			Log.v("Test", "Draw called");
+			mIcon.draw(c);
 			if(android.os.Build.VERSION.SDK_INT < 16){
-				this.setBackgroundDrawable(mIcon);
+				this.setBackgroundDrawable(new BitmapDrawable(getResources(), b));
 			} else {
-				this.setBackground(mIcon);
+				this.setBackground(new BitmapDrawable(getResources(), b));
 			}
-			setButtonDrawable(new ColorDrawable(Color.WHITE));
 		}
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Override
 	public void setChecked(boolean checked) {
-		if(mNormalMode){
-			super.setChecked(checked);
-		} else {
-			if(checked){
-				Drawable d = getResources().getDrawable(R.drawable.checked);
-				if(android.os.Build.VERSION.SDK_INT < 16){
-					this.setBackgroundDrawable(d);
-				} else {
-					this.setBackground(d);
-				}
-				
+		if(checked){
+			if(android.os.Build.VERSION.SDK_INT < 16){
+				this.setBackgroundDrawable(drawCheckedIcon());
 			} else {
-				if(android.os.Build.VERSION.SDK_INT < 16){
-					this.setBackgroundDrawable(mIcon);
-				} else {
-					this.setBackground(mIcon);
-				}
+				this.setBackground(drawCheckedIcon());
 			}
-			super.setChecked(checked);
+			
+		} else {
+			drawUncheckedIcon();
 		}
+		super.setChecked(checked);
+	}
+	
+	private Drawable drawCheckedIcon(){
+		Drawable background = getResources().getDrawable(R.drawable.cell_background);
+		Drawable d = getResources().getDrawable(R.drawable.checked_2);
+		background.setBounds(0,0,258,258);
+		d.setBounds(new Rect(10,10,250,250));
+		mIcon.setBounds(10,10,250,250);
+		Bitmap b = Bitmap.createBitmap(258, 258,Bitmap.Config.ARGB_8888);
+		Log.v("Test", "Height: " + String.valueOf(mIcon.getBitmap().getHeight()) + " Width: " + String.valueOf(mIcon.getBitmap().getWidth()));
+		Canvas c = new Canvas(b);
+		background.draw(c);
+		mIcon.draw(c);
+		d.draw(c);
+		return new BitmapDrawable(getResources(),b);
 	}
 
 	@Override
 	public String getString() {
-		String result;
 		if(this.isChecked()){
-			result = "YES";
+			return "YES";
 		} else {
-			result = "NO";
+			return "NO";
 		}
-		return result;
 	}
 
 	@Override

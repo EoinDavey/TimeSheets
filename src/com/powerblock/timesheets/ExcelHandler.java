@@ -5,8 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import jxl.Cell;
 import jxl.CellType;
@@ -24,6 +22,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,6 +60,12 @@ public class ExcelHandler {
 	public static final String EXCEL_SECTION_SAFETY_MANUAL_HANDLING="Manual Handling";
 	public static final String EXCEL_SECTION_SAFETY_WORKING_AT_HEIGHT="Working at height";
 	public static final String EXCEL_SECTION_SAFETY_OTHER = "Other";
+	public static final String EXCEL_SECTION_TESTING_TYPE = "Testing Type";
+	public static final String EXCEL_SECTION_TESTING_DBDETAILS = "DB Details";
+	public static final String EXCEL_SECTION_TESTING_PRECONNECTION = "pre-connection";
+	public static final String EXCEL_SECTION_TESTING_POSTCONNECTION = "post-connection";
+	public static final String EXCEL_SECTION_TESTING_SIGNATURE = "Testing Signature";
+	public static final String EXCEL_SECTION_TESTING_QCNUMBER = "QC Number";
 
 	//Cell coordinates
 	private final static int[] cJobType = {1,1};
@@ -135,30 +140,21 @@ public class ExcelHandler {
 		{6,76},{6,77},{6,78}
 	};
 	
-	/*private final static int[] rSafetyIds = {
-		R.id.safety_cell_checkbox_1,R.id.safety_cell_checkbox_2,R.id.safety_cell_checkbox_3,
-		R.id.safety_cell_checkbox_4,R.id.safety_cell_checkbox_5,R.id.safety_cell_checkbox_6,
-		R.id.safety_cell_checkbox_7,R.id.safety_cell_checkbox_8,R.id.safety_cell_checkbox_9,
-		R.id.safety_cell_checkbox_10,R.id.safety_cell_checkbox_11,R.id.safety_cell_checkbox_12,
-		R.id.safety_cell_checkbox_13,R.id.safety_cell_checkbox_14,R.id.safety_cell_checkbox_15,
-		R.id.safety_cell_checkbox_16,R.id.safety_cell_work_area, R.id.safety_cell_site_rating,
-		R.id.safety_cell_site_controls, R.id.safety_cell_access_types, R.id.safety_cell_access_rating,
-		R.id.safety_cell_access_controls, R.id.safety_cell_load_type, R.id.safety_cell_load_rating,
-		R.id.safety_cell_lock_out, R.id.safety_cell_lock_out_rating, R.id.safety_cell_lock_out_controls,
-		R.id.safety_cell_other, R.id.safety_cell_other_rating, R.id.safety_cell_other_controls
-	}; */
+	private final static int[] rSafetyHeightIds={
+		R.id.safety_height_access,
+		R.id.safety_height_checkbox_1,R.id.safety_height_checkbox_2,R.id.safety_height_checkbox_3,R.id.safety_height_checkbox_4,
+		R.id.safety_height_checkbox_5,R.id.safety_height_checkbox_6,R.id.safety_height_checkbox_7,R.id.safety_height_checkbox_8,
+		R.id.safety_height_checkbox_9,R.id.safety_height_checkbox_10,R.id.safety_height_checkbox_11,R.id.safety_height_checkbox_12,
+		R.id.safety_height_checkbox_13,R.id.safety_height_checkbox_14,R.id.safety_height_checkbox_15,R.id.safety_height_checkbox_16,
+	};
 	
-	/*private final static int[][] cSafetyCells = {
-		{1,65},{2,65},{3,65},
-		{1,67},{2,67},{3,67},
-		{1,69},{2,69},{3,69},
-		{1,56},{2,56},{3,56},{4,56},{5,56},{6,56},{7,56},
-		{1,59},{2,59},{3,59},
-		{1,62},{2,62},{3,62},
-		{1,65},{2,65},
-		{1,74},{2,74},{3,74},
-		{1,77},{2,77},{3,77}
-	};*/
+	private final static int[][] cSafetyHeightCells = {
+		{2,81},
+		{2,82},{2,83},{2,84},{2,85},
+		{4,82},{4,83},{4,84},{4,85},
+		{6,82},{6,83},{6,84},{6,85},
+		{8,82},{8,83},{8,84},{8,85},
+	};
 
 	private final static int[][] cEquipmentCells = 
 		{{1,7},{1,11},{1,12},{1,13},{1,8},{1,9}};
@@ -251,7 +247,7 @@ public class ExcelHandler {
 		R.id.time_cell_testing_complete, R.id.time_cell_reason
 	};
 	
-	private final static int[] cSigImage = {1,2};
+	private final static int[][] cSigImage = {{1,2},{1,10}};
 
 
 	public ExcelHandler(Activity parent){
@@ -261,13 +257,16 @@ public class ExcelHandler {
 		mParent = parent;
 	}
 	
-	public ArrayList<int[][]> getCells(String section){
+	public int[][][] getCells(String section){
 		int[][] cells;
 		int[][] ids = new int[1][];
-		List<int[][]> list = new ArrayList<int[][]>();
+		int[][] sheet = new int[1][];
+		int[][][] list = new int[2][][];
+		//List<int[][]> list = new ArrayList<int[][]>();
 		if(section.equalsIgnoreCase(EXCEL_SECTION_JOB_SETUP)){
 			cells = cJobSetupCells;
 			ids[0] = rJobSetupIds;
+			sheet[0][0] = 1;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_EQUIPMENT)){
 			cells = cEquipmentCells;
 			ids[0] = rEquipmentIds;
@@ -301,12 +300,17 @@ public class ExcelHandler {
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_SAFETY_MANUAL_HANDLING)){
 			cells = cSafetyManualCells;
 			ids[0] = rSafetyManualIds;
+		} else if(section.equalsIgnoreCase(EXCEL_SECTION_SAFETY_WORKING_AT_HEIGHT)){
+			cells = cSafetyHeightCells;
+			ids[0] = rSafetyHeightIds;
 		} else {
 			return null;
 		}
-		list.add(cells);
-		list.add(ids);
-		return (ArrayList<int[][]>) list;
+		list[0] = cells;
+		list[1] = ids;
+		//list.add(cells);
+		//list.add(ids);
+		return list;
 	}
 
 	public void write(String section, View givenView){
@@ -328,12 +332,13 @@ public class ExcelHandler {
 	} 
 
 	public View read(LayoutInflater inflater, ViewGroup container, int layout, String section){
-		ArrayList<int[][]> list = getCells(section);
+		//ArrayList<int[][]> list = getCells(section);
+		int[][][] list = getCells(section);
 		if(list == null){
 			return inflater.inflate(layout, container, false);
 		}
-		int[][] cells = list.get(0);
-		int[] ids = list.get(1)[0];
+		int[][] cells = list[0];
+		int[] ids = list[1][0];
 		Workbook w = getWorkbook();
 		Sheet s = w.getSheet(0);
 		View v = inflater.inflate(layout, container, false);
@@ -405,12 +410,12 @@ public class ExcelHandler {
 		
 		@Override
 		protected void onPreExecute() {
-			mProgressDialog.show();
+			mImageProgressDialog.show();
 		}
 		
 		@Override
 		protected void onPostExecute(String result) {
-			mProgressDialog.dismiss();
+			mImageProgressDialog.dismiss();
 			if(result == null){
 				Toast.makeText(mParent, "Saved..", Toast.LENGTH_SHORT).show();
 			}
@@ -418,9 +423,9 @@ public class ExcelHandler {
 		
 		@Override
 		protected void onProgressUpdate(Integer... values) {
-			mProgressDialog.setIndeterminate(false);
-	        mProgressDialog.setMax(100);
-	        mProgressDialog.setProgress(values[0]);
+			mImageProgressDialog.setIndeterminate(false);
+	        mImageProgressDialog.setMax(100);
+	        mImageProgressDialog.setProgress(values[0]);
 		}
 
 		@Override
@@ -440,8 +445,24 @@ public class ExcelHandler {
 			publishProgress(20);
 			WritableWorkbook w = getWritableWorkbook();
 			WritableSheet s = w.getSheet(iType);
-			WritableImage i = new WritableImage(cSigImage[0], cSigImage[1], 6, height, new File(fileLoc));
+			WritableImage i = new WritableImage(cSigImage[0][0], cSigImage[0][1], 6, height, new File(fileLoc));
 			s.addImage(i);
+			WritableCell dateCell = s.getWritableCell(cSigImage[1][0], cSigImage[1][1]);
+			Time now = new Time();
+			now.setToNow();
+			if(isLabel(dateCell)){
+				Label l = (Label) dateCell;
+				l.setString(now.format("%d-%m-%Y %k:%M"));
+			} else {
+				Label l = new Label(cSigImage[1][0], cSigImage[1][1],now.format("%d-%m-%Y %k:%M"));
+				try {
+					s.addCell(l);
+				} catch (WriteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 			
 			File myDir = new File(root + MainActivity.workingTemplateDir);
 			workingTemplateFile = new File(myDir, MainActivity.workingTemplateFileName);
@@ -493,10 +514,10 @@ public class ExcelHandler {
 		@Override
 		protected String doInBackground(PBStore... pb) {
 			
-			ArrayList<int[][]> list = getCells(pb[0].getSection());
+			int[][][] list = getCells(pb[0].getSection());
 			publishProgress(5);
-			int[][] cells = list.get(0);
-			int[] ids = list.get(1)[0];
+			int[][] cells = list[0];
+			int[] ids = list[1][0];
 			WritableWorkbook w = null;
 			try{
 				w = getWritableWorkbook();
