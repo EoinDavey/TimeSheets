@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        android:text="Description of works"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+    
+    <com.powerblock.timesheets.CustomEditText
+        android:id="@+id/job_setup_description"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/description"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Description of works"
+        android:inputType="text"
+        android:gravity="left|top"
+        android:singleLine="false"
+        android:background="@drawable/cell_background"
+        android:layout_margin="20dp"
+        android:textAppearance="?android:attr/textAppearanceLargeInverse" />
+
+</RelativeLayout>

@@ -16,9 +16,13 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:buttonStyle">@style/PBButtonStyle</item>
+        <item name="android:spinnerStyle">@style/PBSpinnerStyle</item>
     </style>
 	<style name="PBButtonStyle" parent="android:style/Widget.Button">
 	    <item name="android:background">@drawable/button_background</item>
 	    <item name="android:padding">2dp</item>
+	</style>
+	<style name="PBSpinnerStyle" parent = "android:style/Widget.Spinner">
+	    <item name="android:background">@drawable/button_background</item>
 	</style>
 </resources>

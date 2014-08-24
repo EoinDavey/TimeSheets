@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    
+    <TextView
+        android:id="@+id/safety_welfare_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="No. 6 Welfare"
+        android:textSize="@dimen/safety_font"
+        android:layout_marginBottom="40dp" />
+    
+    <TableLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/safety_welfare_table_1"
+	    android:layout_centerHorizontal="true"
+	    android:layout_below="@id/safety_welfare_text"
+	    android:layout_marginTop="40dp" >
+		<TableRow android:baselineAligned="false" 
+            android:background="@drawable/cell_background"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content">
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_1"
+		        custom:icon_image="@drawable/assembly_point"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_2"
+		        custom:icon_image="@drawable/cutlery"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_3"
+		        custom:icon_image="@drawable/burns_kit"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		</TableRow>
+		<TableRow android:baselineAligned="false" 
+            android:background="@drawable/cell_background"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content">
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_4" 
+		        custom:icon_image="@drawable/basin"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_5"
+		        custom:icon_image="@drawable/first_aid"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_6" 
+		        custom:icon_image="@drawable/bins"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		</TableRow>
+		<TableRow android:baselineAligned="false"
+            android:background="@drawable/cell_background"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content">
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_7"
+		        custom:icon_image="@drawable/toilets"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_8"
+		        custom:icon_image="@drawable/no_smoking"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_9" 
+		        custom:icon_image="@drawable/hospital"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		</TableRow>
+		<TableRow android:baselineAligned="false"
+            android:background="@drawable/cell_background"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content">
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_10"
+		        custom:icon_image="@drawable/sunscreen"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_11"
+		        custom:icon_image="@drawable/emergency_exit"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		    <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_welfare_checkbox_12" 
+		        custom:icon_image="@drawable/fire_extinguisher"
+		     	android:padding="2dp"
+		        android:background="@drawable/cell_background"
+		        android:layout_width="@dimen/safety_image_dimen"
+		        android:layout_height="@dimen/safety_image_dimen"/>
+		</TableRow>
+	    
+	</TableLayout>
+    
+</RelativeLayout>

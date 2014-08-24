@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <TableLayout
+        android:id="@+id/pre_connection_table_1"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="40dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_alignParentTop="true" >
+	    
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:background="@drawable/cell_background"
+            android:paddingBottom="2dp" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Circuit Continuity (Ohms)\nAll Circuits"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="CCT1"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="CCT2"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="CCT3"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+        </TableRow>
+       <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Resistance of phase conductor (Rp)"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_1"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_2"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_3"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Resistance of earth conductor (Re)"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_4"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_5"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_6"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Ring circuit end to end"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_7"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_8"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_9"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="L-L"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_10"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_11"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_12"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="N-N"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_13"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_14"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_15"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="E-E"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_16"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_17"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_18"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+	</TableLayout>
+	<TableLayout
+	    android:layout_below="@id/pre_connection_table_1"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="40dp"
+	    android:layout_centerHorizontal="true">
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:background="@drawable/cell_background"
+            android:paddingBottom="2dp" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Min. insulation res (MEG OHM)"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <View 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background"/>
+            <View 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background"/>
+            <View 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background"/>
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Phase &amp; Neutral to earth (MΩ)"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_19"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_20"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_21"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+		<TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Phase to Natural (MΩ)"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_22"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_23"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_24"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="3 Phase - Phase to Phase (MΩ)"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_25"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_26"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+            <com.powerblock.timesheets.CustomEditText
+                android:id="@+id/pre_connection_value_27"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:textSize="15sp"
+                android:background="@drawable/cell_background"
+                android:gravity="center"
+                android:hint="Enter Text" />
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Polarity"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomCheckBox
+                android:id="@+id/pre_connection_value_28"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background"/>
+            <com.powerblock.timesheets.CustomCheckBox
+                android:id="@+id/pre_connection_value_29"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background"/>
+            <com.powerblock.timesheets.CustomCheckBox
+                android:id="@+id/pre_connection_value_30"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background"/>
+        </TableRow>
+        <TableRow 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false" >
+            <TextView 
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:text="Erroneous"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/cell_background"
+                android:gravity="center"/>
+            <com.powerblock.timesheets.CustomCheckBox
+                android:id="@+id/pre_connection_value_31"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background" />
+            <com.powerblock.timesheets.CustomCheckBox
+                android:id="@+id/pre_connection_value_32"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background"/>
+            <com.powerblock.timesheets.CustomCheckBox
+                android:id="@+id/pre_connection_value_33"
+                android:layout_width="@dimen/connection_cell_width"
+                android:layout_height="@dimen/connection_cell_height"
+                android:background="@drawable/cell_background"/>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
+</ScrollView>

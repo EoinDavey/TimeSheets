@@ -57,6 +57,9 @@ public class SectionTemplate extends Fragment {
 			case ExcelHandler.EXCEL_SECTION_MATERIALS_POWER:
 				layoutId = R.layout.materials_power;
 				break;
+			case ExcelHandler.EXCEL_SECTION_MATERIALS_MCB:
+				layoutId = R.layout.materials_mcb;
+				break;
 			case ExcelHandler.EXCEL_SECTION_SAFETY_PPE:
 				layoutId = R.layout.ppe;
 				break;
@@ -72,14 +75,26 @@ public class SectionTemplate extends Fragment {
 			case ExcelHandler.EXCEL_SECTION_SAFETY_WORKING_AT_HEIGHT:
 				layoutId = R.layout.safety_height;
 				break;
-			case ExcelHandler.EXCEL_SECTION_SAFETY_OTHER:
-				layoutId = R.layout.safety_other;
+			case ExcelHandler.EXCEL_SECTION_SAFETY_WELFARE:
+				layoutId = R.layout.safety_welfare;
 				break;
 			case ExcelHandler.EXCEL_SECTION_TESTING_TYPE:
 				layoutId = R.layout.testing_test_type;
 				break;
 			case ExcelHandler.EXCEL_SECTION_TESTING_DBDETAILS:
 				layoutId = R.layout.testing_db_details;
+				break;
+			case ExcelHandler.EXCEL_SECTION_JOB_SETUP_DESCRIPTION:
+				layoutId = R.layout.job_setup_description;
+				break;
+			case ExcelHandler.EXCEL_SECTION_JOB_SETUP_QUOTE_NO:
+				layoutId = R.layout.job_setup_quote_no;
+				break;
+			case ExcelHandler.EXCEL_SECTION_TESTING_PRECONNECTION:
+				layoutId = R.layout.testing_preconnection;
+				break;
+			case ExcelHandler.EXCEL_SECTION_TESTING_POSTCONNECTION:
+				layoutId = R.layout.testing_postconnection;
 				break;
 		}
 		

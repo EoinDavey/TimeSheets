@@ -153,12 +153,12 @@
 			        android:background="@drawable/cell_background"
 			        android:layout_width="@dimen/safety_image_dimen"
 			        android:layout_height="@dimen/safety_image_dimen"/>
-            <com.powerblock.timesheets.CustomEditText android:id="@+id/safety_height_checkbox_14"
+            <com.powerblock.timesheets.CustomCheckBox android:id="@+id/safety_height_checkbox_14"
+			        custom:icon_image="@drawable/training"
 			     	android:padding="2dp"
 			        android:background="@drawable/cell_background"
 			        android:layout_width="@dimen/safety_image_dimen"
-			        android:layout_height="@dimen/safety_image_dimen"
-			        android:hint="Add text"/>
+			        android:layout_height="@dimen/safety_image_dimen"/>
             <com.powerblock.timesheets.CustomEditText android:id="@+id/safety_height_checkbox_15"
 			     	android:padding="2dp"
 			        android:background="@drawable/cell_background"

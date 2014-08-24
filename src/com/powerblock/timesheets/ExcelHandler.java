@@ -50,22 +50,25 @@ public class ExcelHandler {
 	public static final String EXCEL_SECTION_TIME = "Time";
 	public static final String EXCEL_SECTION_SAFETY = "Safety";
 	public static final String EXCEL_SECTION_MATERIALS_LIGHTING = "Lighting";
-	public static final String EXCEL_SECTION_MATERIALS_POWER = "Power";
-	public static final String EXCEL_SECTION_MATERIALS_DATA = "Data";
+	public static final String EXCEL_SECTION_MATERIALS_POWER = "Power"; //Lamps
+	public static final String EXCEL_SECTION_MATERIALS_DATA = "Data"; //Accessories
 	public static final String EXCEL_SECTION_MATERIALS_CONTAINMENT = "Containment";
 	public static final String EXCEL_SECTION_MATERIALS_CABLE = "Cable";
+	public static final String EXCEL_SECTION_MATERIALS_MCB = "MCB";
 	public static final String EXCEL_SECTION_SAFETY_SITE_CONDITIONS="Site Conditions";
 	public static final String EXCEL_SECTION_SAFETY_PPE="PPE";
 	public static final String EXCEL_SECTION_SAFETY_LOCK_OUT="Lock out";
 	public static final String EXCEL_SECTION_SAFETY_MANUAL_HANDLING="Manual Handling";
 	public static final String EXCEL_SECTION_SAFETY_WORKING_AT_HEIGHT="Working at height";
-	public static final String EXCEL_SECTION_SAFETY_OTHER = "Other";
+	public static final String EXCEL_SECTION_SAFETY_WELFARE = "WELFARE";
 	public static final String EXCEL_SECTION_TESTING_TYPE = "Testing Type";
 	public static final String EXCEL_SECTION_TESTING_DBDETAILS = "DB Details";
 	public static final String EXCEL_SECTION_TESTING_PRECONNECTION = "pre-connection";
 	public static final String EXCEL_SECTION_TESTING_POSTCONNECTION = "post-connection";
 	public static final String EXCEL_SECTION_TESTING_SIGNATURE = "Testing Signature";
 	public static final String EXCEL_SECTION_TESTING_QCNUMBER = "QC Number";
+	public static final String EXCEL_SECTION_JOB_SETUP_DESCRIPTION = "Description";
+	public static final String EXCEL_SECTION_JOB_SETUP_QUOTE_NO = "Quote Number";
 
 	//Cell coordinates
 	private final static int[] cJobType = {1,1};
@@ -74,9 +77,10 @@ public class ExcelHandler {
 	private final static int[] cPIC = {1,4};
 	private final static int[] cAPersonnel = {1,5};
 	private final static int[][] cJobSetupCells = {cJobType,cSiteName,cSiteAddress, cPIC, cAPersonnel};
-	private final static int[] rJobSetupIds = {R.id.job_setup_job_types, 
-		R.id.job_setup_site_name, R.id.job_setup_site_address, R.id.job_setup_PIC, 
-		R.id.job_setup_personnel};
+	private final static int[] rJobSetupIds = {R.id.job_setup_cost_centre, 
+		R.id.job_setup_customer, R.id.job_setup_site_address, R.id.job_setup_job_owner, 
+		R.id.job_setup_maintenance_work, R.id.job_setup_contract_work, R.id.job_setup_description, R.id.job_setup_PIC, 
+		R.id.job_setup_quote_no, R.id.job_setup_personnel};
 	
 	private final static int[] rSafetySiteConditionIds = {
 		R.id.safety_site_conditions_work_area,
@@ -170,14 +174,7 @@ public class ExcelHandler {
 		{2,21},{2,22},{2,23},{2,24},
 		{3,21},{3,22},{3,23},{3,24}};
 	
-	private final static int[] rMaterialsLighting = {
-		R.id.materials_cell_lighting_store, R.id.materials_cell_lighting_docket,
-		R.id.materials_cell_lighting_quantity_1,R.id.materials_cell_lighting_quantity_2,
-		R.id.materials_cell_lighting_quantity_3,R.id.materials_cell_lighting_quantity_4,
-		R.id.materials_cell_lighting_material_1,R.id.materials_cell_lighting_material_2,
-		R.id.materials_cell_lighting_material_3,R.id.materials_cell_lighting_material_4,
-		R.id.materials_cell_lighting_size_1,R.id.materials_cell_lighting_size_2,
-		R.id.materials_cell_lighting_size_3,R.id.materials_cell_lighting_size_4};
+	private final static int[] rMaterialsLighting = {};
 	
 	private final static int[][] cMaterialsPower = {
 		{0,26},{0,27},
@@ -186,15 +183,7 @@ public class ExcelHandler {
 		{3,27},{3,28},{3,29},{3,30}
 	};
 	
-	private final static int[] rMaterialsPower = {
-		R.id.materials_power_store, R.id.materials_power_docket,
-		R.id.materials_cell_power_quantity_1,R.id.materials_cell_power_quantity_2,
-		R.id.materials_cell_power_quantity_3,R.id.materials_cell_power_quantity_4,
-		R.id.materials_cell_power_material_1,R.id.materials_cell_power_material_2,
-		R.id.materials_cell_power_material_3,R.id.materials_cell_power_material_4,
-		R.id.materials_cell_power_size_1,R.id.materials_cell_power_size_2,
-		R.id.materials_cell_power_size_3,R.id.materials_cell_power_size_4
-	};
+	private final static int[] rMaterialsPower = {};
 	
 	private final static int[][] cMaterialsData = {
 		{0,32},{0,33},
@@ -202,42 +191,21 @@ public class ExcelHandler {
 		{2,33},{2,34},{2,35},{2,36},
 		{3,33},{3,34},{3,35},{3,36}};
 	
-	private final static int[] rMaterialsData = {
-		R.id.materials_cell_data_store, R.id.materials_cell_data_docket,
-		R.id.materials_cell_data_quantity_1,R.id.materials_cell_data_quantity_2,
-		R.id.materials_cell_data_quantity_3,R.id.materials_cell_data_quantity_4,
-		R.id.materials_cell_data_material_1,R.id.materials_cell_data_material_2,
-		R.id.materials_cell_data_material_3,R.id.materials_cell_data_material_4,
-		R.id.materials_cell_data_size_1,R.id.materials_cell_data_size_2,
-		R.id.materials_cell_data_size_3,R.id.materials_cell_data_size_4};
+	private final static int[] rMaterialsData = {};
 	
 	private final static int[][] cMaterialsContainment = {
 		{1,39},{1,40},{1,41},{1,42},
 		{2,39},{2,40},{2,41},{2,42},
 		{3,39},{3,40},{3,41},{3,42}
 		};
-	private final static int[] rMaterialsContainment = {
-		R.id.materials_cell_containment_quantity_1,R.id.materials_cell_containment_quantity_3,
-		R.id.materials_cell_containment_quantity_3,R.id.materials_cell_containment_quantity_4,
-		R.id.materials_cell_containment_material_1,R.id.materials_cell_containment_material_2,
-		R.id.materials_cell_containment_material_3,R.id.materials_cell_containment_material_4,
-		R.id.materials_cell_containment_size_1,R.id.materials_cell_containment_size_3,
-		R.id.materials_cell_containment_size_3,R.id.materials_cell_containment_size_4
-		};
+	private final static int[] rMaterialsContainment = {};
 	
 	private final static int[][] cMaterialsCable = {
 		{1,45},{1,46},{1,47},{1,48},
 		{2,45},{2,46},{2,47},{2,48},
 		{3,45},{3,46},{3,47},{3,48}
 		};
-	private final static int[] rMaterialsCable = {
-		R.id.materials_cell_cable_quantity_1,R.id.materials_cell_cable_quantity_2,
-		R.id.materials_cell_cable_quantity_3,R.id.materials_cell_cable_quantity_4,
-		R.id.materials_cell_cable_material_1,R.id.materials_cell_cable_material_2,
-		R.id.materials_cell_cable_material_3,R.id.materials_cell_cable_material_4,
-		R.id.materials_cell_cable_size_1,R.id.materials_cell_cable_size_2,
-		R.id.materials_cell_cable_size_3,R.id.materials_cell_cable_size_4
-		};
+	private final static int[] rMaterialsCable = {};
 	
 	private final static int[][] cTime = {
 		{1,51},{2,51},{3,51},{4,51},{5,51}
@@ -260,9 +228,8 @@ public class ExcelHandler {
 	public int[][][] getCells(String section){
 		int[][] cells;
 		int[][] ids = new int[1][];
-		int[][] sheet = new int[1][];
+		int[][] sheet = new int[1][1];
 		int[][][] list = new int[2][][];
-		//List<int[][]> list = new ArrayList<int[][]>();
 		if(section.equalsIgnoreCase(EXCEL_SECTION_JOB_SETUP)){
 			cells = cJobSetupCells;
 			ids[0] = rJobSetupIds;
@@ -274,20 +241,25 @@ public class ExcelHandler {
 			cells = cTime;
 			ids[0] = rTime;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_CONTAINMENT)){
-			cells = cMaterialsContainment;
-			ids[0] = rMaterialsContainment;
+			//cells = cMaterialsContainment;
+			//ids[0] = rMaterialsContainment;
+			return null;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_LIGHTING)){
-			cells = cMaterialsLighting;
-			ids[0] = rMaterialsLighting;
+			//cells = cMaterialsLighting;
+			//ids[0] = rMaterialsLighting;
+			return null;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_POWER)){
-			cells = cMaterialsPower;
-			ids[0] = rMaterialsPower;
+			//cells = cMaterialsPower;
+			//ids[0] = rMaterialsPower;
+			return null;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_DATA)){
-			cells = cMaterialsData;
-			ids[0] = rMaterialsData;
+			//cells = cMaterialsData;
+			//ids[0] = rMaterialsData;
+			return null;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_MATERIALS_CABLE)){
-			cells = cMaterialsCable;
-			ids[0] = rMaterialsCable;
+			//cells = cMaterialsCable;
+			//ids[0] = rMaterialsCable;
+			return null;
 		} else if(section.equalsIgnoreCase(EXCEL_SECTION_SAFETY_SITE_CONDITIONS)){
 			cells = cSafetySiteConditionCells;
 			ids[0] = rSafetySiteConditionIds;
@@ -458,7 +430,6 @@ public class ExcelHandler {
 				try {
 					s.addCell(l);
 				} catch (WriteException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

@@ -12,21 +12,19 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.widget.CheckBox;
 
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 public class CustomCheckBox extends CheckBox implements PBSpinner {
 	private BitmapDrawable mIcon;
+	private boolean noIcon = true;
 	public CustomCheckBox(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		Log.v("Test","instantiated");
 		init(attrs);
 	}
 	
 	public CustomCheckBox(Context context, AttributeSet attrs, int i) {
 		super(context, attrs);
-		Log.v("Test","instantiated");
 		init(attrs);
 	}
 	
@@ -37,12 +35,13 @@ public class CustomCheckBox extends CheckBox implements PBSpinner {
 	
 	private void init(AttributeSet attrs){
 		TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.CustomCheckBox);
-		Log.v("Test","mIcon set");
 		mIcon = (BitmapDrawable) a.getDrawable(R.styleable.CustomCheckBox_icon_image);
 		a.recycle();
-		drawUncheckedIcon();
-		setButtonDrawable(new ColorDrawable(Color.WHITE));
-		
+		if(mIcon != null){
+			noIcon = false;
+			drawUncheckedIcon();
+			setButtonDrawable(new ColorDrawable(Color.WHITE));
+		}
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -54,7 +53,6 @@ public class CustomCheckBox extends CheckBox implements PBSpinner {
 			Bitmap b = Bitmap.createBitmap(258,258, Bitmap.Config.ARGB_8888);
 			Canvas c = new Canvas(b);
 			background.draw(c);
-			Log.v("Test", "Draw called");
 			mIcon.draw(c);
 			if(android.os.Build.VERSION.SDK_INT < 16){
 				this.setBackgroundDrawable(new BitmapDrawable(getResources(), b));
@@ -67,14 +65,14 @@ public class CustomCheckBox extends CheckBox implements PBSpinner {
 	@SuppressWarnings("deprecation")
 	@Override
 	public void setChecked(boolean checked) {
-		if(checked){
+		if(!noIcon && checked){
 			if(android.os.Build.VERSION.SDK_INT < 16){
 				this.setBackgroundDrawable(drawCheckedIcon());
 			} else {
 				this.setBackground(drawCheckedIcon());
 			}
 			
-		} else {
+		} else if(!noIcon && !checked) {
 			drawUncheckedIcon();
 		}
 		super.setChecked(checked);
@@ -87,7 +85,6 @@ public class CustomCheckBox extends CheckBox implements PBSpinner {
 		d.setBounds(new Rect(10,10,250,250));
 		mIcon.setBounds(10,10,250,250);
 		Bitmap b = Bitmap.createBitmap(258, 258,Bitmap.Config.ARGB_8888);
-		Log.v("Test", "Height: " + String.valueOf(mIcon.getBitmap().getHeight()) + " Width: " + String.valueOf(mIcon.getBitmap().getWidth()));
 		Canvas c = new Canvas(b);
 		background.draw(c);
 		mIcon.draw(c);

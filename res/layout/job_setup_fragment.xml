@@ -1,89 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets">
-<LinearLayout
+	xmlns:custom="http://schemas.android.com/apk/res/com.powerblock.timesheets"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <com.powerblock.timesheets.CustomSpinner
-        android:id="@+id/job_setup_job_types"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        custom:entries="job_setup_job_types"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <com.powerblock.timesheets.CustomSpinner
-        android:id="@+id/job_setup_site_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        custom:entries="job_setup_site_names"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin" />
-    <com.powerblock.timesheets.CustomSpinner
-        android:id="@+id/job_setup_site_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        custom:entries="job_setup_site_address"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <com.powerblock.timesheets.CustomSpinner
-        android:id="@+id/job_setup_customer_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        custom:entries="job_setup_customer_names"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PIC"
-        android:textColor="#FF0000"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <com.powerblock.timesheets.CustomSpinner
-        android:id="@+id/job_setup_PIC" 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        custom:entries="job_setup_PIC"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Additional Personnel"
-        android:textColor="#FF0000"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <com.powerblock.timesheets.MultiChoiceSpinner 
-    	android:id="@+id/job_setup_personnel" 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        custom:multi_entries="job_setup_personnel"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <!--com.powerblock.timesheets.CustomSpinner
-        android:id="@+id/job_setup_personnel_1" 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        custom:entries="job_setup_personnel"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <com.powerblock.timesheets.CustomSpinner 
-        android:id="@+id/job_setup_personnel_2" 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        custom:entries="job_setup_personnel"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/>
-    <com.powerblock.timesheets.CustomSpinner 
-        android:id="@+id/job_setup_personnel_3" 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        custom:entries="job_setup_personnel"
-        android:textSize="@dimen/main_fragment_button_font"
-        android:layout_marginBottom="@dimen/job_setup_frag_text_view_margin"/-->
-    
-
-</LinearLayout>
-</ScrollView>
+        android:layout_centerInParent="true"
+        android:id="@+id/job_setup_table_1" >
+        <!-- row 1 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_fragment_layout_padding" >
+		    <com.powerblock.timesheets.CustomSpinner
+		        android:id="@+id/job_setup_cost_centre"
+		        android:layout_width="@dimen/job_setup_spinner_width"
+		        android:layout_height="@dimen/job_setup_spinner_height"
+		        custom:entries="job_setup_cost_center"
+		        android:textSize="@dimen/main_fragment_button_font"
+                android:layout_marginRight="@dimen/main_fragment_layout_padding"/>
+		    <com.powerblock.timesheets.CustomSpinner
+		        android:id="@+id/job_setup_customer"
+		        android:layout_width="@dimen/job_setup_spinner_width"
+		        android:layout_height="@dimen/job_setup_spinner_height"
+		        custom:entries="job_setup_customers"
+		        android:textSize="@dimen/main_fragment_button_font"/>
+		</LinearLayout>
+		<!-- row 2 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_marginBottom="@dimen/main_fragment_layout_padding">
+			<com.powerblock.timesheets.CustomSpinner
+			    android:id="@+id/job_setup_site_address"
+		        android:layout_width="@dimen/job_setup_spinner_width"
+		        android:layout_height="@dimen/job_setup_spinner_height"
+			    custom:entries="job_setup_site_address"
+			    android:textSize="@dimen/main_fragment_button_font"
+                android:layout_marginRight="@dimen/main_fragment_layout_padding"/>
+			<com.powerblock.timesheets.CustomSpinner
+			    android:id="@+id/job_setup_job_owner"
+		        android:layout_width="@dimen/job_setup_spinner_width"
+		        android:layout_height="@dimen/job_setup_spinner_height"
+			    custom:entries="job_setup_job_owner"
+			    android:textSize="@dimen/main_fragment_button_font"/>
+			
+		</LinearLayout>
+		<!-- row 3 -->
+        <LinearLayout 
+            android:orientation = "horizontal"
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_fragment_layout_padding" >
+			<com.powerblock.timesheets.CustomSpinner
+			    android:id="@+id/job_setup_maintenance_work" 
+			    android:layout_width="@dimen/job_setup_spinner_width"
+			    android:layout_height="@dimen/job_setup_spinner_height"
+			    custom:entries="job_setup_type_of_maintenance_work"
+			    android:textSize="@dimen/main_fragment_button_font"
+                android:layout_marginRight="@dimen/main_fragment_layout_padding"/>
+			<com.powerblock.timesheets.CustomSpinner 
+				android:id="@+id/job_setup_contract_work" 
+			    android:layout_width="@dimen/job_setup_spinner_width"
+			    android:layout_height="@dimen/job_setup_spinner_height"
+			    custom:entries="job_setup_type_of_contract_work"
+			    android:textSize="@dimen/main_fragment_button_font"/>
+		</LinearLayout>
+    	<!-- row 4 -->
+        <LinearLayout 
+            android:orientation = "horizontal"
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_fragment_layout_padding" >
+			<Button
+			    android:id="@+id/job_setup_description" 
+			    android:layout_width="@dimen/job_setup_spinner_width"
+			    android:layout_height="@dimen/job_setup_spinner_height"
+			    android:textSize="@dimen/main_fragment_button_font"
+			    android:text="Description of works"
+                android:layout_marginRight="@dimen/main_fragment_layout_padding"
+                android:onClick="showDescription"/>
+			<com.powerblock.timesheets.CustomSpinner 
+				android:id="@+id/job_setup_PIC" 
+			    android:layout_width="@dimen/job_setup_spinner_width"
+			    android:layout_height="@dimen/job_setup_spinner_height"
+			    custom:entries="job_setup_PIC"
+			    android:textSize="@dimen/main_fragment_button_font"/>
+		</LinearLayout>
+		<!-- row 5 -->
+        <LinearLayout 
+            android:orientation = "horizontal"
+            android:baselineAligned="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_fragment_layout_padding" >
+			<Button 
+				android:id="@+id/job_setup_quote_no" 
+			    android:layout_width="@dimen/job_setup_spinner_width"
+			    android:layout_height="@dimen/job_setup_spinner_height"
+			    android:textSize="@dimen/main_fragment_button_font"
+			    android:text="Quote No / Work record number"
+                android:layout_marginRight="@dimen/main_fragment_layout_padding"
+                android:onClick="showQuoteNo"/>
+			<com.powerblock.timesheets.CustomSpinner 
+				android:id="@+id/job_setup_personnel" 
+			    android:layout_width="@dimen/job_setup_spinner_width"
+			    android:layout_height="@dimen/job_setup_spinner_height"
+			    custom:entries="job_setup_additional_personnel"
+			    android:textSize="@dimen/main_fragment_button_font"/>
+	</LinearLayout>
+	</LinearLayout>
+</RelativeLayout>

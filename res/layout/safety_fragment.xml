@@ -76,7 +76,7 @@
             <Button
                 android:layout_width="@dimen/main_fragment_button_width_dimen"
                 android:layout_height = "@dimen/main_fragment_button_height_dimen"
-                android:text="Other"
+                android:text="Welfare"
                 android:textSize="@dimen/main_fragment_button_font"
                 android:onClick="showSafetyOther" />
         </LinearLayout>

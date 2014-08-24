@@ -5,82 +5,84 @@
     android:layout_height="match_parent" >
     
     <!-- Power table -->
-		<TableLayout android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_marginTop="40dp"
-		    android:layout_centerHorizontal="true"
-		    android:id="@+id/materials_table_layout_3">
-		    <TableRow
-		        android:layout_width="match_parent"
+	<TextView
+	    android:id="@+id/materials_lamps_text"
+		android:layout_width="@dimen/materials_cell_width"
+		android:layout_height="@dimen/materials_cell_height"
+		android:layout_marginTop="40dp"
+		android:text="Lamps"
+		android:textSize="@dimen/materials_font"
+		android:layout_centerHorizontal="true"
+		android:gravity="center_vertical|center_horizontal" />
+		        
+	<TableLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="20dp"
+	    android:layout_centerHorizontal="true"
+	    android:id="@+id/materials_table_layout_4"
+	    android:layout_below="@id/materials_lamps_text">
+	    <TableRow 
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent"
+	        android:baselineAligned="false">
+	        <TextView
+	            android:layout_width="@dimen/materials_cell_width"
+	            android:layout_height="@dimen/materials_cell_height"
+	            android:textSize="@dimen/materials_font"
+	            android:background="@drawable/cell_background"
+	            android:text="Quantity"
+	            android:gravity="center_vertical|center_horizontal"/>
+	
+	        <TextView
+	            android:layout_width="@dimen/materials_cell_width"
+	            android:layout_height="@dimen/materials_cell_height"
+	            android:textSize="@dimen/materials_font"
+	            android:background="@drawable/cell_background"
+	            android:text="Type"
+	            android:gravity="center_vertical|center_horizontal"/>
+	        <TextView
+	            android:layout_width="@dimen/materials_cell_width"
+	            android:layout_height="@dimen/materials_cell_height"
+	            android:textSize="@dimen/materials_font"
+	            android:background="@drawable/cell_background"
+	            android:text="Size"
+	            android:gravity="center_vertical|center_horizontal"/>
+	    </TableRow>
+	    <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
-	
-		        <TextView
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_lamps_value_1"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
-		            android:text="Power -"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
-		            android:gravity="center_vertical|center_horizontal" />
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_2"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_types"/>
 		        <com.powerblock.timesheets.CustomSpinner
-		            android:id="@+id/materials_power_store"
-		            android:layout_width="@dimen/materials_cell_width"
-		            android:layout_height="@dimen/materials_cell_height"
-		            android:textSize="@dimen/materials_font"
-		            android:background="@drawable/cell_background"
-		            custom:entries="materials_stores"
-		            android:prompt="@string/prompt"/>
-		        <com.powerblock.timesheets.CustomEditText
-		            android:id="@+id/materials_power_docket"
+		            android:id="@+id/materials_lamps_value_3"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter docket number"
-		            android:inputType="number" />
-	
+		            custom:entries="materials_accessories_size"/>
 		    </TableRow>
-		    <TableRow 
-		        android:layout_height="wrap_content"
-		        android:layout_width="match_parent"
-		        android:baselineAligned="false">
-		        <TextView
-		            android:layout_width="@dimen/materials_cell_width"
-		            android:layout_height="@dimen/materials_cell_height"
-		            android:textSize="@dimen/materials_font"
-		            android:background="@drawable/cell_background"
-		            android:text="Quantity"
-		            android:gravity="center_vertical|center_horizontal"/>
-
-		        <TextView
-		            android:layout_width="@dimen/materials_cell_width"
-		            android:layout_height="@dimen/materials_cell_height"
-		            android:textSize="@dimen/materials_font"
-		            android:background="@drawable/cell_background"
-		            android:text="Material"
-		            android:gravity="center_vertical|center_horizontal"/>
-		        <TextView
-		            android:layout_width="@dimen/materials_cell_width"
-		            android:layout_height="@dimen/materials_cell_height"
-		            android:textSize="@dimen/materials_font"
-		            android:background="@drawable/cell_background"
-		            android:text="Size"
-		            android:gravity="center_vertical|center_horizontal"/>
-		    </TableRow>
-		</TableLayout>
-		<TableLayout 
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_marginTop="20dp"
-		    android:layout_centerHorizontal="true"
-		    android:id="@+id/materials_table_layout_4"
-		    android:layout_below="@id/materials_table_layout_3">
 		    <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
 		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_quantity_1"
+		            android:id="@+id/materials_lamps_value_4"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
@@ -88,28 +90,28 @@
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter quantity"
 		            android:inputType="number"/>
-		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_material_1"
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_5"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter Material"/>
-		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_size_1"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_6"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter Size"/>
+		            custom:entries="materials_accessories_size"/>
 		    </TableRow>
-		    <TableRow android:layout_width="wrap_content"
+		   <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
 		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_quantity_2"
+		            android:id="@+id/materials_lamps_value_7"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
@@ -117,28 +119,28 @@
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter quantity"
 		            android:inputType="number"/>
-		        <com.powerblock.timesheets.CustomEditText
-		            android:id="@+id/materials_cell_power_material_2" 
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_8"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter Material"/>
-		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_size_2"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_9"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter Size"/>
+		            custom:entries="materials_accessories_size"/>
 		    </TableRow>
 		    <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
 		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_quantity_3"
+		            android:id="@+id/materials_lamps_value_10"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
@@ -146,28 +148,28 @@
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter quantity"
 		            android:inputType="number"/>
-		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_material_3"
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_11"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter Material"/>
-		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_size_3"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_12"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter Size"/>
+		            custom:entries="materials_accessories_size"/>
 		    </TableRow>
 		    <TableRow android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:baselineAligned="false">
 		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_quantity_4"
+		            android:id="@+id/materials_lamps_value_13"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
@@ -175,24 +177,168 @@
 		            android:gravity="center_vertical|center_horizontal"
 		            android:hint="Enter quantity"
 		            android:inputType="number"/>
-		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_material_4"
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_14"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter Material"/>
-		        <com.powerblock.timesheets.CustomEditText 
-		            android:id="@+id/materials_cell_power_size_4"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_15"
 		            android:layout_width="@dimen/materials_cell_width"
 		            android:layout_height="@dimen/materials_cell_height"
 		            android:textSize="@dimen/materials_font"
 		            android:background="@drawable/cell_background"
 		            android:gravity="center_vertical|center_horizontal"
-		            android:hint="Enter Size"/>
+		            custom:entries="materials_accessories_size"/>
 		    </TableRow>
-		    
-		</TableLayout>
+		    <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_lamps_value_16"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_17"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_18"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_size"/>
+		    </TableRow>
+		   <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_lamps_value_19"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_20"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_21"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_size"/>
+		    </TableRow>
+		    <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_lamps_value_22"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_23"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_24"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_size"/>
+		    </TableRow>
+		    <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_lamps_value_25"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_26"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_27"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_size"/>
+		    </TableRow>
+		    <TableRow android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:baselineAligned="false">
+		        <com.powerblock.timesheets.CustomEditText 
+		            android:id="@+id/materials_lamps_value_28"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            android:hint="Enter quantity"
+		            android:inputType="number"/>
+		        <com.powerblock.timesheets.CustomSpinner 
+		            android:id="@+id/materials_lamps_value_29"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_types"/>
+		        <com.powerblock.timesheets.CustomSpinner
+		            android:id="@+id/materials_lamps_value_30"
+		            android:layout_width="@dimen/materials_cell_width"
+		            android:layout_height="@dimen/materials_cell_height"
+		            android:textSize="@dimen/materials_font"
+		            android:background="@drawable/cell_background"
+		            android:gravity="center_vertical|center_horizontal"
+		            custom:entries="materials_accessories_size"/>
+		    </TableRow>	    
+	</TableLayout>
 
 </RelativeLayout>

@@ -192,6 +192,10 @@ public class MainActivity extends ActionBarActivity {
 		show(ExcelHandler.EXCEL_SECTION_MATERIALS_CABLE);
 	}
 	
+	public void showMaterialsMCBs(View v){
+		show(ExcelHandler.EXCEL_SECTION_MATERIALS_MCB);
+	}
+	
 	public void showSiteConditions(View v){
 		show(ExcelHandler.EXCEL_SECTION_SAFETY_SITE_CONDITIONS);
 	}
@@ -205,7 +209,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	public void showSafetyOther(View v){
-		show(ExcelHandler.EXCEL_SECTION_SAFETY_OTHER);
+		show(ExcelHandler.EXCEL_SECTION_SAFETY_WELFARE);
 	}
 	
 	public void showManualHandling(View v){
@@ -222,6 +226,22 @@ public class MainActivity extends ActionBarActivity {
 	
 	public void showDBDetails(View v){
 		show(ExcelHandler.EXCEL_SECTION_TESTING_DBDETAILS);
+	}
+	
+	public void showDescription(View v){
+		show(ExcelHandler.EXCEL_SECTION_JOB_SETUP_DESCRIPTION);
+	}
+	
+	public void showQuoteNo(View v){
+		show(ExcelHandler.EXCEL_SECTION_JOB_SETUP_QUOTE_NO);
+	}
+	
+	public void showPreConnection(View v){
+		show(ExcelHandler.EXCEL_SECTION_TESTING_PRECONNECTION);
+	}
+	
+	public void showPostConnection(View v){
+		show(ExcelHandler.EXCEL_SECTION_TESTING_POSTCONNECTION);
 	}
 	
 	public void saveTimeSheet(String fileName){

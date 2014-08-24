@@ -3,14 +3,15 @@
     <!-- item android:drawable="@drawable/shadow_black"></item-->
     <item>
       <shape android:shape="rectangle">
-         <solid android:color="#CABBBBBB"/>
+         <solid android:color="#000000"/>
+         <!-- #CABBBBBB -->
          <corners android:radius="2dp" />
       </shape>
    </item>
 	<item
-      android:left="0dp"
-      android:right="0dp"
-      android:top="0dp"
+      android:left="2dp"
+      android:right="2dp"
+      android:top="2dp"
       android:bottom="2dp">
       <shape android:shape="rectangle">
          <solid android:color="@android:color/white"/>
